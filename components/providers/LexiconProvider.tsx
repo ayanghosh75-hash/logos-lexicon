@@ -161,9 +161,16 @@ export const LexiconProvider: React.FC<{ children: React.ReactNode }> = ({ child
   }, []);
 
   const setLanguage = (lang: string) => {
+    if (!lang) return;
     setCurrentLanguageState(lang);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('logos_lang', lang);
+      try {
+        localStorage.setItem('logos_lang', lang);
+        localStorage.setItem('logos_user_has_manual_lang', 'true');
+        sessionStorage.setItem('logos_geo_banner_dismissed', 'true');
+      } catch (e) {
+        console.warn('Failed to save language preference', e);
+      }
     }
   };
 

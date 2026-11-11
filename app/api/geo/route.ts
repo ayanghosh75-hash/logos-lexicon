@@ -86,12 +86,12 @@ export async function GET(req: NextRequest) {
     } else if (country.toUpperCase() === 'IN') {
       // Smart India resolution: Check accept-language for Bengali, Hindi, Tamil, Telugu, Urdu
       countryName = 'India';
-      countryNative = 'भारत';
       if (acceptLang.includes('bn')) matchedLang = 'bn';
+      else if (acceptLang.includes('hi')) matchedLang = 'hi';
       else if (acceptLang.includes('ta')) matchedLang = 'ta';
       else if (acceptLang.includes('te')) matchedLang = 'te';
       else if (acceptLang.includes('ur')) matchedLang = 'ur';
-      else matchedLang = 'hi';
+      else matchedLang = 'en';
     } else {
       // Fallback: Parse accept-language header
       if (acceptLang.startsWith('ar')) matchedLang = 'ar';

@@ -21,8 +21,13 @@ export const GeoVernacularDetector: React.FC = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Check if the user already has a manually chosen language or already dismissed
+    // Strict Guard: Never override if the user already has a chosen language or preference
+    const storedLang = localStorage.getItem('logos_lang');
     const hasManualLang = localStorage.getItem('logos_user_has_manual_lang');
+    if (storedLang || hasManualLang) {
+      return; // Absolute prohibition: Preserve user's explicit language selection!
+    }
+
     const dismissed = sessionStorage.getItem('logos_geo_banner_dismissed');
 
     async function detectGeo() {
@@ -97,7 +102,8 @@ export const GeoVernacularDetector: React.FC = () => {
       }
 
       // If vernacular found and user has not set manual preference, auto-apply!
-      if (detectedLang && detectedLang !== 'en' && !hasManualLang) {
+      const userActivePref = localStorage.getItem('logos_lang') || localStorage.getItem('logos_user_has_manual_lang');
+      if (detectedLang && detectedLang !== 'en' && !userActivePref) {
         setLanguage(detectedLang);
         setGeoInfo({
           country: cCode,
