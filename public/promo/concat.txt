@@ -1,0 +1,11 @@
+file 'C:/Users/acer/.gemini/antigravity/scratch/logos-lexicon/public/promo/slide_1.png'
+duration 12
+file 'C:/Users/acer/.gemini/antigravity/scratch/logos-lexicon/public/promo/slide_2.png'
+duration 12
+file 'C:/Users/acer/.gemini/antigravity/scratch/logos-lexicon/public/promo/slide_3.png'
+duration 12
+file 'C:/Users/acer/.gemini/antigravity/scratch/logos-lexicon/public/promo/slide_4.png'
+duration 12
+file 'C:/Users/acer/.gemini/antigravity/scratch/logos-lexicon/public/promo/slide_5.png'
+duration 12
+file 'C:/Users/acer/.gemini/antigravity/scratch/logos-lexicon/public/promo/slide_5.png'
