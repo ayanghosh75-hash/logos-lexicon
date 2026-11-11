@@ -7,7 +7,7 @@ import { UpdateBanner } from '@/components/pwa/UpdateBanner';
 import { LexiGuide } from '@/components/lexi/LexiGuide';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://logoslexicon.org'),
+  metadataBase: new URL('https://logos-lexicon-app.vercel.app'),
   title: {
     default: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
     template: '%s | Logos Lexicon',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
   applicationName: 'Logos Lexicon',
-  authors: [{ name: 'Rev. Ayan Kumar Ghosh', url: 'https://logoslexicon.org/about' }],
+  authors: [{ name: 'Rev. Ayan Kumar Ghosh', url: 'https://logos-lexicon-app.vercel.app/about' }],
   creator: 'Rev. Ayan Kumar Ghosh',
   publisher: 'Logos Lexicon Theological Editorial Board',
   manifest: '/manifest.webmanifest',
@@ -30,23 +30,24 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://logoslexicon.org/',
+    canonical: 'https://logos-lexicon-app.vercel.app/',
   },
   openGraph: {
     title: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
     description:
       'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
-    url: 'https://logoslexicon.org/',
+    url: 'https://logos-lexicon-app.vercel.app/',
     siteName: 'Logos Lexicon',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://logoslexicon.org/og-image.jpg',
+        url: 'https://logos-lexicon-app.vercel.app/og-image.png',
+        secureUrl: 'https://logos-lexicon-app.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
-        type: 'image/jpeg',
+        type: 'image/png',
       },
     ],
   },
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     title: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
     description:
       'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
-    images: ['https://logoslexicon.org/og-image.jpg'],
+    images: ['https://logos-lexicon-app.vercel.app/og-image.png'],
     creator: '@LogosLexicon',
   },
   robots: {
@@ -108,6 +109,22 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3020259399527859"
           crossOrigin="anonymous"
         />
+
+        {/* Social Media Link Preview / Open Graph */}
+        <meta property="og:site_name" content="Logos Lexicon" />
+        <meta property="og:title" content="Logos Lexicon — Multilingual Biblical & Theological Dictionary" />
+        <meta property="og:description" content="Explore biblical and theological terms across 15 languages with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio." />
+        <meta property="og:image" content="https://logos-lexicon-app.vercel.app/og-image.png" />
+        <meta property="og:image:secure_url" content="https://logos-lexicon-app.vercel.app/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="https://logos-lexicon-app.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Logos Lexicon — Multilingual Biblical & Theological Dictionary" />
+        <meta name="twitter:description" content="Explore biblical and theological terms across 15 languages with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio." />
+        <meta name="twitter:image" content="https://logos-lexicon-app.vercel.app/og-image.png" />
       </head>
       <body className="bg-ivory-100 dark:bg-navy-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors selection:bg-gold-400 selection:text-navy-950">
         <a href="#main-content" className="skip-link">
