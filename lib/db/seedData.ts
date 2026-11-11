@@ -1,8 +1,20 @@
 import { MasterEntry } from './types';
 import { PILOT_BATCH_100 } from './pilotBatch100';
+import { EXPANDED_THEOLOGICAL_VOCABULARY } from './expandedTheologicalVocabulary';
 import { MULTILINGUAL_SEED_SUPPLEMENT } from './multilingualSeedSupplement';
 
-export const SEED_ENTRIES: MasterEntry[] = PILOT_BATCH_100.map((entry) => {
+const rawCombined = [...PILOT_BATCH_100, ...EXPANDED_THEOLOGICAL_VOCABULARY];
+const seenSlugs = new Set<string>();
+const uniqueMasterEntries: MasterEntry[] = [];
+
+for (const entry of rawCombined) {
+  if (!seenSlugs.has(entry.slug)) {
+    seenSlugs.add(entry.slug);
+    uniqueMasterEntries.push(entry);
+  }
+}
+
+export const SEED_ENTRIES: MasterEntry[] = uniqueMasterEntries.map((entry) => {
   const supplement = MULTILINGUAL_SEED_SUPPLEMENT[entry.slug];
   if (!supplement) return entry;
   return {
