@@ -2,7 +2,7 @@
 // ============================================================================
 // LEXI AUTONOMOUS 24/7 AUTOPILOT COORDINATION ENGINE
 // ----------------------------------------------------------------------------
-// Sole Owner & Final Authority (Level 5): Rev. Ayan Kumar Ghosh
+// Sole Owner & Final Authority (Level 5): Ayan Kumar Ghosh
 // Operational Guardian (Level 4): Lexi (LOGOS Lexicon Exclusively)
 //
 // Responsibilities Coordinated Solely by Lexi:
@@ -36,7 +36,7 @@ export interface SafePwaInstallationStatus {
 export interface LexiAutopilotManifest {
   coordinator: 'Lexi';
   mode: '24/7 Autopilot Mode';
-  soleOwnerAndFinalAuthority: 'Rev. Ayan Kumar Ghosh (Level 5)';
+  soleOwnerAndFinalAuthority: 'Ayan Kumar Ghosh (Level 5)';
   delegatedAuthorityLevel: AuthorityLevel.LEXI_GUARDIAN;
   lastAutonomousCycle: string;
   globalVernacularCoverage: {
@@ -56,7 +56,7 @@ export function getLexiAutopilotManifest(): LexiAutopilotManifest {
   return {
     coordinator: 'Lexi',
     mode: '24/7 Autopilot Mode',
-    soleOwnerAndFinalAuthority: 'Rev. Ayan Kumar Ghosh (Level 5)',
+    soleOwnerAndFinalAuthority: 'Ayan Kumar Ghosh (Level 5)',
     delegatedAuthorityLevel: AuthorityLevel.LEXI_GUARDIAN,
     lastAutonomousCycle: new Date().toISOString(),
     globalVernacularCoverage: {

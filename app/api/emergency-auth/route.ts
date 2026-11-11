@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
     recoveryAttempts.delete(ip);
 
     logAuditEvent({
-      operator: 'Rev. Ayan Kumar Ghosh (Out-of-Band Authority)',
+      operator: 'Ayan Kumar Ghosh (Out-of-Band Authority)',
       instruction: 'Authorized Emergency Recovery Console Access',
       riskLevel: 'YELLOW',
       triageSummary: 'Emergency recovery console unlocked via verified passkey.',

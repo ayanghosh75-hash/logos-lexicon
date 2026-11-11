@@ -265,7 +265,7 @@ export const UserGuideModal: React.FC = () => {
                       Sound Orthodoxy &amp; Confessional Sources
                     </h4>
                     <p className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">
-                      Curated under the theological direction of Rev. Ayan Kumar Ghosh, adhering to biblical inerrancy, historical patristic confessions, and sound hermeneutics.
+                      Curated under the theological direction of Ayan Kumar Ghosh, adhering to biblical inerrancy, historical patristic confessions, and sound hermeneutics.
                     </p>
                   </div>
                 </div>

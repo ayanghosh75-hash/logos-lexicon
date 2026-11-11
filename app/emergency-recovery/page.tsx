@@ -61,7 +61,7 @@ export default function EmergencyRecoveryPage() {
         }
         fetchDiagnostics();
       } else {
-        setErrorMsg(data.error || 'Invalid Emergency Passkey. Access restricted to Rev. Ayan Kumar Ghosh.');
+        setErrorMsg(data.error || 'Invalid Emergency Passkey. Access restricted to Ayan Kumar Ghosh.');
       }
     } catch {
       setErrorMsg('Connection error during emergency authentication.');
@@ -106,7 +106,7 @@ export default function EmergencyRecoveryPage() {
         body: JSON.stringify({
           action: 'execute-runbook',
           runbookId: 'RB-01',
-          operator: 'Rev. Ayan Kumar Ghosh (Emergency Recovery Rollback)',
+          operator: 'Ayan Kumar Ghosh (Emergency Recovery Rollback)',
         }),
       });
       const data = await res.json();
@@ -129,7 +129,7 @@ export default function EmergencyRecoveryPage() {
         body: JSON.stringify({
           action: 'toggle-safe-mode',
           safeMode: nextState,
-          operator: 'Rev. Ayan Kumar Ghosh (Emergency Console)',
+          operator: 'Ayan Kumar Ghosh (Emergency Console)',
         }),
       });
       const data = await res.json();
@@ -154,7 +154,7 @@ export default function EmergencyRecoveryPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           action: 'reset-breaker',
-          operator: 'Rev. Ayan Kumar Ghosh (Emergency Console)',
+          operator: 'Ayan Kumar Ghosh (Emergency Console)',
         }),
       });
       setActionMessage('Circuit breaker reset. Autonomous checks re-enabled.');
@@ -175,7 +175,7 @@ export default function EmergencyRecoveryPage() {
         body: JSON.stringify({
           action: 'execute-runbook',
           runbookId: 'RB-01',
-          operator: 'Rev. Ayan Kumar Ghosh (Emergency Cache Purge)',
+          operator: 'Ayan Kumar Ghosh (Emergency Cache Purge)',
         }),
       });
       const data = await res.json();
@@ -269,7 +269,7 @@ export default function EmergencyRecoveryPage() {
                 </span>
               </div>
               <p className="text-xs text-gray-400">
-                Authorized Authority: <strong>Rev. Ayan Kumar Ghosh</strong>
+                Authorized Authority: <strong>Ayan Kumar Ghosh</strong>
               </p>
             </div>
           </div>

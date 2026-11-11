@@ -80,7 +80,7 @@ export function SearchZeroResults({
           No direct entries found for &ldquo;<span className="text-gold-600 dark:text-gold-400">{query}</span>&rdquo;
         </h3>
         <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-          Logos Lexicon only displays peer-reviewed, source-verified entries under the supervision of Rev. Ayan Kumar Ghosh.
+          Logos Lexicon only displays peer-reviewed, source-verified entries under the supervision of Ayan Kumar Ghosh.
         </p>
       </div>
 

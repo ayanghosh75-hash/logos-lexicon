@@ -1,6 +1,6 @@
 // lib/lexi/selfProtection.ts
 // Lexi Self-Protection, Untrusted Data Isolation & 8-Point Pre-Action Verification Engine
-// Lead Theological Editor & Owner: Rev. Ayan Kumar Ghosh (Level 5)
+// Lead Theological Editor & Owner: Ayan Kumar Ghosh (Level 5)
 
 import { AuthorityLevel, AuthorityUser } from '../security/authority';
 import { logAuditEvent } from './auditLog';
@@ -112,7 +112,7 @@ export function verifyPreActionGate(params: PreActionGateParams): GateResult {
   if (params.riskCategory === 'RED' && params.actor.level < AuthorityLevel.OWNER_FINAL_AUTHORITY) {
     return {
       passed: false,
-      reason: 'Gate 5 Failed: RED-tier high-risk action requires explicit Level 5 approval ticket from Rev. Ayan Kumar Ghosh.',
+      reason: 'Gate 5 Failed: RED-tier high-risk action requires explicit Level 5 approval ticket from Ayan Kumar Ghosh.',
     };
   }
 
@@ -163,7 +163,7 @@ export function triggerCompromiseContainment(
       'Suspended Lexi active operational session',
       'Preserved forensic evidence in audit log',
       'Switched LOGOS Lexicon to safe read-only mode',
-      'Dispatched Level 5 alert to Rev. Ayan Kumar Ghosh',
+      'Dispatched Level 5 alert to Ayan Kumar Ghosh',
     ],
     outcome: 'CIRCUIT_TRIPPED',
     details: { incidentDescription, triggeredAt: new Date().toISOString() },

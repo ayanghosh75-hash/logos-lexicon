@@ -106,7 +106,7 @@ export default function PrivacyPage() {
           <p>
             For any inquiries regarding data protection or theological review privacy, contact:
             <br />
-            <strong>Rev. Ayan Kumar Ghosh</strong> — Project Director, Logos Lexicon.
+            <strong>Ayan Kumar Ghosh</strong> — Project Director, Logos Lexicon.
           </p>
         </section>
       </div>

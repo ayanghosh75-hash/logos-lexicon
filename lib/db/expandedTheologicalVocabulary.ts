@@ -3,7 +3,7 @@ import { MasterEntry } from './types';
 /**
  * Logos Lexicon Expanded Theological Vocabulary (A–Z Comprehensive Directory)
  * Curated for theological scholars, pastors, students, and lay believers.
- * Level 5 Sole Authority: Rev. Ayan Kumar Ghosh
+ * Level 5 Sole Authority: Ayan Kumar Ghosh
  * Published by Logos Lexicon Theological Editorial Board.
  */
 export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
@@ -64,7 +64,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -261,7 +261,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -460,7 +460,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -658,7 +658,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -856,7 +856,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -1052,7 +1052,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -1249,7 +1249,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -1446,7 +1446,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -1642,7 +1642,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Openly licensed"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -1840,7 +1840,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -2037,7 +2037,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -2234,7 +2234,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Openly licensed"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -2434,7 +2434,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -2633,7 +2633,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -2831,7 +2831,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -3029,7 +3029,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -3227,7 +3227,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -3424,7 +3424,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -3623,7 +3623,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -3820,7 +3820,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -4016,7 +4016,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -4215,7 +4215,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -4413,7 +4413,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -4609,7 +4609,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -4807,7 +4807,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -5004,7 +5004,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -5202,7 +5202,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -5401,7 +5401,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Citation-only source"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -5599,7 +5599,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -5797,7 +5797,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -5994,7 +5994,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -6191,7 +6191,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -6389,7 +6389,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -6588,7 +6588,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -6785,7 +6785,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Citation-only source"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -6982,7 +6982,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -7178,7 +7178,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -7377,7 +7377,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -7575,7 +7575,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -7772,7 +7772,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -7968,7 +7968,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -8167,7 +8167,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",
@@ -8364,7 +8364,7 @@ export const EXPANDED_THEOLOGICAL_VOCABULARY: MasterEntry[] = [
         "classification": "Public domain"
       }
     ],
-    "author": "Rev. Ayan Kumar Ghosh",
+    "author": "Ayan Kumar Ghosh",
     "theologicalReviewer": "Logos Lexicon Theological Editorial Board",
     "approvalStatus": "Theologically reviewed",
     "publicationStatus": "Published",

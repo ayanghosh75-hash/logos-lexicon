@@ -102,7 +102,7 @@ export default function DictionaryPage() {
                 <BookOpen className="w-4 h-4 text-gold-500" />
                 Lexi Theological Pipeline Status (Controlled Level 4)
               </span>
-              <span className="text-gray-500 font-normal">Supervised by Rev. Ayan Kumar Ghosh</span>
+              <span className="text-gray-500 font-normal">Supervised by Ayan Kumar Ghosh</span>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-xs">
               <div className="bg-white dark:bg-navy-900 p-2.5 rounded-lg border border-emerald-200 dark:border-emerald-900/50">

@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
               <span>Dedicated Operations Assistant: <strong>Lexi</strong></span>
             </div>
             <div className="text-[11px] text-gray-500">
-              Project Director & Theological Lead: <strong>Rev. Ayan Kumar Ghosh</strong>
+              Project Director & Theological Lead: <strong>Ayan Kumar Ghosh</strong>
             </div>
             <div className="pt-1">
               <a
@@ -134,7 +134,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-0.5 text-center sm:text-left">
             <p>© {new Date().getFullYear()} Ayan Kumar Ghosh • Logos Lexicon. All rights reserved.</p>
             <p className="text-[11px] text-gray-400">
-              Project Director &amp; Theological Lead: <strong>Rev. Ayan Kumar Ghosh</strong>
+              Project Director &amp; Theological Lead: <strong>Ayan Kumar Ghosh</strong>
             </p>
             <p className="text-[11px] text-gray-500">
               Permanent Canonical Public Address:{' '}

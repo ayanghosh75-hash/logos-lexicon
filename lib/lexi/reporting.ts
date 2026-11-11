@@ -206,14 +206,14 @@ export function generateLicensingAndAttributionReport() {
   return {
     softwareAndPlatformOwnership: {
       category: 'LOGOS Original Software & Architecture',
-      owner: 'Rev. Ayan Kumar Ghosh (Sole Owner & Final Authority)',
+      owner: 'Ayan Kumar Ghosh (Sole Owner & Final Authority)',
       license: 'Proprietary / All Rights Reserved for Platform Core; Open Data Exports Permitted',
       commercialUseAllowed: true,
       modificationAllowed: 'Owner-authorized only',
     },
     editorialContentOwnership: {
       category: 'Original Synthesized Definitions & Bengali Theological Translations',
-      owner: 'Rev. Ayan Kumar Ghosh & Logos Lexicon Editorial Board',
+      owner: 'Ayan Kumar Ghosh & Logos Lexicon Editorial Board',
       license: 'CC BY-NC 4.0 / Attribution Required',
       commercialUseAllowed: 'Owner-authorized only',
     },
@@ -228,10 +228,10 @@ export function generateLicensingAndAttributionReport() {
       permittedUse: s.permittedUse,
       prohibitedUse: s.prohibitedUse,
       attributionText: s.attributionFormat,
-      verifiedBy: s.copyrightReviewer || 'Rev. Ayan Kumar Ghosh',
+      verifiedBy: s.copyrightReviewer || 'Ayan Kumar Ghosh',
     })),
     strictPolicyNotice:
-      'Third-party public-domain and openly licensed historical works are explicitly attributed and never mislabelled as owned by Rev. Ayan Kumar Ghosh. Missing-licence material is marked UNVERIFIED and quarantined from public publication.',
+      'Third-party public-domain and openly licensed historical works are explicitly attributed and never mislabelled as owned by Ayan Kumar Ghosh. Missing-licence material is marked UNVERIFIED and quarantined from public publication.',
   };
 }
 
@@ -263,12 +263,12 @@ export function getMonetisationSafetyConfig() {
   return {
     paymentObligationsActive: false,
     ownerApprovalRequired: true,
-    controllingAuthority: 'Rev. Ayan Kumar Ghosh (Level 5)',
+    controllingAuthority: 'Ayan Kumar Ghosh (Level 5)',
     coreLexiconAccessFree: true,
     optionalFuturePremiumToolsRequireLevel5Approval: true,
     thirdPartyPublicDomainPaywallBlocked: true,
     pricingDisclosure:
-      'Core dictionary, Biblical Greek/Hebrew root lookup, and Bengali definitions are provided free of charge. Optional future specialist research or institutional features may be introduced only with explicit Level 5 approval from Rev. Ayan Kumar Ghosh.',
+      'Core dictionary, Biblical Greek/Hebrew root lookup, and Bengali definitions are provided free of charge. Optional future specialist research or institutional features may be introduced only with explicit Level 5 approval from Ayan Kumar Ghosh.',
     plannedModules: [
       { id: 'mod-research', name: 'Advanced Exegetical Research Workspace', status: 'PREPARED_INACTIVE', requiresApproval: 'Level 5' },
       { id: 'mod-institutional', name: 'Seminary & Institutional Multi-Seat Access', status: 'PREPARED_INACTIVE', requiresApproval: 'Level 5' },
@@ -295,7 +295,7 @@ export function generate12HourOperationalReport(
     schedulerStatus: 'PLANNED — NOT ACTIVE (Triggered on-demand locally; external cloud cron scheduler pending owner cloud deployment)',
     emailDeliveryStatus: 'NOT CONFIGURED (Awaiting owner SMTP/Cloud Email provider authorization)',
     duplicateAlertSuppression: 'CONFIGURED_IN_MEMORY (60-minute deduplication window per incident signature)',
-    recipient: 'Rev. Ayan Kumar Ghosh (Sole Owner & Level 5 Authority)',
+    recipient: 'Ayan Kumar Ghosh (Sole Owner & Level 5 Authority)',
     guardian: 'Lexi (Controlled Level 4)',
     currentStatus: {
       overallHealth: 'HEALTHY (Local Runtime)',
@@ -338,7 +338,7 @@ export function generateWeeklyEditorialSummary(): string {
   const coveredLetters = Object.values(letterDist).filter((c) => c > 0).length;
 
   return `# Logos Lexicon — Weekly Theological Editorial & Pipeline Report
-**Authority**: Rev. Ayan Kumar Ghosh (Level 5)
+**Authority**: Ayan Kumar Ghosh (Level 5)
 **Assistant**: Lexi (Controlled Level 4)
 **Generated**: ${new Date().toISOString()}
 

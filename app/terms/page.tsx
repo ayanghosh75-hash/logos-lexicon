@@ -47,7 +47,7 @@ export default function TermsPage() {
         <section className="space-y-2">
           <h2 className="text-xl font-bold text-navy-900 dark:text-white">3. Doctrinal Governance</h2>
           <p>
-            The project operates under the oversight of <strong>Rev. Ayan Kumar Ghosh</strong>. The content represents
+            The project operates under the oversight of <strong>Ayan Kumar Ghosh</strong>. The content represents
             ecumenical biblical orthodoxy, historic confessions, and careful scholarship. Lexi (the operations assistant)
             has zero authority to alter published doctrine independently.
           </p>

@@ -237,7 +237,7 @@ export default function LexiAdminConsole() {
               </span>
             </div>
             <p className="text-xs text-gray-400">
-              Logged in as: <strong>{admin?.displayName || 'Rev. Ayan Kumar Ghosh'}</strong> ({admin?.role})
+              Logged in as: <strong>{admin?.displayName || 'Ayan Kumar Ghosh'}</strong> ({admin?.role})
             </p>
           </div>
         </div>
@@ -353,7 +353,7 @@ export default function LexiAdminConsole() {
                     Lexi Operations Overview
                   </h3>
                   <p className="text-xs text-gray-300 max-w-2xl">
-                    Per the executive mandate of Rev. Ayan Kumar Ghosh, Lexi&apos;s three-dimensional character model, WebGL canvas, automatic entrance animations, and background audio have been permanently removed. Lexi functions as a lightweight text research assistant, terminology validator, and operational guide.
+                    Per the executive mandate of Ayan Kumar Ghosh, Lexi&apos;s three-dimensional character model, WebGL canvas, automatic entrance animations, and background audio have been permanently removed. Lexi functions as a lightweight text research assistant, terminology validator, and operational guide.
                   </p>
                 </div>
               </div>
@@ -578,7 +578,7 @@ export default function LexiAdminConsole() {
           </div>
           <p className="text-xs text-gray-300 font-serif leading-relaxed">
             Lexi is engineered with technically enforced boundary constraints. The following operations
-            cannot be initiated by Lexi independently and require the manual confirmation of <strong>Rev. Ayan Kumar Ghosh</strong>:
+            cannot be initiated by Lexi independently and require the manual confirmation of <strong>Ayan Kumar Ghosh</strong>:
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
@@ -617,7 +617,7 @@ export default function LexiAdminConsole() {
                 </h3>
               </div>
               <span className="text-[11px] font-mono px-3 py-1 rounded-full bg-navy-800 text-gold-300 border border-gold-400/30">
-                Final Authority: Rev. Ayan Kumar Ghosh
+                Final Authority: Ayan Kumar Ghosh
               </span>
             </div>
             <p className="text-xs text-gray-300 leading-relaxed max-w-4xl">

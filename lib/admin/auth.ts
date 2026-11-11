@@ -122,7 +122,7 @@ export function generateSessionToken(
     jti: `sess-${crypto.randomUUID()}`,
     username: username.trim(),
     role: isLexi ? 'LEXI_GUARDIAN' : 'CHIEF_THEOLOGICAL_EDITOR',
-    displayName: isLexi ? 'Lexi (Operational Guardian)' : 'Rev. Ayan Kumar Ghosh',
+    displayName: isLexi ? 'Lexi (Operational Guardian)' : 'Ayan Kumar Ghosh',
     authorityLevel: isLexi ? AuthorityLevel.LEXI_GUARDIAN : AuthorityLevel.OWNER_FINAL_AUTHORITY,
     scopedIdentities: allNineIdentities,
     mfaVerified: options?.mfaVerified ?? true,

@@ -584,7 +584,7 @@ export default function LexiCommandCentre() {
                           Authority Approval Required
                         </p>
                         <p className="text-[11px] mt-1">
-                          Under Controlled Level 4 governance, this action requires explicit authorization by Rev. Ayan Kumar Ghosh.
+                          Under Controlled Level 4 governance, this action requires explicit authorization by Ayan Kumar Ghosh.
                         </p>
                       </div>
 
@@ -602,7 +602,7 @@ export default function LexiCommandCentre() {
                           className="w-full py-3 rounded-xl bg-red-700 hover:bg-red-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2"
                         >
                           <ShieldAlert className="w-4 h-4" />
-                          <span>Submit for Authority Approval (Rev. Ayan Kumar Ghosh)</span>
+                          <span>Submit for Authority Approval (Ayan Kumar Ghosh)</span>
                         </button>
                       )}
                     </div>
@@ -972,7 +972,7 @@ export default function LexiCommandCentre() {
                       Logos Master Protection & Continuity Dashboard
                     </h3>
                     <p className="text-xs text-gray-500">
-                      Supervised under Controlled Level 4 by Rev. Ayan Kumar Ghosh • Real-time Threat & Reliability Telemetry
+                      Supervised under Controlled Level 4 by Ayan Kumar Ghosh • Real-time Threat & Reliability Telemetry
                     </p>
                   </div>
                 </div>

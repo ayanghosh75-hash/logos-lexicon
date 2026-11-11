@@ -122,7 +122,7 @@ export async function GET(req: NextRequest) {
         international: 'en',
       },
       detectedBy: 'Lexi Autopilot Geo-Vernacular Coordinator',
-      authority: 'Rev. Ayan Kumar Ghosh (Level 5 Sole Owner)',
+      authority: 'Ayan Kumar Ghosh (Level 5 Sole Owner)',
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {

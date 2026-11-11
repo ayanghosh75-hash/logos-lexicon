@@ -49,10 +49,10 @@ export default function LicensingAndAttributionPage() {
           <div className="bg-slate-900/90 border border-slate-800 rounded-xl p-5">
             <h2 className="text-lg font-semibold text-amber-300 mb-2">1. Platform &amp; Original Code</h2>
             <p className="text-xs text-slate-300 leading-relaxed">
-              <strong>Sole Owner &amp; Level 5 Authority:</strong> Rev. Ayan Kumar Ghosh.
+              <strong>Sole Owner &amp; Level 5 Authority:</strong> Ayan Kumar Ghosh.
               <br />
               Original software architecture, UI, search engine, and synthesised Bengali/English editorial definitions
-              are directed by Rev. Ayan Kumar Ghosh. Third-party public-domain works are never mislabelled as
+              are directed by Ayan Kumar Ghosh. Third-party public-domain works are never mislabelled as
               proprietary.
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function LicensingAndAttributionPage() {
             <p className="text-xs text-slate-300 leading-relaxed">
               If any imported record or dataset lacks verifiable licence evidence, it is automatically marked{' '}
               <code className="text-rose-200 bg-rose-950/60 px-1 rounded">UNVERIFIED</code>, blocked from monetisation,
-              quarantined in private staging, and withheld from public publication until reviewed by Rev. Ayan Kumar
+              quarantined in private staging, and withheld from public publication until reviewed by Ayan Kumar
               Ghosh.
             </p>
           </div>
@@ -171,7 +171,7 @@ export default function LicensingAndAttributionPage() {
               <div className="text-xs text-slate-400 mt-1">Unverified / Assumed Public Domain</div>
             </div>
             <div className="bg-slate-950 p-3 rounded-lg border border-slate-800">
-              <div className="text-2xl font-bold text-purple-300">Rev. Ayan Kumar Ghosh</div>
+              <div className="text-2xl font-bold text-purple-300">Ayan Kumar Ghosh</div>
               <div className="text-xs text-slate-400 mt-1">Lead Copyright &amp; Theological Reviewer</div>
             </div>
           </div>

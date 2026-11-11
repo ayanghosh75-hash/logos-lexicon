@@ -13,7 +13,7 @@ interface Lexi3DCanvasProps {
 
 /**
  * Lexi3DCanvas (Legacy Compatibility Shim)
- * 3D character WebGL rendering permanently disabled per Rev. Ayan Kumar Ghosh mandate.
+ * 3D character WebGL rendering permanently disabled per Ayan Kumar Ghosh mandate.
  * Replaced with the lightweight, high-performance static 2D LexiAvatar emblem.
  */
 export const Lexi3DCanvas: React.FC<Lexi3DCanvasProps> = ({

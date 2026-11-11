@@ -18,7 +18,7 @@ export async function GET() {
       latencyMs: Date.now() - startTime,
     },
     monitoredBy: 'Lexi — Logos Lexicon Research and Operations Assistant',
-    projectDirector: 'Rev. Ayan Kumar Ghosh',
+    projectDirector: 'Ayan Kumar Ghosh',
   };
 
   return NextResponse.json(healthData, {

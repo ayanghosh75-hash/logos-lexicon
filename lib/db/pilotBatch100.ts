@@ -3,7 +3,7 @@ import { SOURCE_REGISTER } from './sourceRegister';
 
 /**
  * Logos Lexicon Foundational Pilot Batch (100 Authentic Theological Terms)
- * Populated per Controlled Level 4 Mandate directed by Rev. Ayan Kumar Ghosh.
+ * Populated per Controlled Level 4 Mandate directed by Ayan Kumar Ghosh.
  * Covers all 61 master theological sections with 3-tier reading levels,
  * original Biblical languages (Greek/Hebrew/Aramaic), confessional citations,
  * and localized Bengali translations.
@@ -129,7 +129,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       verified: true
     }
   ],
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -207,7 +207,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       verified: true
     }
   ],
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -260,7 +260,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Galatians 2:16"
   ],
   theologicalSignificance: "The material principle of the Reformation ('articulus stantis et cadentis ecclesiae').",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -314,7 +314,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 19:13"
   ],
   theologicalSignificance: "Secures the eternal deity and pre-existence of Christ against Arian subordinationism.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -368,7 +368,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 11:15"
   ],
   theologicalSignificance: "Unifies biblical history from creation to new creation under God's righteous rule.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -423,7 +423,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 John 2:2"
   ],
   theologicalSignificance: "Guarantees that salvation preserves divine holy justice while demonstrating infinite mercy.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -479,7 +479,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 Peter 1:2"
   ],
   theologicalSignificance: "Defines the very nature of the Christian God against polytheism, unitarianism, and modalism.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -534,7 +534,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "James 2:17-26"
   ],
   theologicalSignificance: "The sole empty hand by which the sinner receives Christ and His benefits ('Sola Fide').",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -588,7 +588,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 John 4:2"
   ],
   theologicalSignificance: "Without the incarnation, genuine substitutionary atonement and bodily resurrection are impossible.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -642,7 +642,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Hebrews 12:14"
   ],
   theologicalSignificance: "Demonstrates that saving grace never leaves the believer in unrepentant rebellion.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -697,7 +697,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 Peter 1:18-19"
   ],
   theologicalSignificance: "Secures the believer's absolute freedom from the dominion of darkness and legal condemnation.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -749,7 +749,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Colossians 1:19-22"
   ],
   theologicalSignificance: "Establishes that salvation is relational communion and peace, not merely a sterile juridical transaction.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -804,7 +804,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 Peter 1:3"
   ],
   theologicalSignificance: "Affirms that fallen humans cannot initiate their own salvation without prior divine resuscitation.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -859,7 +859,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Philippians 3:20-21"
   ],
   theologicalSignificance: "Without Christ's resurrection, the Christian faith is in vain and believers remain in their sins.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -914,7 +914,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 4:11"
   ],
   theologicalSignificance: "Establishes God's ultimate ownership and sovereign lordship over all reality.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -968,7 +968,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 21:1-5"
   ],
   theologicalSignificance: "Provides the believer with eternal hope, moral vigilance, and assurance that history marches toward God's victory.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1026,7 +1026,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Galatians 5:22-23"
   ],
   theologicalSignificance: "Ensures that redemption accomplished by the Son is actively and effectively applied to the hearts of believers.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1082,7 +1082,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 Peter 2:9-10"
   ],
   theologicalSignificance: "The church is Christ's bride and bodily witness on earth through which God displays His multifaceted wisdom.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1139,7 +1139,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Hebrews 7:25"
   ],
   theologicalSignificance: "Salvation belongs entirely to the Lord; it demonstrates His infinite grace, wisdom, and sovereign power.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1197,7 +1197,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Acts 18:28"
   ],
   theologicalSignificance: "Identifies Jesus as the ultimate fulfillment of all divine covenant promises made to Israel.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1251,7 +1251,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "2 Peter 1:20-21"
   ],
   theologicalSignificance: "Without divine revelation, true theological knowledge is impossible and humans remain in spiritual darkness.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1305,7 +1305,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "2 Peter 1:20-21"
   ],
   theologicalSignificance: "Establishes the Bible as entirely trustworthy, divine truth rather than human religious philosophy.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1359,7 +1359,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Galatians 1:8"
   ],
   theologicalSignificance: "Prevents human tradition, church councils, or individual subjective feelings from supplanting God's voice.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1414,7 +1414,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "James 3:9"
   ],
   theologicalSignificance: "Forms the sacred foundation for human rights, moral sanctity of life, and the purpose of existence.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1470,7 +1470,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 John 3:4"
   ],
   theologicalSignificance: "Reveals the universal need for a divine Savior, demonstrating humanity's total inability to save itself.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1526,7 +1526,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "2 Corinthians 7:10"
   ],
   theologicalSignificance: "Without genuine repentance, faith is a shallow intellectual assent that produces no spiritual fruit.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1579,7 +1579,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 John 3:1-2"
   ],
   theologicalSignificance: "Reveals that God's grace does not stop at legal acquittal; it brings sinners into the warmest filial intimacy.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1632,7 +1632,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 John 3:2"
   ],
   theologicalSignificance: "Guarantees that God's redemptive work will reach complete, flawless perfection without loss.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1687,7 +1687,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Hebrews 9:24"
   ],
   theologicalSignificance: "Demonstrates that a redeemed human nature is now enthroned in heaven at the right hand of God.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1742,7 +1742,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 John 2:1-2"
   ],
   theologicalSignificance: "Gives believers enduring confidence that their salvation is kept by an eternal, praying Savior.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1798,7 +1798,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 22:20"
   ],
   theologicalSignificance: "The blessed hope of the Church, proving that history will not end in futility but in Christ's absolute triumph.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1850,7 +1850,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 20:1-7"
   ],
   theologicalSignificance: "Reflects the longing for Christ's visible reign of righteousness and peace over creation.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1903,7 +1903,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 22:1-5"
   ],
   theologicalSignificance: "Assures believers of an eternal home where God's presence brings everlasting joy and righteousness.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -1959,7 +1959,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "2 Corinthians 5:21"
   ],
   theologicalSignificance: "Establishes God's unbending moral standard and highlights our need for Christ's perfect righteousness.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2014,7 +2014,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 4:8"
   ],
   theologicalSignificance: "The supreme beauty of God's character and the ultimate goal for the lives of His people.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2069,7 +2069,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Hebrews 4:16"
   ],
   theologicalSignificance: "Shows that God takes no pleasure in the destruction of sinners but delights to pardon and restore.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2125,7 +2125,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Colossians 3:15"
   ],
   theologicalSignificance: "Authentic peace is not the mere absence of conflict, but the presence of God's covenantal blessing in Christ.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2179,7 +2179,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Ephesians 1:13"
   ],
   theologicalSignificance: "The exclusive, non-negotiable message entrusted to the Church for the rescue of the lost world.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2233,7 +2233,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 Peter 3:21"
   ],
   theologicalSignificance: "Visibly unites the believer to the visible church and declares public allegiance to the Lord Jesus.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2286,7 +2286,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 Corinthians 11:23-29"
   ],
   theologicalSignificance: "Nourishes believers spiritually and proclaims Christ's sacrificial death until His return.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2343,7 +2343,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 4:11"
   ],
   theologicalSignificance: "The chief end of man: to glorify God and enjoy Him forever.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2398,7 +2398,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "James 5:16"
   ],
   theologicalSignificance: "Demonstrates the believer's absolute dependence upon God and fosters deep personal intimacy with the Father.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2452,7 +2452,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Hebrews 4:9-10"
   ],
   theologicalSignificance: "Reminds humanity that life does not consist merely of labor, pointing toward eternal resting in Christ.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2509,7 +2509,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "1 Timothy 1:8"
   ],
   theologicalSignificance: "Upholds God's absolute holiness, reveals our helplessness, and acts as a tutor leading to Christ.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2564,7 +2564,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 19:10"
   ],
   theologicalSignificance: "Authenticates Scripture's divine authorship through the flawless fulfillment of predicted history in Christ.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2618,7 +2618,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Hebrews 10:1-14"
   ],
   theologicalSignificance: "Visually demonstrates that without the shedding of blood there is no forgiveness of sins.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2673,7 +2673,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 1:6"
   ],
   theologicalSignificance: "Secures direct access to the throne of grace for every believer without needing earthly human intermediaries.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2727,7 +2727,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Colossians 1:17"
   ],
   theologicalSignificance: "Gives believers deep comfort that no tragedy or circumstance is outside of God's sovereign, redeeming care.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2780,7 +2780,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Revelation 21:4"
   ],
   theologicalSignificance: "Vindicates God's character against accusations of cruelty or incompetence, pointing to the Cross and final resurrection.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2833,7 +2833,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
     "Hebrews 1:1-3"
   ],
   theologicalSignificance: "Establishes human accountability before God while affirming the absolute indispensability of Scripture and the Gospel.",
-  author: "Rev. Ayan Kumar Ghosh",
+  author: "Ayan Kumar Ghosh",
   approvalStatus: "Theologically reviewed",
   publicationStatus: "Published",
   evidenceStatus: "Strongly supported",
@@ -2948,7 +2948,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3057,7 +3057,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3166,7 +3166,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3278,7 +3278,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3397,7 +3397,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3508,7 +3508,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3613,7 +3613,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3726,7 +3726,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3841,7 +3841,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -3947,7 +3947,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4057,7 +4057,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4163,7 +4163,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4267,7 +4267,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4375,7 +4375,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4477,7 +4477,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4576,7 +4576,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4674,7 +4674,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4780,7 +4780,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4879,7 +4879,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -4977,7 +4977,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5073,7 +5073,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5170,7 +5170,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5268,7 +5268,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5364,7 +5364,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5464,7 +5464,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5562,7 +5562,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5661,7 +5661,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5759,7 +5759,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5858,7 +5858,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -5956,7 +5956,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6056,7 +6056,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6150,7 +6150,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6246,7 +6246,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6343,7 +6343,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6441,7 +6441,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6547,7 +6547,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6644,7 +6644,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6754,7 +6754,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6850,7 +6850,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -6962,7 +6962,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7060,7 +7060,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7158,7 +7158,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7269,7 +7269,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7380,7 +7380,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7486,7 +7486,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7583,7 +7583,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7681,7 +7681,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7780,7 +7780,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7879,7 +7879,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",
@@ -7972,7 +7972,7 @@ export const PILOT_BATCH_100: MasterEntry[] = [
       "verified": true
     }
   ],
-  "author": "Rev. Ayan Kumar Ghosh",
+  "author": "Ayan Kumar Ghosh",
   "approvalStatus": "Theologically reviewed",
   "publicationStatus": "Published",
   "evidenceStatus": "Strongly supported",

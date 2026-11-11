@@ -1,6 +1,6 @@
 // lib/lexi/auditLog.ts
 // Cryptographically Hash-Chained, Tamper-Resistant Audit Log for Logos Lexicon
-// Final Authority: Rev. Ayan Kumar Ghosh (Level 5)
+// Final Authority: Ayan Kumar Ghosh (Level 5)
 
 import fs from 'fs';
 import path from 'path';
@@ -42,7 +42,7 @@ function ensureAuditFile(): void {
       const initPayload = {
         id: `audit-${Date.now()}-init`,
         timestamp: new Date().toISOString(),
-        operator: 'Rev. Ayan Kumar Ghosh (Final Authority)',
+        operator: 'Ayan Kumar Ghosh (Final Authority)',
         instruction: 'Initialize Logos Lexicon Cryptographic Audit Trail & Controlled Level 5 Governance',
         riskLevel: 'GREEN' as const,
         triageSummary: 'System initialization and tamper-evident SHA-256 blockchain audit trail established.',

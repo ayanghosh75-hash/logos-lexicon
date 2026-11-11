@@ -1,6 +1,6 @@
 // lib/security/authority.ts
 // 5-Tier Authority Hierarchy & 9 Least-Privilege Scoped Service Identities for Logos Lexicon
-// Final Authority: Rev. Ayan Kumar Ghosh (Level 5)
+// Final Authority: Ayan Kumar Ghosh (Level 5)
 
 export enum AuthorityLevel {
   PUBLIC_USER = 1,
@@ -51,7 +51,7 @@ export interface AuthorityUser {
 export const SYSTEM_AUTHORITY_REGISTRY: Record<string, AuthorityUser> = {
   'ayan-kumar-ghosh': {
     id: 'usr-level5-ayankumarghosh',
-    name: 'Rev. Ayan Kumar Ghosh',
+    name: 'Ayan Kumar Ghosh',
     level: AuthorityLevel.OWNER_FINAL_AUTHORITY,
     role: 'Sole Owner, Lead Theological Editor & Final Authority',
     scopedIdentities: ALL_SCOPED_IDENTITIES,
@@ -63,7 +63,7 @@ export const SYSTEM_AUTHORITY_REGISTRY: Record<string, AuthorityUser> = {
     level: AuthorityLevel.LEXI_GUARDIAN,
     role: 'Controlled Operational Guardian of LOGOS Only',
     scopedIdentities: ALL_SCOPED_IDENTITIES,
-    grantedBy: 'Rev. Ayan Kumar Ghosh',
+    grantedBy: 'Ayan Kumar Ghosh',
   },
   'watchdog-service': {
     id: 'svc-level3-logos-watchdog',
@@ -71,7 +71,7 @@ export const SYSTEM_AUTHORITY_REGISTRY: Record<string, AuthorityUser> = {
     level: AuthorityLevel.AUTOMATED_SERVICES,
     role: 'Independent External Monitoring & Recovery Service',
     scopedIdentities: ['identity:monitoring', 'identity:incident_recovery'],
-    grantedBy: 'Rev. Ayan Kumar Ghosh',
+    grantedBy: 'Ayan Kumar Ghosh',
   },
   'theological-editor': {
     id: 'usr-level2-editor',
@@ -79,7 +79,7 @@ export const SYSTEM_AUTHORITY_REGISTRY: Record<string, AuthorityUser> = {
     level: AuthorityLevel.EDITOR_SUPPORT,
     role: 'Authorised Language Editor & Theological Reviewer',
     scopedIdentities: ['identity:content_ingestion', 'identity:editorial_review', 'identity:licensing'],
-    grantedBy: 'Rev. Ayan Kumar Ghosh',
+    grantedBy: 'Ayan Kumar Ghosh',
   },
 };
 
@@ -126,7 +126,7 @@ export function assertHierarchyIntegrity(
     if (attemptedTargetLevel >= actor.level) {
       return {
         allowed: false,
-        violationReason: `SECURITY VIOLATION: Actor "${actor.name}" (Level ${actor.level}) cannot create or elevate permissions to Level ${attemptedTargetLevel}. Sole authority resides with Rev. Ayan Kumar Ghosh (Level 5).`,
+        violationReason: `SECURITY VIOLATION: Actor "${actor.name}" (Level ${actor.level}) cannot create or elevate permissions to Level ${attemptedTargetLevel}. Sole authority resides with Ayan Kumar Ghosh (Level 5).`,
       };
     }
   }

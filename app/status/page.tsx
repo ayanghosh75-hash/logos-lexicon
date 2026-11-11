@@ -181,7 +181,7 @@ export default function StatusPage() {
           </h3>
           <p className="text-xs text-gray-500 dark:text-gray-400">
             If you encounter unexpected latency, a missing word definition, or a rendering glitch, submit an
-            incident report directly to the operations team under Rev. Ayan Kumar Ghosh.
+            incident report directly to the operations team under Ayan Kumar Ghosh.
           </p>
         </div>
 

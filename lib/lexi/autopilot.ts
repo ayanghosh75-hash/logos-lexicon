@@ -17,7 +17,7 @@ export const STANDARD_REMEDIATION_SEQUENCE = [
   '3. Contain: Isolate affected module without interrupting public read access',
   '4. Preserve Evidence: Record immutable forensic state in hash-chained audit log',
   '5. Maintain Safe Read Access: Keep dictionary and canonical term routes operational',
-  '6. Notify Level 5: Dispatch alert to Rev. Ayan Kumar Ghosh',
+  '6. Notify Level 5: Dispatch alert to Ayan Kumar Ghosh',
   '7. Propose Remedy: Formulate structured triage analysis and risk rating',
   '8. Obtain Approval: If YELLOW/RED, require explicit Level 5 approval ticket',
   '9. Test: Rehearse resolution in sandbox or staging harness',
@@ -138,7 +138,7 @@ export function getAutopilotStatus(): AutopilotStatus {
   return currentState;
 }
 
-export function setAutopilotMode(mode: AutopilotMode, operator = 'Rev. Ayan Kumar Ghosh'): AutopilotStatus {
+export function setAutopilotMode(mode: AutopilotMode, operator = 'Ayan Kumar Ghosh'): AutopilotStatus {
   ensureState();
   const prevMode = currentState.mode;
   currentState.mode = mode;
@@ -156,7 +156,7 @@ export function setAutopilotMode(mode: AutopilotMode, operator = 'Rev. Ayan Kuma
   return currentState;
 }
 
-export function toggleSafeMode(active: boolean, operator = 'Rev. Ayan Kumar Ghosh'): boolean {
+export function toggleSafeMode(active: boolean, operator = 'Ayan Kumar Ghosh'): boolean {
   ensureState();
   currentState.safeModeActive = active;
   persistState();
@@ -175,7 +175,7 @@ export function toggleSafeMode(active: boolean, operator = 'Rev. Ayan Kumar Ghos
   return currentState.safeModeActive;
 }
 
-export function resetCircuitBreaker(operator = 'Rev. Ayan Kumar Ghosh'): void {
+export function resetCircuitBreaker(operator = 'Ayan Kumar Ghosh'): void {
   ensureState();
   currentState.circuitBreakerTripped = false;
   currentState.trippedIssues = [];
@@ -235,7 +235,7 @@ export function recordRepairAttempt(issueKey: string, success: boolean): { canCo
       operator: 'Safe Autopilot (Circuit Breaker)',
       instruction: `Two-Strike Limit Reached: ${issueKey}`,
       riskLevel: 'RED',
-      triageSummary: `Circuit breaker tripped for ${issueKey}. Autonomous modifications halted. Rev. Ayan Kumar Ghosh notified.`,
+      triageSummary: `Circuit breaker tripped for ${issueKey}. Autonomous modifications halted. Ayan Kumar Ghosh notified.`,
       actionsTaken: ['Trip Circuit Breaker', 'Halt Autonomous Repairs', 'Notify Level-4 Authority'],
       outcome: 'CIRCUIT_TRIPPED',
     });
@@ -259,7 +259,7 @@ export async function executeRunbook(
   if (currentState.circuitBreakerTripped && operator.includes('Autopilot')) {
     return {
       success: false,
-      message: 'Circuit breaker is tripped. Autonomous execution disabled until reset by Rev. Ayan Kumar Ghosh.',
+      message: 'Circuit breaker is tripped. Autonomous execution disabled until reset by Ayan Kumar Ghosh.',
     };
   }
 
@@ -394,11 +394,11 @@ export function triageNaturalLanguageCommand(instruction: string): TriageAnalysi
       instruction,
       understanding: `The operator is requesting a high-impact operation: "${instruction}". This involves permanent data mutation, batch publication, or service disruption.`,
       scope: ['Master Database Records', 'Public Production Service', 'Editorial Pipeline'],
-      evidence: ['Controlled Level 4 Authority rule requires Rev. Ayan Kumar Ghosh direct consent.'],
+      evidence: ['Controlled Level 4 Authority rule requires Ayan Kumar Ghosh direct consent.'],
       suspectedRootCause: 'User-initiated batch or irreversible command.',
       plan: [
         { step: 1, description: 'Hold execution in pending approval state', automated: true },
-        { step: 2, description: 'Generate cryptographic approval ticket for Rev. Ayan Kumar Ghosh', automated: true },
+        { step: 2, description: 'Generate cryptographic approval ticket for Ayan Kumar Ghosh', automated: true },
         { step: 3, description: 'Wait for digital signature or password confirmation', automated: false },
         { step: 4, description: 'Execute only upon confirmed authority clearance', automated: false },
       ],

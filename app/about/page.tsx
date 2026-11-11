@@ -47,7 +47,7 @@ export default function AboutPage() {
           <span>Project Governance & Editorial Board</span>
         </h2>
         <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-serif">
-          Logos Lexicon is directed under the theological leadership of <strong>Rev. Ayan Kumar Ghosh</strong>.
+          Logos Lexicon is directed under the theological leadership of <strong>Ayan Kumar Ghosh</strong>.
           Every theological article is governed by the <strong>Master-Content Principle</strong>: each concept has one
           authoritative English master record, to which verified multilingual translations are linked.
         </p>
@@ -55,7 +55,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
           <div className="p-3 bg-gray-50 dark:bg-navy-950 rounded-xl border border-gray-200 dark:border-navy-800">
             <strong className="text-navy-900 dark:text-gold-300 block">Project Director & Chief Editor:</strong>
-            <span className="text-gray-600 dark:text-gray-400">Rev. Ayan Kumar Ghosh</span>
+            <span className="text-gray-600 dark:text-gray-400">Ayan Kumar Ghosh</span>
           </div>
           <div className="p-3 bg-gray-50 dark:bg-navy-950 rounded-xl border border-gray-200 dark:border-navy-800">
             <strong className="text-navy-900 dark:text-gold-300 block">Research & Operations Assistant:</strong>

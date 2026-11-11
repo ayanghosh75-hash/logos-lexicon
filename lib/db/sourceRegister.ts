@@ -21,7 +21,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['en', 'el'],
     contentCategories: ['Biblical Greek', 'Lexicography', 'New Testament Studies'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Published before 1928; verified in the public domain globally under Berne Convention rules.',
   },
 
@@ -45,7 +45,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['en', 'he', 'arc'],
     contentCategories: ['Biblical Hebrew and Aramaic', 'Old Testament Studies'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Standard public domain authority for Old Testament Hebrew and Aramaic lemmas.',
   },
 
@@ -69,7 +69,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['en'],
     contentCategories: ['Biblical Theology', 'Biblical People', 'Biblical Places', 'Biblical Customs'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Verified public domain. Valuable for concise, devotional, and biblical-theological definitions.',
   },
 
@@ -93,7 +93,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['en', 'el', 'he'],
     contentCategories: ['Biblical Greek', 'Biblical Hebrew and Aramaic', 'Canon and Manuscripts'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Verified public domain numbering system. Lexi must caution against etymological root fallacies.',
   },
 
@@ -117,7 +117,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['en', 'la', 'el'],
     contentCategories: ['Creeds and Confessions', 'Church History', 'Systematic Theology'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Monumental 3-volume collection of ancient, medieval, and reformational confessional standards.',
   },
 
@@ -141,7 +141,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['el', 'la', 'en'],
     contentCategories: ['Creeds and Confessions', 'Theology Proper', 'Trinity', 'Christology'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Foundational trinitarian and christological standard recognized across Catholic, Orthodox, and Protestant churches.',
   },
 
@@ -165,7 +165,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['en', 'la'],
     contentCategories: ['Systematic Theology', 'Covenant Theology', 'Creeds and Confessions'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Definitive articulation of British and American Reformed systematic theology and covenant structure.',
   },
 
@@ -189,7 +189,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['la', 'de', 'en'],
     contentCategories: ['Historical Theology', 'Creeds and Confessions', 'Soteriology'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Primary confessional standard of the Lutheran Reformation, indispensable for denominational balance.',
   },
 
@@ -213,7 +213,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['de', 'la', 'en'],
     contentCategories: ['Practical Theology', 'Pastoral Theology', 'Soteriology'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Remarkable pastoral tone (Questions 1, 21, 60), valuable for warm pastoral applications.',
   },
 
@@ -237,7 +237,7 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['en', 'la'],
     contentCategories: ['Creeds and Confessions', 'Systematic Theology', 'Historical Theology'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Historical confessional foundation of the Anglican Communion, essential for ecumenical balance.',
   },
 
@@ -261,14 +261,14 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     languagesAvailable: ['en', 'el', 'he'],
     contentCategories: ['Bible Translation', 'Textual Criticism', 'Hermeneutics'],
     importStatus: 'Citation only',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Strictly restricted to citation and reference check. No verbatim text ingestion permitted.',
   },
 
   logos_editorial: {
     sourceId: 'logos_editorial',
     shortTitle: 'Logos Lexicon Theological Editorial Board',
-    authorOrOrg: 'Rev. Ayan Kumar Ghosh and Commissioned Scholarly Contributors',
+    authorOrOrg: 'Ayan Kumar Ghosh and Commissioned Scholarly Contributors',
     publisher: 'Logos Lexicon Press',
     publicationDate: '2026',
     url: 'https://logoslexicon.org/about#editorial',
@@ -277,15 +277,15 @@ export const SOURCE_REGISTRY: Record<string, SourceRegistryEntry> = {
     licenceUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
     copyrightStatus: 'Original commissioned',
     permittedUse: 'Master-content publishing, synthesis, and peer-reviewed educational dissemination.',
-    prohibitedUse: 'Commercial monetization without explicit approval from Rev. Ayan Kumar Ghosh.',
-    attributionFormat: 'Logos Lexicon Theological Editorial Board, directed by Rev. Ayan Kumar Ghosh. Kolkata, 2026.',
+    prohibitedUse: 'Commercial monetization without explicit approval from Ayan Kumar Ghosh.',
+    attributionFormat: 'Logos Lexicon Theological Editorial Board, directed by Ayan Kumar Ghosh. Kolkata, 2026.',
     evidenceFile: 'evidence/sources/logos_editorial_charter_2026.pdf',
     reliabilityRating: 'Primary text',
     theologicalTradition: 'Ecumenical Protestant / Academic Christian',
     languagesAvailable: ['en', 'bn', 'hi', 'ur', 'ko', 'ta', 'te'],
     contentCategories: ['Systematic Theology', 'Biblical Theology', 'Practical Theology'],
     importStatus: 'Approved for reuse',
-    copyrightReviewer: 'Rev. Ayan Kumar Ghosh',
+    copyrightReviewer: 'Ayan Kumar Ghosh',
     reviewNotes: 'Original synthesized and verified theological master records for Logos Lexicon.',
   },
 };
