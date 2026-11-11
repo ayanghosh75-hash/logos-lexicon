@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description:
     'Explore biblical and theological terms across 21 languages (English, Bengali, Hindi, Urdu, Arabic, Persian, Filipino, Japanese, Chinese, and more) with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio on any device worldwide.',
   applicationName: 'Logos Lexicon',
-  authors: [{ name: 'Rev. Ayan Kumar Ghosh', url: 'https://logos-lexicon-app.vercel.app/about' }],
-  creator: 'Rev. Ayan Kumar Ghosh',
-  publisher: 'Logos Lexicon Theological Editorial Board',
+  authors: [{ name: 'Ayan Kumar Ghosh (Rev. Ayan Kumar Ghosh)', url: 'https://logos-lexicon-app.vercel.app/about' }],
+  creator: 'Ayan Kumar Ghosh (Rev. Ayan Kumar Ghosh)',
+  publisher: 'Ayan Kumar Ghosh — Logos Lexicon Theological Editorial Board',
   manifest: '/manifest.webmanifest',
   icons: {
     icon: [

@@ -132,7 +132,10 @@ export const Footer: React.FC = () => {
 
         <div className="mt-10 pt-6 border-t border-navy-850 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 space-y-2 sm:space-y-0">
           <div className="space-y-0.5 text-center sm:text-left">
-            <p>© {new Date().getFullYear()} Logos Lexicon. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Ayan Kumar Ghosh • Logos Lexicon. All rights reserved.</p>
+            <p className="text-[11px] text-gray-400">
+              Project Director &amp; Theological Lead: <strong>Rev. Ayan Kumar Ghosh</strong>
+            </p>
             <p className="text-[11px] text-gray-500">
               Permanent Canonical Public Address:{' '}
               <span className="text-gold-400/90 font-mono">https://logoslexicon.org/</span>
