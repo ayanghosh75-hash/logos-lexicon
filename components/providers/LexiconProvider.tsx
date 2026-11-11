@@ -27,6 +27,9 @@ interface LexiconContextType {
   dismissUpdate: () => void;
   isInstallable: boolean;
   triggerInstall: () => Promise<void>;
+  isUserGuideOpen: boolean;
+  openUserGuide: () => void;
+  closeUserGuide: () => void;
 }
 
 const LexiconContext = createContext<LexiconContextType | undefined>(undefined);
@@ -44,6 +47,7 @@ export const LexiconProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [waitingWorker, setWaitingWorker] = useState<ServiceWorker | null>(null);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [isInstallable, setIsInstallable] = useState<boolean>(false);
+  const [isUserGuideOpen, setIsUserGuideOpen] = useState<boolean>(false);
 
   // Load persisted user preferences safely
   useEffect(() => {
@@ -84,6 +88,36 @@ export const LexiconProvider: React.FC<{ children: React.ReactNode }> = ({ child
       console.warn('Storage read failed', e);
     }
   }, []);
+
+  // Show user guide automatically on first visit, or listen for open events
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const dismissed = localStorage.getItem('logos_user_guide_dismiss_forever');
+    const hasSeen = localStorage.getItem('logos_user_guide_seen');
+
+    if (!dismissed && !hasSeen) {
+      const timer = setTimeout(() => {
+        setIsUserGuideOpen(true);
+      }, 700);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // Listen for logos:open-user-guide custom event
+  useEffect(() => {
+    const handleOpenGuide = () => setIsUserGuideOpen(true);
+    window.addEventListener('logos:open-user-guide', handleOpenGuide);
+    return () => window.removeEventListener('logos:open-user-guide', handleOpenGuide);
+  }, []);
+
+  // Sync document root lang and dir attributes dynamically whenever currentLanguage changes
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const cfg = getLanguageConfig(currentLanguage);
+    document.documentElement.setAttribute('lang', currentLanguage);
+    document.documentElement.setAttribute('dir', cfg.dir);
+  }, [currentLanguage]);
 
   // PWA Service Worker Registration and Update Detection
   useEffect(() => {
@@ -213,6 +247,9 @@ export const LexiconProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   };
 
+  const openUserGuide = () => setIsUserGuideOpen(true);
+  const closeUserGuide = () => setIsUserGuideOpen(false);
+
   const langConfig = getLanguageConfig(currentLanguage);
   const dir = langConfig.dir;
 
@@ -241,6 +278,9 @@ export const LexiconProvider: React.FC<{ children: React.ReactNode }> = ({ child
         dismissUpdate,
         isInstallable,
         triggerInstall,
+        isUserGuideOpen,
+        openUserGuide,
+        closeUserGuide,
       }}
     >
       <div

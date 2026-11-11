@@ -23,10 +23,11 @@ import {
   Scale,
   Clock,
   Compass,
+  HelpCircle,
 } from 'lucide-react';
 
 export default function HomePage() {
-  const { currentLanguage, setLanguage, isInstallable, triggerInstall } = useLexicon();
+  const { currentLanguage, setLanguage, isInstallable, triggerInstall, openUserGuide } = useLexicon();
   const [searchQuery, setSearchQuery] = useState('');
 
   // Multilingual Search calculation with typo-tolerance & zero-result analysis
@@ -70,8 +71,19 @@ export default function HomePage() {
 
           <p className="max-w-2xl mx-auto text-sm sm:text-base text-gray-300 font-serif leading-relaxed">
             An academically rigorous, theologically grounded multilingual dictionary. Explore foundational
-            scriptural concepts, compare translations across 15 languages, and examine original Biblical Greek, Hebrew, and Aramaic.
+            scriptural concepts, compare translations across 21 global languages, and examine original Biblical Greek, Hebrew, and Aramaic.
           </p>
+
+          {/* Quick Action: Step-by-Step User Guide Button */}
+          <div className="flex justify-center items-center gap-3 pt-1">
+            <button
+              onClick={openUserGuide}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs sm:text-sm shadow-lg transition-transform hover:scale-105"
+            >
+              <HelpCircle className="w-4 h-4" />
+              <span>📖 How to Use (Step-by-Step Guide / ব্যবহার নির্দেশিকা)</span>
+            </button>
+          </div>
 
           {/* Multilingual Search Bar */}
           <div data-tour="hero-search" className="max-w-2xl mx-auto relative pt-4">

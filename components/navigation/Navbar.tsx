@@ -24,6 +24,7 @@ import {
   Share2,
   PenTool,
   Coffee,
+  HelpCircle,
 } from 'lucide-react';
 import { ShareModal } from '../sharing/ShareModal';
 
@@ -38,6 +39,7 @@ export const Navbar: React.FC = () => {
     toggleTheme,
     isInstallable,
     triggerInstall,
+    openUserGuide,
   } = useLexicon();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -159,6 +161,17 @@ export const Navbar: React.FC = () => {
               )}
             </div>
 
+            {/* User Guide Button */}
+            <button
+              onClick={openUserGuide}
+              className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-lg bg-navy-900 dark:bg-gold-500/20 text-gold-400 border border-gold-400/40 hover:bg-navy-800 text-xs font-bold transition-all shadow-sm"
+              title="Step-by-step user guide & walkthrough"
+              aria-label="Open User Guide"
+            >
+              <HelpCircle className="w-3.5 h-3.5 text-gold-400" />
+              <span className="hidden md:inline">User Guide</span>
+            </button>
+
             {/* Share Logos Lexicon Button */}
             <button
               onClick={() => setShareModalOpen(true)}
@@ -272,6 +285,20 @@ export const Navbar: React.FC = () => {
                 </option>
               ))}
             </select>
+          </div>
+
+          {/* Mobile User Guide Action */}
+          <div className="pt-2">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openUserGuide();
+              }}
+              className="w-full bg-navy-900 dark:bg-gold-500/20 text-gold-400 border border-gold-400/40 p-2.5 rounded-xl text-xs font-bold flex items-center justify-center space-x-2 transition-colors shadow-sm"
+            >
+              <HelpCircle className="w-4 h-4 text-gold-400" />
+              <span>📖 Step-by-Step User Guide (ব্যবহার নির্দেশিকা)</span>
+            </button>
           </div>
 
           {/* Mobile Share Action */}

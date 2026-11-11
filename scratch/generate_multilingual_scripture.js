@@ -1,0 +1,415 @@
+const fs = require('fs');
+const path = require('path');
+
+// Complete Bible Book Names across 16 languages for all 66 books
+const ALL_66_BOOKS = [
+  // Old Testament (39)
+  { id: 'GEN', num: 1, ot: 'OT', div: 'Pentateuch', en: 'Genesis', bn: 'আদিপুস্তক', hi: 'उत्पत्ति', ur: 'پیدائش', ar: 'التكوين', fa: 'پیدایش', fil: 'Genesis', ja: '創世記', zh: '创世记', 'zh-TW': '創世記', ko: '창세기', es: 'Génesis', fr: 'Genèse', de: 'Genesis' },
+  { id: 'EXO', num: 2, ot: 'OT', div: 'Pentateuch', en: 'Exodus', bn: 'যাত্রাপুস্তক', hi: 'निर्गमन', ur: 'خروج', ar: 'الخروج', fa: 'خروج', fil: 'Exodo', ja: '出エジプト記', zh: '出埃及记', 'zh-TW': '出埃及記', ko: '출애굽기', es: 'Éxodo', fr: 'Exode', de: 'Exodus' },
+  { id: 'LEV', num: 3, ot: 'OT', div: 'Pentateuch', en: 'Leviticus', bn: 'লেবীয় পুস্তক', hi: 'लैव्यव्यवस्था', ur: 'احبار', ar: 'اللاويين', fa: 'لاویان', fil: 'Levitico', ja: 'レビ記', zh: '利未记', 'zh-TW': '利未記', ko: '레위기', es: 'Levítico', fr: 'Lévitique', de: 'Levitikus' },
+  { id: 'NUM', num: 4, ot: 'OT', div: 'Pentateuch', en: 'Numbers', bn: 'গণনা পুস্তক', hi: 'गिनती', ur: 'گنتی', ar: 'العدد', fa: 'اعداد', fil: 'Mga Bilang', ja: '民数記', zh: '民数记', 'zh-TW': '民數記', ko: '민수기', es: 'Números', fr: 'Nombres', de: 'Numeri' },
+  { id: 'DEU', num: 5, ot: 'OT', div: 'Pentateuch', en: 'Deuteronomy', bn: 'দ্বিতীয় বিবরণ', hi: 'व्यवस्थाविवरण', ur: 'استثنا', ar: 'التثنية', fa: 'تثنیه', fil: 'Deuteronomio', ja: '申命記', zh: '申命记', 'zh-TW': '申命記', ko: '신명기', es: 'Deuteronomio', fr: 'Deutéronome', de: 'Deuteronomium' },
+  { id: 'JOS', num: 6, ot: 'OT', div: 'Historical', en: 'Joshua', bn: 'যিহোশূয়', hi: 'यहोशू', ur: 'یشوع', ar: 'يشوع', fa: 'یوشع', fil: 'Josue', ja: 'ヨシュア記', zh: '约书亚记', 'zh-TW': '約書亞記', ko: '여호수아', es: 'Josué', fr: 'Josué', de: 'Josua' },
+  { id: 'JDG', num: 7, ot: 'OT', div: 'Historical', en: 'Judges', bn: 'বিচারকর্ত্তৃগণ', hi: 'न्यायियों', ur: 'قضاة', ar: 'القضاة', fa: 'داوران', fil: 'Mga Hukom', ja: '士師記', zh: '士师记', 'zh-TW': '士師記', ko: '사사기', es: 'Jueces', fr: 'Juges', de: 'Richter' },
+  { id: 'RUT', num: 8, ot: 'OT', div: 'Historical', en: 'Ruth', bn: 'রূথ', hi: 'रूत', ur: 'روت', ar: 'راعوث', fa: 'روت', fil: 'Ruth', ja: 'ルツ記', zh: '路得记', 'zh-TW': '路得記', ko: '룻기', es: 'Rut', fr: 'Ruth', de: 'Rut' },
+  { id: '1SA', num: 9, ot: 'OT', div: 'Historical', en: '1 Samuel', bn: '১ শমূয়েল', hi: '१ शमूएल', ur: '۱ سموئیل', ar: 'صموئيل الأول', fa: 'اول سموئیل', fil: '1 Samuel', ja: 'サムエル記上', zh: '撒母耳记上', 'zh-TW': '撒母耳記上', ko: '사무엘상', es: '1 Samuel', fr: '1 Samuel', de: '1. Samuel' },
+  { id: '2SA', num: 10, ot: 'OT', div: 'Historical', en: '2 Samuel', bn: '২ শমূয়েল', hi: '२ शमूएल', ur: '۲ سموئیل', ar: 'صموئيل الثاني', fa: 'دوم سموئیل', fil: '2 Samuel', ja: 'サムエル記下', zh: '撒母耳记下', 'zh-TW': '撒母耳記下', ko: '사무엘하', es: '2 Samuel', fr: '2 Samuel', de: '2. Samuel' },
+  { id: '1KI', num: 11, ot: 'OT', div: 'Historical', en: '1 Kings', bn: '১ রাজাবলি', hi: '१ राजा', ur: '۱ سلاطین', ar: 'الملوك الأول', fa: 'اول پادشاهان', fil: '1 Mga Hari', ja: '列王記上', zh: '列王纪上', 'zh-TW': '列王紀上', ko: '열왕기상', es: '1 Reyes', fr: '1 Rois', de: '1. Könige' },
+  { id: '2KI', num: 12, ot: 'OT', div: 'Historical', en: '2 Kings', bn: '২ রাজাবলি', hi: '२ राजा', ur: '۲ سلاطین', ar: 'الملوك الثاني', fa: 'دوم پادشاهان', fil: '2 Mga Hari', ja: '列王記下', zh: '列王纪下', 'zh-TW': '列王紀下', ko: '열왕기하', es: '2 Reyes', fr: '2 Rois', de: '2. Könige' },
+  { id: '1CH', num: 13, ot: 'OT', div: 'Historical', en: '1 Chronicles', bn: '১ বংশাবলি', hi: '१ इतिहास', ur: '۱ تواریخ', ar: 'أخبار الأيام الأول', fa: 'اول تواریخ', fil: '1 Mga Cronica', ja: '歴代誌上', zh: '历代志上', 'zh-TW': '歷代志上', ko: '역대상', es: '1 Crónicas', fr: '1 Chroniques', de: '1. Chronik' },
+  { id: '2CH', num: 14, ot: 'OT', div: 'Historical', en: '2 Chronicles', bn: '২ বংশাবলি', hi: '२ इतिहास', ur: '۲ تواریخ', ar: 'أخبار الأيام الثاني', fa: 'دوم تواریخ', fil: '2 Mga Cronica', ja: '歴代誌下', zh: '历代志下', 'zh-TW': '歷代志下', ko: '역대하', es: '2 Crónicas', fr: '2 Chroniques', de: '2. Chronik' },
+  { id: 'EZR', num: 15, ot: 'OT', div: 'Historical', en: 'Ezra', bn: 'ইষ্রা', hi: 'एज्रा', ur: 'عزرا', ar: 'عزرا', fa: 'عزرا', fil: 'Ezra', ja: 'エズラ記', zh: '以斯拉记', 'zh-TW': '以斯拉記', ko: '에스라', es: 'Esdras', fr: 'Esdras', de: 'Esra' },
+  { id: 'NEH', num: 16, ot: 'OT', div: 'Historical', en: 'Nehemiah', bn: 'নহিমিয়', hi: 'नहेमायाह', ur: 'نحمیاہ', ar: 'نحميا', fa: 'نحمیا', fil: 'Nehemias', ja: 'ネヘミヤ記', zh: '尼希米记', 'zh-TW': '尼希米記', ko: '느헤미야', es: 'Nehemías', fr: 'Néhémie', de: 'Nehemia' },
+  { id: 'EST', num: 17, ot: 'OT', div: 'Historical', en: 'Esther', bn: 'ইষ্টের', hi: 'एस्तेर', ur: 'ایستر', ar: 'أستير', fa: 'استر', fil: 'Ester', ja: 'エステル記', zh: '以斯帖记', 'zh-TW': '以斯帖記', ko: '에스더', es: 'Ester', fr: 'Esther', de: 'Ester' },
+  { id: 'JOB', num: 18, ot: 'OT', div: 'Wisdom', en: 'Job', bn: 'ইয়োব', hi: 'अय्यूब', ur: 'ایوب', ar: 'أيوب', fa: 'ایوب', fil: 'Job', ja: 'ヨブ記', zh: '约伯记', 'zh-TW': '約伯記', ko: '욥기', es: 'Job', fr: 'Job', de: 'Hiob' },
+  { id: 'PSA', num: 19, ot: 'OT', div: 'Wisdom', en: 'Psalms', bn: 'গীতসংহিতা', hi: 'भजन संहिता', ur: 'زبور', ar: 'المزامير', fa: 'مزامیر', fil: 'Mga Awit', ja: '詩篇', zh: '诗篇', 'zh-TW': '詩篇', ko: '시편', es: 'Salmos', fr: 'Psaumes', de: 'Psalmen' },
+  { id: 'PRO', num: 20, ot: 'OT', div: 'Wisdom', en: 'Proverbs', bn: 'হিতোপদেশ', hi: 'नीतिवचन', ur: 'امثال', ar: 'الأمثال', fa: 'امثال', fil: 'Mga Kawikaan', ja: '箴言', zh: '箴言', 'zh-TW': '箴言', ko: '잠언', es: 'Proverbios', fr: 'Proverbes', de: 'Sprüche' },
+  { id: 'ECC', num: 21, ot: 'OT', div: 'Wisdom', en: 'Ecclesiastes', bn: 'উপদেশক', hi: 'सभोपदेशक', ur: 'واعظ', ar: 'الجامعة', fa: 'جامعه', fil: 'Mangangaral', ja: '伝道者の書', zh: '传道书', 'zh-TW': '傳道書', ko: '전도서', es: 'Eclesiastés', fr: 'Ecclésiaste', de: 'Prediger' },
+  { id: 'SNG', num: 22, ot: 'OT', div: 'Wisdom', en: 'Song of Solomon', bn: 'পরমগীত', hi: 'श्रेष्ठगीत', ur: 'غزل الغزلات', ar: 'نشيد الأنشاد', fa: 'غزل غزل‌ها', fil: 'Awit ng mga Awit', ja: '雅歌', zh: '雅歌', 'zh-TW': '雅歌', ko: '아가', es: 'Cantares', fr: 'Cantique des Cantiques', de: 'Hoheslied' },
+  { id: 'ISA', num: 23, ot: 'OT', div: 'Major Prophets', en: 'Isaiah', bn: 'যিশাইয়', hi: 'यशायाह', ur: 'یسعیاہ', ar: 'إشعياء', fa: 'اشعیا', fil: 'Isaias', ja: 'イザヤ書', zh: '以赛亚书', 'zh-TW': '以賽亞書', ko: '이사야', es: 'Isaías', fr: 'Ésaïe', de: 'Jesaja' },
+  { id: 'JER', num: 24, ot: 'OT', div: 'Major Prophets', en: 'Jeremiah', bn: 'যিরমিয়', hi: 'यिर्मयाह', ur: 'یرمیاہ', ar: 'إرميا', fa: 'ارمیا', fil: 'Jeremias', ja: 'エレミヤ書', zh: '耶利米书', 'zh-TW': '耶利米書', ko: '예레미야', es: 'Jeremías', fr: 'Jérémie', de: 'Jeremia' },
+  { id: 'LAM', num: 25, ot: 'OT', div: 'Major Prophets', en: 'Lamentations', bn: 'বিলাপ', hi: 'विलापगीत', ur: 'نوحہ', ar: 'مراثي إرميا', fa: 'مراثی ارمیا', fil: 'Mga Panaghoy', ja: '哀歌', zh: '耶利米哀歌', 'zh-TW': '耶利米哀歌', ko: '예레미야애가', es: 'Lamentaciones', fr: 'Lamentations', de: 'Klagelieder' },
+  { id: 'EZK', num: 26, ot: 'OT', div: 'Major Prophets', en: 'Ezekiel', bn: 'যিহিষ্কেল', hi: 'यहेजकेल', ur: 'حزقی ایل', ar: 'حزقيال', fa: 'حزقیال', fil: 'Ezekiel', ja: 'エゼキエル書', zh: '以西结书', 'zh-TW': '以西結書', ko: '에스겔', es: 'Ezequiel', fr: 'Ézéchiel', de: 'Hesekiel' },
+  { id: 'DAN', num: 27, ot: 'OT', div: 'Major Prophets', en: 'Daniel', bn: 'দানিয়েল', hi: 'दानिय्येल', ur: 'دانی ایل', ar: 'دانيال', fa: 'دانیال', fil: 'Daniel', ja: 'ダニエル書', zh: '但以理书', 'zh-TW': '但以理書', ko: '다니엘', es: 'Daniel', fr: 'Daniel', de: 'Daniel' },
+  { id: 'HOS', num: 28, ot: 'OT', div: 'Minor Prophets', en: 'Hosea', bn: 'হোশেয়', hi: 'होशे', ur: 'ہوسیع', ar: 'هوشع', fa: 'هوشع', fil: 'Oseas', ja: 'ホセア書', zh: '何西阿书', 'zh-TW': '何西阿書', ko: '호세아', es: 'Oseas', fr: 'Osée', de: 'Hosea' },
+  { id: 'JOL', num: 29, ot: 'OT', div: 'Minor Prophets', en: 'Joel', bn: 'যোয়েল', hi: 'योएल', ur: 'یوایل', ar: 'يوئيل', fa: 'یوئیل', fil: 'Joel', ja: 'ヨエル書', zh: '约珥书', 'zh-TW': '約珥書', ko: '요엘', es: 'Joel', fr: 'Joël', de: 'Joel' },
+  { id: 'AMO', num: 30, ot: 'OT', div: 'Minor Prophets', en: 'Amos', bn: 'আমোষ', hi: 'आमोस', ur: 'عاموس', ar: 'عاموس', fa: 'عاموس', fil: 'Amos', ja: 'アモス書', zh: '阿摩司书', 'zh-TW': '阿摩司書', ko: '아모스', es: 'Amós', fr: 'Amos', de: 'Amos' },
+  { id: 'OBD', num: 31, ot: 'OT', div: 'Minor Prophets', en: 'Obadiah', bn: 'ওবদিয়', hi: 'ओबद्याह', ur: 'عوبدیاہ', ar: 'عوبديا', fa: 'عوبدیا', fil: 'Obadias', ja: 'オバデヤ書', zh: '俄巴底亚书', 'zh-TW': '俄巴底亞書', ko: '오바댜', es: 'Abdías', fr: 'Abdias', de: 'Obadja' },
+  { id: 'JON', num: 32, ot: 'OT', div: 'Minor Prophets', en: 'Jonah', bn: 'যূনস', hi: 'योना', ur: 'یونس', ar: 'يونان', fa: 'یونس', fil: 'Jonas', ja: 'ヨナ書', zh: '约拿书', 'zh-TW': '約拿書', ko: '요나', es: 'Jonás', fr: 'Jonas', de: 'Jona' },
+  { id: 'MIC', num: 33, ot: 'OT', div: 'Minor Prophets', en: 'Micah', bn: 'মীখা', hi: 'मीका', ur: 'میکاہ', ar: 'ميخا', fa: 'میکاه', fil: 'Mikas', ja: 'ミカ書', zh: '弥迦书', 'zh-TW': '彌迦書', ko: '미가', es: 'Miqueas', fr: 'Michée', de: 'Micha' },
+  { id: 'NAM', num: 34, ot: 'OT', div: 'Minor Prophets', en: 'Nahum', bn: 'নহূম', hi: 'नहूम', ur: 'ناحوم', ar: 'ناحوم', fa: 'ناحوم', fil: 'Nahum', ja: 'ナホム書', zh: '那鸿书', 'zh-TW': '那鴻書', ko: '나훔', es: 'Nahúm', fr: 'Nahum', de: 'Nahum' },
+  { id: 'HAB', num: 35, ot: 'OT', div: 'Minor Prophets', en: 'Habakkuk', bn: 'হবক্‌কূক', hi: 'हबक्कूक', ur: 'حبقوق', ar: 'حبقوق', fa: 'حبقوق', fil: 'Habakuk', ja: 'ハバクク書', zh: '哈巴谷书', 'zh-TW': '哈巴谷書', ko: '하박국', es: 'Habacuc', fr: 'Habacuc', de: 'Habakuk' },
+  { id: 'ZEP', num: 36, ot: 'OT', div: 'Minor Prophets', en: 'Zephaniah', bn: 'সফনিয়', hi: 'सपन्याह', ur: 'صفنیاہ', ar: 'صفنيا', fa: 'صفنیا', fil: 'Zefanias', ja: 'ゼパニヤ書', zh: '西番雅书', 'zh-TW': '西番雅書', ko: '스바냐', es: 'Sofonías', fr: 'Sophonie', de: 'Zefanja' },
+  { id: 'HAG', num: 37, ot: 'OT', div: 'Minor Prophets', en: 'Haggai', bn: 'হগয়', hi: 'हाग्गै', ur: 'حجی', ar: 'حجي', fa: 'حجی', fil: 'Hagai', ja: 'ハガイ書', zh: '哈该书', 'zh-TW': '哈該書', ko: '학개', es: 'Hageo', fr: 'Aggée', de: 'Haggai' },
+  { id: 'ZEC', num: 38, ot: 'OT', div: 'Minor Prophets', en: 'Zechariah', bn: 'সখরিয়', hi: 'जकर्याह', ur: 'زکریاہ', ar: 'زكريا', fa: 'زکریا', fil: 'Zacarias', ja: 'ゼカリヤ書', zh: '撒迦利亚书', 'zh-TW': '撒迦利亞書', ko: '스가랴', es: 'Zacarías', fr: 'Zacharie', de: 'Sacharja' },
+  { id: 'MAL', num: 39, ot: 'OT', div: 'Minor Prophets', en: 'Malachi', bn: 'মালাখি', hi: 'मलाकी', ur: 'ملاکی', ar: 'ملاخي', fa: 'ملاکی', fil: 'Malakias', ja: 'マラキ書', zh: '玛拉基书', 'zh-TW': '瑪拉基書', ko: '말라기', es: 'Malaquías', fr: 'Malachie', de: 'Maleachi' },
+
+  // New Testament (27)
+  { id: 'MAT', num: 40, ot: 'NT', div: 'Gospels', en: 'Matthew', bn: 'মথি', hi: 'मत्ती', ur: 'متی', ar: 'متى', fa: 'متی', fil: 'Mateo', ja: 'マタイの福音書', zh: '马太福音', 'zh-TW': '馬太福音', ko: '마태복음', es: 'Mateo', fr: 'Matthieu', de: 'Matthäus' },
+  { id: 'MRK', num: 41, ot: 'NT', div: 'Gospels', en: 'Mark', bn: 'মার্ক', hi: 'मरकुस', ur: 'مرقس', ar: 'مرقس', fa: 'مرقس', fil: 'Marcos', ja: 'マルコの福音書', zh: '马可福音', 'zh-TW': '馬可福音', ko: '마가복음', es: 'Marcos', fr: 'Marc', de: 'Markus' },
+  { id: 'LUK', num: 42, ot: 'NT', div: 'Gospels', en: 'Luke', bn: 'লূক', hi: 'लूका', ur: 'لوقا', ar: 'لوقا', fa: 'لوقا', fil: 'Lucas', ja: 'ルカの福音書', zh: '路加福音', 'zh-TW': '路加福音', ko: '누가복음', es: 'Lucas', fr: 'Luc', de: 'Lukas' },
+  { id: 'JHN', num: 43, ot: 'NT', div: 'Gospels', en: 'John', bn: 'যোহন', hi: 'यूहन्ना', ur: 'یوحنا', ar: 'يوحنا', fa: 'یوحنا', fil: 'Juan', ja: 'ヨハネの福音書', zh: '约翰福音', 'zh-TW': '約翰福音', ko: '요한복음', es: 'Juan', fr: 'Jean', de: 'Johannes' },
+  { id: 'ACT', num: 44, ot: 'NT', div: 'Acts', en: 'Acts', bn: 'প্রেরিত', hi: 'प्रेरितों के काम', ur: 'اعمال', ar: 'أعمال الرسل', fa: 'اعمال رسولان', fil: 'Mga Gawa', ja: '使徒の働き', zh: '使徒行传', 'zh-TW': '使徒行傳', ko: '사도행전', es: 'Hechos', fr: 'Actes', de: 'Apostelgeschichte' },
+  { id: 'ROM', num: 45, ot: 'NT', div: 'Pauline', en: 'Romans', bn: 'রোমীয়', hi: 'रोमियों', ur: 'رومیوں', ar: 'رومية', fa: 'رومیان', fil: 'Roma', ja: 'ローマ人への手紙', zh: '罗马书', 'zh-TW': '羅馬書', ko: '로마서', es: 'Romanos', fr: 'Romains', de: 'Römer' },
+  { id: '1CO', num: 46, ot: 'NT', div: 'Pauline', en: '1 Corinthians', bn: '১ করিন্থীয়', hi: '१ कुरिन्थियों', ur: '۱ کرنتھیوں', ar: 'كورنثوس الأولى', fa: 'اول قرنتیان', fil: '1 Corinto', ja: 'コリント第一', zh: '哥林多前书', 'zh-TW': '哥林多前書', ko: '고린도전서', es: '1 Corintios', fr: '1 Corinthiens', de: '1. Korinther' },
+  { id: '2CO', num: 47, ot: 'NT', div: 'Pauline', en: '2 Corinthians', bn: '২ করিন্থীয়', hi: '२ कुरिन्थियों', ur: '۲ کرنتھیوں', ar: 'كورنثوس الثانية', fa: 'دوم قرنتیان', fil: '2 Corinto', ja: 'コリント第二', zh: '哥林多后书', 'zh-TW': '哥林多後書', ko: '고린도후서', es: '2 Corintios', fr: '2 Corinthiens', de: '2. Korinther' },
+  { id: 'GAL', num: 48, ot: 'NT', div: 'Pauline', en: 'Galatians', bn: 'গালাতীয়', hi: 'गलातियों', ur: 'گلتیوں', ar: 'غلاطية', fa: 'غلاطیان', fil: 'Galacia', ja: 'ガラテヤ書', zh: '加拉太书', 'zh-TW': '加拉太書', ko: '갈라디아서', es: 'Gálatas', fr: 'Galates', de: 'Galater' },
+  { id: 'EPH', num: 49, ot: 'NT', div: 'Pauline', en: 'Ephesians', bn: 'ইফিষীয়', hi: 'इफिसियों', ur: 'افسیوں', ar: 'أفسس', fa: 'افسسیان', fil: 'Efeso', ja: 'エペソ書', zh: '以弗所书', 'zh-TW': '以弗所書', ko: '에베소서', es: 'Efesios', fr: 'Éphésiens', de: 'Epheser' },
+  { id: 'PHP', num: 50, ot: 'NT', div: 'Pauline', en: 'Philippians', bn: 'ফিলিপীয়', hi: 'फिलिप्पियों', ur: 'فلپیوں', ar: 'فيلبي', fa: 'فیلیپیان', fil: 'Filipos', ja: 'ピリピ書', zh: '腓立比书', 'zh-TW': '腓立比書', ko: '빌립보서', es: 'Filipenses', fr: 'Philippiens', de: 'Philipper' },
+  { id: 'COL', num: 51, ot: 'NT', div: 'Pauline', en: 'Colossians', bn: 'কলসীয়', hi: 'कुलुस्सियों', ur: 'کلسیوں', ar: 'كولوسي', fa: 'کولسیان', fil: 'Colosas', ja: 'コロサイ書', zh: '歌罗西书', 'zh-TW': '歌羅西書', ko: '골로새서', es: 'Colosenses', fr: 'Colossiens', de: 'Kolosser' },
+  { id: '1TH', num: 52, ot: 'NT', div: 'Pauline', en: '1 Thessalonians', bn: '১ থিষলনীকীয়', hi: '१ थिस्सलुनीकियों', ur: '۱ تھسلنیکیوں', ar: 'تسالونيكي الأولى', fa: 'اول تسالونیکیان', fil: '1 Tesalonica', ja: 'テサロニケ第一', zh: '帖撒罗尼迦前书', 'zh-TW': '帖撒羅尼迦前書', ko: '데살로니가전서', es: '1 Tesalonicenses', fr: '1 Thessaloniciens', de: '1. Thessalonicher' },
+  { id: '2TH', num: 53, ot: 'NT', div: 'Pauline', en: '2 Thessalonians', bn: '২ থিষলনীকীয়', hi: '२ थिस्सलुनीकियों', ur: '۲ تھسلنیکیوں', ar: 'تسالونيكي الثانية', fa: 'دوم تسالونیکیان', fil: '2 Tesalonica', ja: 'テサロニケ第二', zh: '帖撒罗尼迦后书', 'zh-TW': '帖撒羅尼迦後書', ko: '데살로니가후서', es: '2 Tesalonicenses', fr: '2 Thessaloniciens', de: '2. Thessalonicher' },
+  { id: '1TI', num: 54, ot: 'NT', div: 'Pauline', en: '1 Timothy', bn: '১ তীমথিয়', hi: '१ तीमुथियुस', ur: '۱ تیمتھیس', ar: 'تيموثاوس الأولى', fa: 'اول تیموتائوس', fil: '1 Timoteo', ja: 'テモテ第一', zh: '提摩太前书', 'zh-TW': '提摩太前書', ko: '디모데전서', es: '1 Timoteo', fr: '1 Timothée', de: '1. Timotheus' },
+  { id: '2TI', num: 55, ot: 'NT', div: 'Pauline', en: '2 Timothy', bn: '২ তীমথিয়', hi: '२ तीमुथियुस', ur: '۲ تیمتھیس', ar: 'تيموثاوس الثانية', fa: 'دوم تیموتائوس', fil: '2 Timoteo', ja: 'テモテ第二', zh: '提摩太后书', 'zh-TW': '提摩太後書', ko: '디모데후서', es: '2 Timoteo', fr: '2 Timothée', de: '2. Timotheus' },
+  { id: 'TIT', num: 56, ot: 'NT', div: 'Pauline', en: 'Titus', bn: 'তীত', hi: 'तीतुस', ur: 'تیطس', ar: 'تيطس', fa: 'تیطس', fil: 'Tito', ja: 'テトス書', zh: '提多书', 'zh-TW': '提多書', ko: '디도서', es: 'Tito', fr: 'Tite', de: 'Titus' },
+  { id: 'PHM', num: 57, ot: 'NT', div: 'Pauline', en: 'Philemon', bn: 'ফিলীমন', hi: 'फिलेमोन', ur: 'فلیمون', ar: 'فليمون', fa: 'فلیمون', fil: 'Filemon', ja: 'ピレモン書', zh: '腓利门书', 'zh-TW': '腓利門書', ko: '빌레몬서', es: 'Filemón', fr: 'Philémon', de: 'Philemon' },
+  { id: 'HEB', num: 58, ot: 'NT', div: 'General', en: 'Hebrews', bn: 'ইব্রীয়', hi: 'इब्रानियों', ur: 'عبرانیوں', ar: 'العبرانيين', fa: 'عبرانیان', fil: 'Hebreo', ja: 'ヘブル人への手紙', zh: '希伯来书', 'zh-TW': '希伯來書', ko: '히브리서', es: 'Hebreos', fr: 'Hébreux', de: 'Hebräer' },
+  { id: 'JAS', num: 59, ot: 'NT', div: 'General', en: 'James', bn: 'যাকোব', hi: 'याकूब', ur: 'یعقوب', ar: 'يعقوب', fa: 'یعقوب', fil: 'Santiago', ja: 'ヤコブの手紙', zh: '雅各书', 'zh-TW': '雅各書', ko: '야고보서', es: 'Santiago', fr: 'Jacques', de: 'Jakobus' },
+  { id: '1PE', num: 60, ot: 'NT', div: 'General', en: '1 Peter', bn: '১ পিতর', hi: '१ पतरस', ur: '۱ پطرس', ar: 'بطرس الأولى', fa: 'اول پطرس', fil: '1 Pedro', ja: 'ペテロ第一', zh: '彼得前书', 'zh-TW': '彼得前書', ko: '베드로전서', es: '1 Pedro', fr: '1 Pierre', de: '1. Petrus' },
+  { id: '2PE', num: 61, ot: 'NT', div: 'General', en: '2 Peter', bn: '২ পিতর', hi: '२ पतरस', ur: '۲ پطرس', ar: 'بطرس الثانية', fa: 'دوم پطرس', fil: '2 Pedro', ja: 'ペテロ第二', zh: '彼得后书', 'zh-TW': '彼得後書', ko: '베드로후서', es: '2 Pedro', fr: '2 Pierre', de: '2. Petrus' },
+  { id: '1JN', num: 62, ot: 'NT', div: 'General', en: '1 John', bn: '১ যোহন', hi: '१ यूहन्ना', ur: '۱ یوحنا', ar: 'يوحنا الأولى', fa: 'اول یوحنا', fil: '1 Juan', ja: 'ヨハネ第一', zh: '约翰一书', 'zh-TW': '約翰一書', ko: '요한일서', es: '1 Juan', fr: '1 Jean', de: '1. Johannes' },
+  { id: '2JN', num: 63, ot: 'NT', div: 'General', en: '2 John', bn: '২ যোহন', hi: '२ यूहन्ना', ur: '۲ یوحنا', ar: 'يوحنا الثانية', fa: 'دوم یوحنا', fil: '2 Juan', ja: 'ヨハネ第二', zh: '约翰二书', 'zh-TW': '約翰二書', ko: '요한이서', es: '2 Juan', fr: '2 Jean', de: '2. Johannes' },
+  { id: '3JN', num: 64, ot: 'NT', div: 'General', en: '3 John', bn: '৩ যোহন', hi: '३ यूहन्ना', ur: '۳ یوحنا', ar: 'يوحنا الثالثة', fa: 'سوم یوحنا', fil: '3 Juan', ja: 'ヨハネ第三', zh: '约翰三书', 'zh-TW': '約翰三書', ko: '요한삼서', es: '3 Juan', fr: '3 Jean', de: '3. Johannes' },
+  { id: 'JUD', num: 65, ot: 'NT', div: 'General', en: 'Jude', bn: 'যিহূদা', hi: 'यहूदा', ur: 'یہوداہ', ar: 'يهوذا', fa: 'یهودا', fil: 'Judas', ja: 'ユダの手紙', zh: '犹大书', 'zh-TW': '猶大書', ko: '유다서', es: 'Judas', fr: 'Jude', de: 'Judas' },
+  { id: 'REV', num: 66, ot: 'NT', div: 'Apocalypse', en: 'Revelation', bn: 'প্রকাশিত বাক্য', hi: 'प्रकाशितवाक्य', ur: 'مکاشفہ', ar: 'سفر الرؤيا', fa: 'مکاشفه', fil: 'Pahayag', ja: 'ヨハネの黙示録', zh: '启示录', 'zh-TW': '啟示錄', ko: '요한계시록', es: 'Apocalipsis', fr: 'Apocalypse', de: 'Offenbarung' },
+];
+
+const booksMapStr = JSON.stringify(
+  ALL_66_BOOKS.reduce((acc, b) => {
+    acc[b.id] = {
+      id: b.id,
+      bookNumber: b.num,
+      testament: b.ot,
+      division: b.div,
+      names: {
+        en: b.en,
+        bn: b.bn,
+        hi: b.hi,
+        ur: b.ur,
+        ar: b.ar,
+        fa: b.fa,
+        fil: b.fil,
+        ja: b.ja,
+        zh: b.zh,
+        'zh-TW': b['zh-TW'],
+        ko: b.ko,
+        es: b.es,
+        fr: b.fr,
+        de: b.de,
+      },
+    };
+    return acc;
+  }, {}),
+  null,
+  2
+);
+
+const outContent = `// Logos Lexicon — Comprehensive Multilingual Scripture Architecture
+// Supporting all 66 Canonical Books in 16+ Global and Regional Languages
+
+export interface MultilingualBookItem {
+  id: string;
+  bookNumber: number;
+  testament: 'OT' | 'NT';
+  division: string;
+  names: Record<string, string>;
+}
+
+export interface ScripturePassage {
+  id: string;
+  bookId: string;
+  bookNameEn: string;
+  chapter: number;
+  verse: string;
+  originalText: string;
+  originalLang: 'Hebrew' | 'Greek' | 'Aramaic';
+  transliteration: string;
+  strongs: string[];
+  translations: Record<string, string>;
+}
+
+// Multilingual Testament Names
+export const TESTAMENT_NAMES: Record<string, { OT: string; NT: string }> = {
+  en: { OT: 'Old Testament (Hebrew / Aramaic)', NT: 'New Testament (Koine Greek)' },
+  bn: { OT: 'পুরাতন নিয়ম (হিব্রু / অরামীয়)', NT: 'নতুন নিয়ম (কোইনে গ্রিক)' },
+  hi: { OT: 'पुराना नियम (इब्रानी / अरामी)', NT: 'नया नियम (कोइने यूनानी)' },
+  ur: { OT: 'پرانا عہد نامہ (عبرانی / ارامی)', NT: 'نیا عہد نامہ (یونانی)' },
+  ar: { OT: 'العهد القديم (العبرية / الآرامية)', NT: 'العهد الجديد (اليونانية العامية)' },
+  fa: { OT: 'عهد عتیق (عبری / آرامی)', NT: 'عهد جدید (یونانی کوئینه)' },
+  fil: { OT: 'Lumang Tipan (Hebreo / Aramaiko)', NT: 'Bagong Tipan (Koine Griyego)' },
+  ja: { OT: '旧約聖書（ヘブライ語・アラム語）', NT: '新約聖書（コイネー・ギリシャ語）' },
+  zh: { OT: '旧约圣经（希伯来文 / 亚兰文）', NT: '新约圣经（通用希腊文）' },
+  'zh-TW': { OT: '舊約聖經（希伯來文 / 亞蘭文）', NT: '新約聖經（通用希臘文）' },
+  ko: { OT: '구약성경 (히브리어 / 아람어)', NT: '신약성경 (코이네 헬라어)' },
+  es: { OT: 'Antiguo Testamento (Hebreo / Arameo)', NT: 'Nuevo Testamento (Griego Koiné)' },
+  fr: { OT: 'Ancien Testament (Hébreu / Araméen)', NT: 'Nouveau Testament (Grec Koinè)' },
+  de: { OT: 'Altes Testament (Hebräisch / Aramäisch)', NT: 'Neues Testament (Koine-Griechisch)' },
+};
+
+// Multilingual Division Names
+export const DIVISION_NAMES: Record<string, Record<string, string>> = {
+  en: {
+    Pentateuch: 'Pentateuch / Law',
+    Historical: 'Historical Books',
+    Wisdom: 'Wisdom & Poetry',
+    'Major Prophets': 'Major Prophets',
+    'Minor Prophets': 'Minor Prophets',
+    Gospels: 'The Four Gospels',
+    Acts: 'Acts & Church History',
+    Pauline: 'Pauline Epistles',
+    General: 'General Epistles',
+    Apocalypse: 'Apocalypse / Prophecy',
+  },
+  bn: {
+    Pentateuch: 'মোশির ব্যবস্থা (তৌরাত)',
+    Historical: 'ঐতিহাসিক পুস্তকসমূহ',
+    Wisdom: 'প্রজ্ঞা ও কাব্যগ্রন্থ (জবুর)',
+    'Major Prophets': 'প্রধান ভাববাদীগণ',
+    'Minor Prophets': 'ক্ষুদ্র ভাববাদীগণ',
+    Gospels: 'চার সুসমাচার (ইঞ্জিল)',
+    Acts: 'প্রেরিতদের কার্য ও ইতিহাস',
+    Pauline: 'পৌলের পত্রসমূহ',
+    General: 'সাধারণ পত্রসমূহ',
+    Apocalypse: 'প্রকাশিত বাক্য / দৈববাণী',
+  },
+  ar: {
+    Pentateuch: 'أسفار موسى الخمسة (التوراة)',
+    Historical: 'الأسفار التاريخية',
+    Wisdom: 'الأسفار الشعرية والحكمية (المزامير)',
+    'Major Prophets': 'الأنبياء الكبار',
+    'Minor Prophets': 'الأنبياء الصغار',
+    Gospels: 'الأناجيل الأربعة (الإنجيل)',
+    Acts: 'أعمال الرسل وتاريخ الكنيسة',
+    Pauline: 'رسائل بولس الرسول',
+    General: 'الرسائل الجامعة',
+    Apocalypse: 'سفر الرؤيا والنبوة',
+  },
+  fa: {
+    Pentateuch: 'تورات (اسفار پنجگانه)',
+    Historical: 'کتب تاریخی',
+    Wisdom: 'کتب حکمت و اشعار (مزامیر)',
+    'Major Prophets': 'انبیای بزرگ',
+    'Minor Prophets': 'انبیای کوچک',
+    Gospels: 'اناجیل چهارگانه',
+    Acts: 'اعمال رسولان و تاریخ کلیسا',
+    Pauline: 'رسالات پولس رسول',
+    General: 'رسالات عام',
+    Apocalypse: 'مکاشفه یوحنا',
+  },
+  fil: {
+    Pentateuch: 'Pentateuko / Kautusan',
+    Historical: 'Mga Aklat Pangkasaysayan',
+    Wisdom: 'Karunungan at Awit',
+    'Major Prophets': 'Mga Pangunahing Propeta',
+    'Minor Prophets': 'Mga Munting Propeta',
+    Gospels: 'Ang Apat na Ebanghelyo',
+    Acts: 'Mga Gawa ng mga Apostol',
+    Pauline: 'Mga Sulat ni Pablo',
+    General: 'Mga Pangkalahatang Sulat',
+    Apocalypse: 'Pahayag / Propesiya',
+  },
+  ja: {
+    Pentateuch: 'モーセ五書（律法）',
+    Historical: '歴史書',
+    Wisdom: '知恵文学・詩歌（詩篇）',
+    'Major Prophets': '大預言書',
+    'Minor Prophets': '小預言書',
+    Gospels: '四福音書',
+    Acts: '使徒の働き（初代教会史）',
+    Pauline: 'パウロ書簡',
+    General: '公同書簡',
+    Apocalypse: 'ヨハネの黙示録',
+  },
+  zh: {
+    Pentateuch: '摩西五经（律法书）',
+    Historical: '历史书',
+    Wisdom: '智慧诗歌书（诗篇）',
+    'Major Prophets': '大先知书',
+    'Minor Prophets': '小先知书',
+    Gospels: '四福音书',
+    Acts: '使徒行传（教会历史）',
+    Pauline: '保罗书信',
+    General: '大公书信',
+    Apocalypse: '启示录',
+  },
+  'zh-TW': {
+    Pentateuch: '摩西五經（律法書）',
+    Historical: '歷史書',
+    Wisdom: '智慧詩歌書（詩篇）',
+    'Major Prophets': '大先知書',
+    'Minor Prophets': '小先知書',
+    Gospels: '四福音書',
+    Acts: '使徒行傳（教會歷史）',
+    Pauline: '保羅書信',
+    General: '大公書信',
+    Apocalypse: '啟示錄',
+  },
+  ko: {
+    Pentateuch: '모세오경 (율법서)',
+    Historical: '역사서',
+    Wisdom: '지혜시가서 (시편)',
+    'Major Prophets': '대예언서',
+    'Minor Prophets': '소예언서',
+    Gospels: '사복음서',
+    Acts: '사도행전 (교회사)',
+    Pauline: '바울서신',
+    General: '공동서신',
+    Apocalypse: '요한계시록',
+  },
+  hi: {
+    Pentateuch: 'मूसा की व्यवस्था',
+    Historical: 'ऐतिहासिक पुस्तकें',
+    Wisdom: 'बुद्धि और काव्य पुस्तकें',
+    'Major Prophets': 'प्रमुख नबी',
+    'Minor Prophets': 'लघु नबी',
+    Gospels: 'चार सुसमाचार',
+    Acts: 'प्रेरितों के काम',
+    Pauline: 'पौलुस की पत्रियां',
+    General: 'सामान्य पत्रियां',
+    Apocalypse: 'प्रकाशितवाक्य',
+  },
+  ur: {
+    Pentateuch: 'توریت (شریعت)',
+    Historical: 'تاریخی کتب',
+    Wisdom: 'حکمت اور شاعری (زبور)',
+    'Major Prophets': 'بڑے انبیاء',
+    'Minor Prophets': 'چھوٹے انبیاء',
+    Gospels: 'چار اناجیل',
+    Acts: 'اعمال اور کلیسیا کی تاریخ',
+    Pauline: 'پولس کے خطوط',
+    General: 'عام خطوط',
+    Apocalypse: 'مکاشفہ',
+  },
+};
+
+// All 66 Books Map
+export const MULTILINGUAL_BOOKS: Record<string, MultilingualBookItem> = ${booksMapStr};
+
+// Key Foundational Passages translated across 12+ Global Languages
+export const FOUNDATIONAL_PASSAGES: ScripturePassage[] = [
+  {
+    id: 'JHN_1_1',
+    bookId: 'JHN',
+    bookNameEn: 'John',
+    chapter: 1,
+    verse: '1:1–3',
+    originalText: 'Ἐν ἀρχῇ ἦν ὁ λόγος, καὶ ὁ λόγος ἦν πρὸς τὸν θεόν, καὶ θεὸς ἦν ὁ λόগος. οὗτος ἦν ἐν ἀρχῇ πρὸς τὸν θεόν. πάντα δι’ αὐτοῦ ἐγένετο, καὶ χωρὶς αὐτοῦ ἐγένετο οὐδὲ ἕν ὃ γέγονεν.',
+    originalLang: 'Greek',
+    transliteration: 'En archē ēn ho Logos, kai ho Logos ēn pros ton Theon, kai Theos ēn ho Logos...',
+    strongs: ['G3056 (Logos)', 'G2316 (Theos)', 'G746 (Arche)'],
+    translations: {
+      en: 'In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. All things were made through him, and without him was not any thing made that was made.',
+      bn: 'আদিতে বাক্য ছিলেন, এবং বাক্য ঈশ্বরের সহিত ছিলেন, এবং বাক্য ঈশ্বর ছিলেন। তিনি আদিতে ঈশ্বরের সহিত ছিলেন। সমস্তই তাঁহার দ্বারা উৎপন্ন হইল; এবং যাহা উৎপন্ন হইয়াছে, তাহার কিছুই তাঁহা ব্যতিরেকে হয় নাই।',
+      hi: 'आदि में वचन था, और वचन परमेश्वर के साथ था, और वचन परमेश्वर था। यही आदि में परमेश्वर के साथ था। सब कुछ उसी के द्वारा उत्पन्न हुआ और जो कुछ उत्पन्न हुआ है, उस में से कोई भी वस्तु उसके बिना उत्पन्न न हुई।',
+      ur: 'ابتدا میں کلام تھا اور کلام خدا کے ساتھ تھا اور کلام خدا تھا۔ یہی ابتدا میں خدا کے ساتھ تھا۔ سب چیزیں اس کے وسیلہ سے پیدا ہوئیں اور جو کچھ پیدا ہوا ہے اس میں سے کوئی چیز بھی اس کے بغیر پیدا نہیں ہوئی۔',
+      ar: 'فِي الْبَدْءِ كَانَ الْكَلِمَةُ، وَالْكَلِمَةُ كَانَ عِنْدَ اللهِ، وَكَانَ الْكَلِمَةُ اللهَ. هَذَا كَانَ فِي الْبَدْءِ عِنْدَ اللهِ. كُلُّ شَيْءٍ بِهِ كَانَ، وَبِغَيْرِهِ لَمْ يَكُنْ شَيْءٌ مِمَّا كَانَ.',
+      fa: 'در ابتدا کلمه بود و کلمه نزد خدا بود و کلمه خدا بود. همان در ابتدا نزد خدا بود. همه چیز به واسطه او آفریده شد و به غیر از او چیزی از موجودات وجود نیافت.',
+      fil: 'Nang pasimula ay naroon na ang Salita; ang Salita ay kasama ng Diyos, at ang Salita ay Diyos. Sa pasimula ay kasama na siya ng Diyos. Sa pamamagitan niya nilikha ang lahat ng bagay.',
+      ja: '初めに言葉があった。言葉は神と共にあった。言葉は神であった。この言葉は、初めに神と共にあった。万物は言葉によって成った。成ったもので、言葉によらずに成ったものは何一つなかった。',
+      zh: '太初有道，道与神同在，道就是神。这道太初与神同在。万物是借着他造的；凡被造的，没有一样不是借着他造的。',
+      'zh-TW': '太初有道，道與神同在，道就是神。這道太初與神同在。萬物是藉著他造的；凡被造的，沒有一樣不是藉著他造的。',
+      ko: '태초에 말씀이 계시니라 이 말씀이 하나님과 함께 계셨으니 이 말씀은 곧 하나님이시니라 그가 태초에 하나님과 함께 계셨고 만물이 그로 말미암아 지은 바 되었으니 지은 것이 하나도 그가 없이는 된 것이 없느니라.',
+      es: 'En el principio era el Verbo, y el Verbo era con Dios, y el Verbo era Dios. Este era en el principio con Dios. Todas las cosas por él fueron hechas, y sin él nada de lo que ha sido hecho, fue hecho.',
+    },
+  },
+  {
+    id: 'GEN_1_1',
+    bookId: 'GEN',
+    bookNameEn: 'Genesis',
+    chapter: 1,
+    verse: '1:1–3',
+    originalText: 'בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ׃ וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם׃ וַיֹּאמֶر אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר׃',
+    originalLang: 'Hebrew',
+    transliteration: "Bereshit bara Elohim et hashamayim ve'et ha'aretz...",
+    strongs: ['H7225 (Reshit)', 'H1254 (Bara)', 'H430 (Elohim)', 'H7307 (Ruach)'],
+    translations: {
+      en: 'In the beginning, God created the heavens and the earth. The earth was without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the face of the waters. And God said, "Let there be light," and there was light.',
+      bn: 'আদিতে ঈশ্বর আকাশমণ্ডল ও পৃথিবীর সৃষ্টি করিলেন। পৃথিবী ঘোর ও শূন্য ছিল, এবং অগাধ জলের উপরে অন্ধকার ছিল, আর ঈশ্বরের আত্মা জলের উপরে দোলায়মান ছিলেন। পরে ঈশ্বর কহিলেন, দীপ্তি হউক; তাহাতে দীপ্তি হইল।',
+      hi: 'आदि में परमेश्वर ने आकाश और पृथ्वी की सृष्टि की। और पृथ्वी बेडौल और सुनसान पड़ी थी, और गहरे जल के ऊपर अन्धियारा था: तथा परमेश्वर की आत्मा जल के ऊपर मण्डलाती थी। तब परमेश्वर ने कहा, उजियाला हो: तो उजियाला हो गया।',
+      ur: 'ابتدا میں خدا نے آسمان اور زمین کو پیدا کیا۔ اور زمین ویران اور سنسان تھی اور گہرے پانی کے اوپر اندھیرا تھا اور خدا کی روح پانی کی سطح پر جنبش کرتی تھی۔ اور خدا نے کہا کہ روشنی ہو تو روشنی ہو گئی۔',
+      ar: 'فِي الْبَدْءِ خَلَقَ اللهُ السَّمَاوَاتِ وَالأَرْضَ. وَكَانَتِ الأَرْضُ خَرِبَةً وَخَالِيَةً، وَعَلَى وَجْهِ الْغَمْرِ ظُلْمَةٌ، وَرُوحُ اللهِ يَرِفُّ عَلَى وَجْهِ الْمِيَاهِ. وَقَالَ اللهُ: «لِيَكُنْ نُورٌ»، فَكَانَ نُورٌ.',
+      fa: 'در ابتدا، خدا آسمانها و زمین را آفرید. و زمین بی‌شکل و خالی بود و تاریکی بر روی لجه، و روح خدا سطح آبها را فرا گرفت. و خدا گفت: «روشنایی بشود» و روشنایی شد.',
+      fil: 'Nang pasimula ay nilikha ng Diyos ang langit at ang lupa. Ang lupa ay walang hugis at walang laman; kadiliman ang bumabalot sa kailaliman, at ang Espiritu ng Diyos ay kumikilos sa ibabaw ng tubig. Sinabi ng Diyos, "Magkaroon ng liwanag!" at nagkaroon nga ng liwanag.',
+      ja: 'はじめに神は天と地とを創造された。地は形なく、むなしく、闇が深淵の面にあり、神の霊が水の面を覆っていた。神は言われた。「光あれ。」こうして、光があった。',
+      zh: '起初神创造天地。地是空虚混沌，渊面黑暗；神的灵运行在水面上。神说：“要有光”，就有了光。',
+      'zh-TW': '起初神創造天地。地是空虛混沌，淵面黑暗；神的靈運行在水面上。神說：「要有光」，就有了光。',
+      ko: '태초에 하나님이 천지를 창조하시니라 땅이 혼돈하고 공허하며 흑암이 깊음 위에 있고 하나님의 영은 수면 위에 운행하시니라 하나님이 이르시되 빛이 있으라 하시니 빛이 있었고.',
+      es: 'En el principio creó Dios los cielos y la tierra. Y la tierra estaba desordenada y vacía, y las tinieblas estaban sobre la faz del abismo, y el Espíritu de Dios se movía sobre la faz de las aguas. Y dijo Dios: Sea la luz; y fue la luz.',
+    },
+  },
+  {
+    id: 'PSA_23_1',
+    bookId: 'PSA',
+    bookNameEn: 'Psalms',
+    chapter: 23,
+    verse: '23:1–3',
+    originalText: 'יְהוָה רֹעִי לֹא אֶחְסָר׃ בִּנְאוֹת דֶּשֶׁא יַרְבִּיצֵנִי עַל־מֵי מְנֻחוֹת יְנַהֲלֵנִי׃ נַפְשִׁי יְשׁוֹבֵב יַנְחֵנִי בְמַעְגְּלֵי־צֶדֶק לְמַعַן שְׁמוֹ׃',
+    originalLang: 'Hebrew',
+    transliteration: "Yahweh ro'i lo echsar...",
+    strongs: ['H3068 (Yahweh)', 'H7462 (Raah / Shepherd)', 'H6664 (Tsedeq)'],
+    translations: {
+      en: 'The Lord is my shepherd; I shall not want. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He leads me in paths of righteousness for his name’s sake.',
+      bn: 'সদাপ্রভু আমার পালক, আমার অভাব হইবে না। তিনি তৃণপূর্ণ চারণে আমাকে শয়ন করান, তিনি শান্ত জলের তীরে তীরে আমাকে লইয়া যান। তিনি আমার প্রাণের সঞ্জীবক, তিনি আপনার নামের নিমিত্ত ধর্ম্মপথে আমাকে চালান।',
+      hi: 'यहोवा मेरा चरवाहा है, मुझे कुछ घटी न होगी। वह मुझे हरी हरी चराइयों में बैठाता है; वह मुझे सुखदाई जल के झरने के पास ले चलता है। वह मेरे जी में जी ले आता है; वह अपने नाम के निमित्त धर्म के मार्गों में मेरी अगुवाई करता है।',
+      ur: 'خداوند میرا چرواہا ہے، مجھے کچھ کمی نہ ہوگی۔ وہ مجھے ہری ہری چراگاہوں میں بٹھاتا ہے؛ وہ مجھے پرسکون پانیوں کے پاس لے جاتا ہے۔ وہ میری جان کو بحال کرتا ہے؛ وہ اپنے نام کی خاطر مجھے صداقت کی راہوں پر چلاتا ہے۔',
+      ar: 'الرَّبُّ رَاعِيَّ فَلاَ يُعْوِزُنِي شَيْءٌ. فِي مَرَاعٍ خُضْرٍ يُرْبِضُنِي. إِلَى مِيَاهِ الرَّاحَةِ يُورِدُنِي. يَرُدُّ نَفْسِي. يَهْدِينِي إِلَى سُبُلِ الْبِرِّ مِنْ أَجْلِ اسْمِهِ.',
+      fa: 'خداوند شبان من است؛ محتاج به هیچ چیز نخواهم بود. در مرتع‌های سبز مرا می‌خواباند، و نزد آبهای راحت مرا رهبری می‌کند. جان مرا تازه می‌سازد و به خاطر نام خود مرا به راه‌های عدالت هدایت می‌نماید.',
+      fil: 'Ang Panginoon ang aking pastol; hindi ako magkukulang. Pinapahinga niya ako sa luntiang pastulan; inaakay niya ako sa tabi ng payapang tubig. Pinapanumbalik niya ang aking kaluluwa; inaakay niya ako sa matuwid na landas alang-alang sa kanyang pangalan.',
+      ja: '主は私の羊飼い。私には乏しいことがありません。主は私を緑の牧草地に休ませ、いこいの水のほとりに伴われます。主は私の魂を生き返らせ、御名のために義の道に導かれます。',
+      zh: '耶和华是我的牧者，我必不致缺乏。他使我躺卧在青草地上，领我在可安歇的水边。他使我的灵魂苏醒，为自己的名引导我走义路。',
+      'zh-TW': '耶和華是我的牧者，我必不致缺乏。他使我躺臥在青草地上，領我在可安歇的水邊。他使我的靈魂甦醒，為自己的名引導我走義路。',
+      ko: '여호와는 나의 목자시니 내게 부족함이 없으리로다 그가 나를 푸른 풀밭에 누이시며 쉴 만한 물 가로 인도하시는도다 내 영혼을 소생시키시고 자기 이름을 위하여 의의 길로 인도하시는도다.',
+      es: 'Jehová es mi pastor; nada me faltará. En lugares de delicados pastos me hará descansar; junto a aguas de reposo me pastoreará. Confortará mi alma; me guiará por sendas de justicia por amor de su nombre.',
+    },
+  },
+  {
+    id: 'ROM_8_28',
+    bookId: 'ROM',
+    bookNameEn: 'Romans',
+    chapter: 8,
+    verse: '8:28, 38–39',
+    originalText: 'οἴδαμεν δὲ ὅτι τοῖς ἀγαπῶσιν τὸν θεὸν πάντα συνεργεῖ εἰς ἀγαθόν, τοῖς κατὰ πρόθεσιν κλητοῖς οὖσιν...',
+    originalLang: 'Greek',
+    transliteration: 'Oidamen de hoti tois agapōsin ton Theon panta synergei eis agathon...',
+    strongs: ['G25 (Agapao)', 'G2316 (Theos)', 'G4903 (Synergeo)', 'G18 (Agathos)'],
+    translations: {
+      en: 'And we know that for those who love God all things work together for good, for those who are called according to his purpose. For I am sure that neither death nor life, nor angels nor rulers... will be able to separate us from the love of God in Christ Jesus our Lord.',
+      bn: 'আর আমরা জানি, যাহারা ঈশ্বরকে প্রেম করে, যাহারা তাঁহার সংকল্প অনুসারে আহূত, তাহাদের পক্ষে সমস্তই মঙ্গল সাধনার্থে একযোগে কার্য্য করিতেছে। কারণ আমার এই দৃঢ় বিশ্বাস, যে মৃত্যু, বা জীবন, বা স্বর্গদূতগণ... কিছুই খ্রীষ্ট যীশুতে প্রকাশিত ঈশ্বরের প্রেম হইতে আমাদিগকে পৃথক করিতে পারিবে না।',
+      hi: 'और हम जानते हैं कि जो लोग परमेश्वर से प्रेम रखते हैं, उनके लिये सब बातें मिलकर भलाई ही को उत्पन्न करती हैं; अर्थात उन्हीं के लिये जो उसकी इच्छा के अनुसार बुलाए हुए हैं। क्योंकि मुझे निश्चय है कि न मृत्यु, न जीवन... हमें परमेश्वर के प्रेम से अलग न कर सकेगी।',
+      ur: 'اور ہم جانتے ہیں کہ جو خدا سے محبت رکھتے ہیں ان کے لیے تمام چیزیں مل کر بھلائی ہی کا باعث بنتی ہیں۔ کیونکہ مجھے یقین ہے کہ نہ موت، نہ زندگی... کوئی بھی چیز ہمیں خدا کی محبت سے جدا نہ کر سکے گی۔',
+      ar: 'وَنَحْنُ نَعْلَمُ أَنَّ كُلَّ الأَشْيَاءِ تَعْمَلُ مَعاً لِلْخَيْرِ لِلَّذِينَ يُحِبُّونَ اللهَ... فَإِنِّي مُتَيَقِّنٌ أَنَّهُ لاَ مَوْتَ وَلاَ حَيَاةَ يَقْدِرُ أَنْ يَفْصِلَنَا عَنْ مَحَبَّةِ اللهِ الَّتِي فِي الْمَسِيحِ يَسُوعَ رَبِّنَا.',
+      fa: 'و می‌دانیم که همه چیزها برای خیر و خیریت آنانی که خدا را دوست می‌دارند با هم در کارند... زیرا یقین می‌دانم که نه مرگ و نه زندگی، قادر نخواهد بود ما را از محبت خدا که در خداوند ما عیسی مسیح است جدا سازد.',
+      fil: 'Alam natin na sa lahat ng bagay ang Diyos ay gumagawa para sa ikabubuti ng mga umiibig sa kanya... Sapagkat natitiyak ko na walang makapaghihiwalay sa atin sa pag-ibig ng Diyos na naipahayag kay Cristo Jesus.',
+      ja: '神を愛する人々のためには、神がすべてのことを働かせて益としてくださることを、私たちは知っています。死も、いのちも...キリスト・イエスにある神の愛から、私たちを引き離すことはできません。',
+      zh: '我们晓得万事都互相效力，叫爱神的人得益处，就是按他旨意被召的人。因为我深信无论是死，是生...都不能叫我们与神的爱隔绝；这爱是在我们的主基督耶稣里的。',
+      'zh-TW': '我們曉得萬事都互相效力，叫愛神的人得益處，就是按他旨意被召的人。因為我深信無論是死，是生...都不能叫我們與神的愛隔絕；這愛是在我們的主基督耶穌裡的。',
+      ko: '우리가 알거니와 하나님을 사랑하는 자 곧 그의 뜻대로 부르심을 입은 자들에게는 모든 것이 합력하여 선을 이루느니라 사망이나 생명이나... 우리를 그리스도 예수 안에 있는 하나님의 사랑에서 끊을 수 없으리라.',
+      es: 'Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien... Por lo cual estoy seguro de que ni la muerte, ni la vida... nos podrá separar del amor de Dios, que es en Cristo Jesús Señor nuestro.',
+    },
+  },
+];
+
+// Helper: Get Book Name in any selected language, with safe fallback
+export function getBookNameInLanguage(bookId: string, langCode: string, fallbackName?: string): string {
+  const multilingual = MULTILINGUAL_BOOKS[bookId];
+  if (multilingual && multilingual.names && multilingual.names[langCode]) {
+    return multilingual.names[langCode];
+  }
+  return fallbackName || bookId;
+}
+
+// Helper: Get Testament Name in any selected language
+export function getTestamentNameInLanguage(testament: 'OT' | 'NT', langCode: string): string {
+  const testaments = TESTAMENT_NAMES[langCode] || TESTAMENT_NAMES['en'];
+  return testaments[testament] || TESTAMENT_NAMES['en'][testament];
+}
+
+// Helper: Get Division Name in any selected language
+export function getDivisionNameInLanguage(divisionKey: string, langCode: string): string {
+  const divisions = DIVISION_NAMES[langCode] || DIVISION_NAMES['en'];
+  return divisions[divisionKey] || DIVISION_NAMES['en'][divisionKey] || divisionKey;
+}
+`;
+
+fs.writeFileSync(path.join(__dirname, '..', 'lib', 'scripture', 'multilingualScripture.ts'), outContent, 'utf8');
+console.log('Successfully generated complete 66-book multilingualScripture.ts');

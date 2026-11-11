@@ -5,6 +5,7 @@ import { Navbar } from '@/components/navigation/Navbar';
 import { Footer } from '@/components/navigation/Footer';
 import { UpdateBanner } from '@/components/pwa/UpdateBanner';
 import { LexiGuide } from '@/components/lexi/LexiGuide';
+import { UserGuideModal } from '@/components/guide/UserGuideModal';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://logos-lexicon-app.vercel.app'),
@@ -138,6 +139,7 @@ export default function RootLayout({
           <Footer />
           <UpdateBanner />
           <LexiGuide />
+          <UserGuideModal />
         </LexiconProvider>
       </body>
     </html>
