@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | Logos Lexicon',
   },
   description:
-    'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
+    'Explore biblical and theological terms across 21 languages (English, Bengali, Hindi, Urdu, Arabic, Persian, Filipino, Japanese, Chinese, and more) with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio on any device worldwide.',
   applicationName: 'Logos Lexicon',
   authors: [{ name: 'Rev. Ayan Kumar Ghosh', url: 'https://logos-lexicon-app.vercel.app/about' }],
   creator: 'Rev. Ayan Kumar Ghosh',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
     description:
-      'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
+      'Explore biblical and theological terms across 21 languages (English, Bengali, Hindi, Urdu, Arabic, Persian, Filipino, Japanese, Chinese, and more) with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio on any device worldwide.',
     url: 'https://logos-lexicon-app.vercel.app/',
     siteName: 'Logos Lexicon',
     locale: 'en_US',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
     description:
-      'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
+      'Explore biblical and theological terms across 21 languages (English, Bengali, Hindi, Urdu, Arabic, Persian, Filipino, Japanese, Chinese, and more) with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio on any device worldwide.',
     images: ['https://logos-lexicon-app.vercel.app/og-image.png'],
     creator: '@LogosLexicon',
   },
@@ -113,7 +113,7 @@ export default function RootLayout({
         {/* Social Media Link Preview / Open Graph */}
         <meta property="og:site_name" content="Logos Lexicon" />
         <meta property="og:title" content="Logos Lexicon — Multilingual Biblical & Theological Dictionary" />
-        <meta property="og:description" content="Explore biblical and theological terms across 15 languages with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio." />
+        <meta property="og:description" content="Explore biblical and theological terms across 21 languages with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio on any device worldwide." />
         <meta property="og:image" content="https://logos-lexicon-app.vercel.app/og-image.png" />
         <meta property="og:image:secure_url" content="https://logos-lexicon-app.vercel.app/og-image.png" />
         <meta property="og:image:type" content="image/png" />
@@ -123,7 +123,7 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Logos Lexicon — Multilingual Biblical & Theological Dictionary" />
-        <meta name="twitter:description" content="Explore biblical and theological terms across 15 languages with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio." />
+        <meta name="twitter:description" content="Explore biblical and theological terms across 21 languages with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio on any device worldwide." />
         <meta name="twitter:image" content="https://logos-lexicon-app.vercel.app/og-image.png" />
       </head>
       <body className="bg-ivory-100 dark:bg-navy-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors selection:bg-gold-400 selection:text-navy-950">
