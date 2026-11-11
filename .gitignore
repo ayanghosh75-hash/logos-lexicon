@@ -38,5 +38,6 @@ next-env.d.ts
 LOGOS_FINAL_VERIFICATION_PACKAGE.zip
 /backups/
 /backup/
+*.cmd
 /verification-package/
 check_git.cmd
