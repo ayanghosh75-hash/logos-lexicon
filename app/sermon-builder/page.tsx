@@ -28,6 +28,7 @@ import {
   CreditCard,
   X,
   FileText,
+  Smartphone,
 } from 'lucide-react';
 import {
   SUNDAY_PULPIT_LIBRARY,
@@ -193,7 +194,7 @@ function SermonBuilderInner() {
   };
 
   const handleCopyUpi = () => {
-    navigator.clipboard.writeText('ayanghosh75@okaxis');
+    navigator.clipboard.writeText('ayanghosh75@oksbi');
     setCopiedUpi(true);
     setTimeout(() => setCopiedUpi(false), 2500);
   };
@@ -751,26 +752,50 @@ function SermonBuilderInner() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2 text-navy-950 dark:text-gold-300 font-bold text-sm">
                     <QrCode className="w-4 h-4 text-gold-600" />
-                    <span>১. ভারত ও বাংলাদেশের প্রচারকদের জন্য (UPI / GPay / PhonePe)</span>
+                    <span>১. ভারত ও বাংলাদেশের প্রচারকদের জন্য (Google Pay / PhonePe / Paytm)</span>
                   </div>
                   <span className="text-xs font-bold px-2 py-0.5 rounded bg-gold-500 text-navy-950">
                     ₹৪৯৯ / বছর
                   </span>
                 </div>
-                <p className="text-[11px] text-gray-600 dark:text-gray-400">
-                  সরাসরি যেকোনো UPI অ্যাপ (Google Pay, PhonePe, Paytm) থেকে নিচের UPI আইডিতে ₹৪৯৯ পাঠিয়ে তাৎক্ষণিক অ্যাক্টিভেশন পাসকোড সংগ্রহ করুন:
+                <p className="text-[11px] text-gray-600 dark:text-gray-400 text-center">
+                  নিচের Google Pay কিউআর কোড স্ক্যান করে অথবা সরাসরি UPI ID-তে ₹৪৯৯ পাঠিয়ে তাৎক্ষণিক অ্যাক্টিভেশন পাসকোড সংগ্রহ করুন:
                 </p>
+
+                {/* Scannable Google Pay QR Image */}
+                <div className="flex justify-center my-2">
+                  <div className="p-1.5 bg-white rounded-2xl shadow-md border border-gray-200">
+                    <img
+                      src="/upi/ayan-googlepay-qr.jpg"
+                      alt="Ayan Kumar Ghosh Google Pay UPI QR"
+                      className="w-40 h-auto block rounded-xl"
+                    />
+                  </div>
+                </div>
+
                 <div className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-navy-900 border border-gray-300 dark:border-navy-700">
-                  <span className="font-mono text-xs font-bold text-navy-900 dark:text-gold-400">
-                    ayanghosh75@okaxis
-                  </span>
+                  <div>
+                    <div className="text-[10px] text-gray-500 dark:text-gray-400">Google Pay UPI ID:</div>
+                    <span className="font-mono text-xs font-bold text-navy-900 dark:text-gold-400">
+                      ayanghosh75@oksbi
+                    </span>
+                    <div className="text-[10px] text-gray-400">Payee: Ayan Kumar Ghosh</div>
+                  </div>
                   <button
                     onClick={handleCopyUpi}
-                    className="px-3 py-1 rounded-lg bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs"
+                    className="px-3 py-1 rounded-lg bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs shadow-sm transition-all"
                   >
                     {copiedUpi ? 'Copied UPI!' : 'Copy UPI'}
                   </button>
                 </div>
+
+                <a
+                  href="upi://pay?pa=ayanghosh75@oksbi&pn=Ayan%20Kumar%20Ghosh&am=499&cu=INR&tn=Logos%20Lexicon%20Sermon%20Studio"
+                  className="w-full py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs flex items-center justify-center space-x-2 shadow-sm transition-colors text-center"
+                >
+                  <Smartphone className="w-3.5 h-3.5" />
+                  <span>মোবাইলে সরাসরি Google Pay / UPI খুলুন</span>
+                </a>
               </div>
 
               {/* Option B: International Pastors (Card / PayPal / Buy Me a Coffee) */}

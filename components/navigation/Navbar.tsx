@@ -27,6 +27,7 @@ import {
   HelpCircle,
 } from 'lucide-react';
 import { ShareModal } from '../sharing/ShareModal';
+import { SupportModal } from '../support/SupportModal';
 
 export const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -45,6 +46,7 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [shareModalOpen, setShareModalOpen] = useState(false);
+  const [supportModalOpen, setSupportModalOpen] = useState(false);
 
   const navLinks = [
     { href: '/', label: 'Home', icon: BookOpen },
@@ -184,17 +186,15 @@ export const Navbar: React.FC = () => {
               <span className="hidden sm:inline">Share</span>
             </button>
 
-            {/* Buy Me a Coffee Support Button */}
-            <a
-              href="https://www.buymeacoffee.com/AyanKumarGhosh"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* Support Modal Button (UPI & Buy Me a Coffee) */}
+            <button
+              onClick={() => setSupportModalOpen(true)}
               className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold shadow-sm transition-all hover:scale-105"
-              title="Support Logos Lexicon Ministry"
+              title="Support Logos Lexicon Ministry (UPI / Google Pay / Buy Me a Coffee)"
             >
               <Coffee className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Support</span>
-            </a>
+            </button>
 
             {/* PWA Install Button */}
             <button
@@ -350,15 +350,16 @@ export const Navbar: React.FC = () => {
             })}
 
             <div className="pt-2 border-t border-gray-100 dark:border-navy-800">
-              <a
-                href="https://www.buymeacoffee.com/AyanKumarGhosh"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setSupportModalOpen(true);
+                }}
                 className="w-full flex items-center justify-center space-x-2 px-3 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs shadow-sm transition-all"
               >
                 <Coffee className="w-4 h-4" />
-                <span>☕ Support Ministry (Buy Me a Coffee)</span>
-              </a>
+                <span>☕ Support Ministry (UPI / GPay / Card)</span>
+              </button>
             </div>
           </div>
         </div>
@@ -370,6 +371,12 @@ export const Navbar: React.FC = () => {
         onClose={() => setShareModalOpen(false)}
         path="/"
         title="Logos Lexicon"
+      />
+
+      {/* Global Support Modal (UPI & Buy Me a Coffee) */}
+      <SupportModal
+        isOpen={supportModalOpen}
+        onClose={() => setSupportModalOpen(false)}
       />
     </header>
   );

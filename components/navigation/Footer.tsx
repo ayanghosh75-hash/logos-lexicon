@@ -23,15 +23,18 @@ export const Footer: React.FC = () => {
             <div className="text-[11px] text-gray-500">
               Project Director & Theological Lead: <strong>Ayan Kumar Ghosh</strong>
             </div>
-            <div className="pt-1">
+            <div className="pt-1 flex flex-wrap gap-2.5 items-center">
               <a
                 href="https://www.buymeacoffee.com/AyanKumarGhosh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold shadow-sm transition-all hover:scale-105"
               >
-                <span>☕ Support Ministry (Buy Me a Coffee)</span>
+                <span>☕ Buy Me a Coffee</span>
               </a>
+              <span className="text-[11px] text-gray-400 font-mono bg-navy-900 px-2.5 py-1 rounded-lg border border-navy-800">
+                Google Pay UPI: <strong className="text-gold-400 font-bold">ayanghosh75@oksbi</strong>
+              </span>
             </div>
           </div>
 
