@@ -1,0 +1,591 @@
+[
+  {
+    "id": "audit-1789798295586-init",
+    "timestamp": "2026-09-19T06:11:35.586Z",
+    "operator": "Rev. Ayan Kumar Ghosh (Final Authority)",
+    "instruction": "Initialize Logos Lexicon Audit Trail & Controlled Level 4 Governance",
+    "riskLevel": "GREEN",
+    "triageSummary": "System initialization and cryptographic audit trail established.",
+    "actionsTaken": [
+      "Init audit logger",
+      "Register Level-4 authority credentials"
+    ],
+    "outcome": "SUCCESS",
+    "previousHash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "6281eeea50a43a87372d96e7a233cda6b7eaff2a7f9383d081c2176504699db8"
+  },
+  {
+    "operator": "Rev. Ayan Kumar Ghosh",
+    "instruction": "Execute RB-01: Cache Corrupt / Stale Rebuild",
+    "riskLevel": "GREEN",
+    "triageSummary": "Cleared memory buffer cache and triggered ISR revalidation.",
+    "actionsTaken": [
+      "Flushed Next.js internal memory cache",
+      "Revalidated static dictionary routes"
+    ],
+    "outcome": "SUCCESS",
+    "id": "audit-1789798295587-o89uw",
+    "timestamp": "2026-09-19T06:11:35.587Z",
+    "previousHash": "6281eeea50a43a87372d96e7a233cda6b7eaff2a7f9383d081c2176504699db8",
+    "hash": "aea472520ec32edeac94beda890a656cdb35e0d42d69fdbd6b22fd3bd754d6a5"
+  },
+  {
+    "operator": "Safe Autopilot (Circuit Breaker)",
+    "instruction": "Two-Strike Limit Reached: test-issue",
+    "riskLevel": "RED",
+    "triageSummary": "Circuit breaker tripped for test-issue. Autonomous modifications halted. Rev. Ayan Kumar Ghosh notified.",
+    "actionsTaken": [
+      "Trip Circuit Breaker",
+      "Halt Autonomous Repairs",
+      "Notify Level-4 Authority"
+    ],
+    "outcome": "CIRCUIT_TRIPPED",
+    "id": "audit-1789798501324-4bdd9",
+    "timestamp": "2026-09-19T06:15:01.324Z",
+    "previousHash": "aea472520ec32edeac94beda890a656cdb35e0d42d69fdbd6b22fd3bd754d6a5",
+    "hash": "65a2dc36fce273d7f0beb92a7871614b07ee53e0698470d9d3f9df69d9cc6115"
+  },
+  {
+    "operator": "Rev. Ayan Kumar Ghosh",
+    "instruction": "Reset Circuit Breaker & Clear Striking Counters",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Circuit breaker reset under Level-4 authority authorization.",
+    "actionsTaken": [
+      "Reset circuit breaker",
+      "Clear struck counters"
+    ],
+    "outcome": "SUCCESS",
+    "id": "audit-1789798501327-5b1mo",
+    "timestamp": "2026-09-19T06:15:01.327Z",
+    "previousHash": "65a2dc36fce273d7f0beb92a7871614b07ee53e0698470d9d3f9df69d9cc6115",
+    "hash": "a52d45528111e37cd97524b812ac9266831ca96b4ff3a08e1e54bee92bcc333a"
+  },
+  {
+    "operator": "Test Runner",
+    "instruction": "Chain test",
+    "riskLevel": "GREEN",
+    "triageSummary": "Testing hash chain",
+    "actionsTaken": [
+      "verify"
+    ],
+    "outcome": "SUCCESS",
+    "id": "audit-1789801086271-mabvp",
+    "timestamp": "2026-09-19T06:58:06.271Z",
+    "previousHash": "a52d45528111e37cd97524b812ac9266831ca96b4ff3a08e1e54bee92bcc333a",
+    "hash": "0effc54ade83218f22bb08d250715cb01f4b813542ed6bb570566bda9bbb8c12"
+  },
+  {
+    "operator": "Client (::1)",
+    "instruction": "Failed Admin Login for user \"attacker\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1789801640761-jbzd3",
+    "timestamp": "2026-09-19T07:07:20.761Z",
+    "previousHash": "0effc54ade83218f22bb08d250715cb01f4b813542ed6bb570566bda9bbb8c12",
+    "hash": "831b011a07183424d2944f064394671f82ed6f2c9e4e24acb0b646f22c137613"
+  },
+  {
+    "operator": "Client (::1)",
+    "instruction": "Failed Admin Login for user \"attacker\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 3.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1789801980231-ftb72",
+    "timestamp": "2026-09-19T07:13:00.232Z",
+    "previousHash": "831b011a07183424d2944f064394671f82ed6f2c9e4e24acb0b646f22c137613",
+    "hash": "c5b55769c1574660593bbb3c34adfd8136db75f381a13fbf0c75077315d04116"
+  },
+  {
+    "operator": "Client (::1)",
+    "instruction": "Failed Admin Login for user \"attacker\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 2.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1789802081277-rbgqs",
+    "timestamp": "2026-09-19T07:14:41.277Z",
+    "previousHash": "c5b55769c1574660593bbb3c34adfd8136db75f381a13fbf0c75077315d04116",
+    "hash": "d60677cf016611edf4ec2f1ae1e3b831f5d3b53b17192c562c568c01ec63cf0a"
+  },
+  {
+    "operator": "Client (::1)",
+    "instruction": "Failed Admin Login for user \"attacker\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1789802226558-yduje",
+    "timestamp": "2026-09-19T07:17:06.558Z",
+    "previousHash": "d60677cf016611edf4ec2f1ae1e3b831f5d3b53b17192c562c568c01ec63cf0a",
+    "hash": "15cd7ff44977bc32c3a9cc7b3af664e9c3d1f1061f3af377d2f96648a7b1ce01"
+  },
+  {
+    "operator": "Client (::1)",
+    "instruction": "Failed Admin Login for user \"attacker\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790394313849-k043r",
+    "timestamp": "2026-09-26T03:45:13.849Z",
+    "previousHash": "15cd7ff44977bc32c3a9cc7b3af664e9c3d1f1061f3af377d2f96648a7b1ce01",
+    "hash": "e967bd2e9cef22f257d1310f6c40e2f5d988db3f7675cc99aa496d86a0415954"
+  },
+  {
+    "operator": "Cross-Origin Request",
+    "instruction": "Blocked Cross-Site Request Forgery (CSRF) on Admin Login",
+    "riskLevel": "RED",
+    "triageSummary": "Origin https://malicious-csrf-attacker.example.org does not match Host localhost:3000.",
+    "actionsTaken": [
+      "Reject cross-origin login POST with HTTP 403"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790398353183-e1ekc",
+    "timestamp": "2026-09-26T04:52:33.183Z",
+    "previousHash": "e967bd2e9cef22f257d1310f6c40e2f5d988db3f7675cc99aa496d86a0415954",
+    "hash": "de5dc380a0eb217516cf8128b339ba4756dca98b9b842d96706439ff1a1027c9"
+  },
+  {
+    "operator": "Client (198.51.100.20)",
+    "instruction": "Failed MFA Challenge for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Primary credentials valid, but second-factor MFA verification failed.",
+    "actionsTaken": [
+      "Reject session issuance",
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398353195-tz7kv",
+    "timestamp": "2026-09-26T04:52:33.195Z",
+    "previousHash": "de5dc380a0eb217516cf8128b339ba4756dca98b9b842d96706439ff1a1027c9",
+    "hash": "5a3456c5dca4df7279f6ce0eb7f7691aa46d8a828c8de4b830323816fcf1dc12"
+  },
+  {
+    "operator": "Rev. Ayan Kumar Ghosh (Chief Theological Authority)",
+    "instruction": "Successful Administrator Authentication",
+    "riskLevel": "GREEN",
+    "triageSummary": "Session token issued for Rev. Ayan Kumar Ghosh (CHIEF_THEOLOGICAL_EDITOR), mfaVerified=true.",
+    "actionsTaken": [
+      "Issue signed HMAC-SHA256 session token",
+      "Set HttpOnly SameSite=Strict cookie"
+    ],
+    "outcome": "SUCCESS",
+    "id": "audit-1790398353204-82f0m",
+    "timestamp": "2026-09-26T04:52:33.204Z",
+    "previousHash": "5a3456c5dca4df7279f6ce0eb7f7691aa46d8a828c8de4b830323816fcf1dc12",
+    "hash": "d4b3fcfc3614330ea99931129cf72fb3f443edc4b462535231b7cd7a72afcf9c"
+  },
+  {
+    "operator": "admin",
+    "instruction": "Blocked Client-Side Role Spoofing Attempt (FORGED_SUPER_ROOT_ROLE)",
+    "riskLevel": "RED",
+    "triageSummary": "Client attempted to override server-verified role CHIEF_THEOLOGICAL_EDITOR with FORGED_SUPER_ROOT_ROLE.",
+    "actionsTaken": [
+      "Ignore forged client header",
+      "Reject request with HTTP 403"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790398353219-wtpnq",
+    "timestamp": "2026-09-26T04:52:33.219Z",
+    "previousHash": "d4b3fcfc3614330ea99931129cf72fb3f443edc4b462535231b7cd7a72afcf9c",
+    "hash": "1c6ae95fcab129f67f7e56975959ebd5f0d8bf7c9a0d3a653776bb9a259c016f"
+  },
+  {
+    "operator": "Client (203.0.113.199)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398353342-6u79n",
+    "timestamp": "2026-09-26T04:52:33.342Z",
+    "previousHash": "1c6ae95fcab129f67f7e56975959ebd5f0d8bf7c9a0d3a653776bb9a259c016f",
+    "hash": "d61be4b3707f2bf535d4f8c0ef418f23e798090aa7d5c57b31c8c679cf00a643"
+  },
+  {
+    "operator": "Client (203.0.113.199)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 3.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398353349-ul7c9",
+    "timestamp": "2026-09-26T04:52:33.349Z",
+    "previousHash": "d61be4b3707f2bf535d4f8c0ef418f23e798090aa7d5c57b31c8c679cf00a643",
+    "hash": "0821e31477f9ceac5c6d70cd1033880a6118c1a5736097c8a7aa1c573ff291ad"
+  },
+  {
+    "operator": "Client (203.0.113.199)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 2.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398353357-60vjr",
+    "timestamp": "2026-09-26T04:52:33.357Z",
+    "previousHash": "0821e31477f9ceac5c6d70cd1033880a6118c1a5736097c8a7aa1c573ff291ad",
+    "hash": "4c99dc3cbb10b6eb91cf265da08f99c1bdada595aa5783737790e0afd293a40e"
+  },
+  {
+    "operator": "Client (203.0.113.199)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 1.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398353365-6zgrq",
+    "timestamp": "2026-09-26T04:52:33.365Z",
+    "previousHash": "4c99dc3cbb10b6eb91cf265da08f99c1bdada595aa5783737790e0afd293a40e",
+    "hash": "d896576302c87968a394ba3698727c6c78414bfb1a55c00559813567062d035d"
+  },
+  {
+    "operator": "Client (203.0.113.199)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 0.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398353370-lv880",
+    "timestamp": "2026-09-26T04:52:33.370Z",
+    "previousHash": "d896576302c87968a394ba3698727c6c78414bfb1a55c00559813567062d035d",
+    "hash": "3361c5c7c559c07a08b050e8931efe30949aedd0bcb17d144b7c29c870560d2c"
+  },
+  {
+    "operator": "Unauthenticated Client (203.0.113.199)",
+    "instruction": "Blocked Admin Login Attempt (Rate Limit Exceeded)",
+    "riskLevel": "YELLOW",
+    "triageSummary": "IP 203.0.113.199 temporarily locked out due to 5 consecutive failed login attempts.",
+    "actionsTaken": [
+      "Enforce 15-minute brute-force lockout"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790398353380-pteqk",
+    "timestamp": "2026-09-26T04:52:33.380Z",
+    "previousHash": "3361c5c7c559c07a08b050e8931efe30949aedd0bcb17d144b7c29c870560d2c",
+    "hash": "4ec7db5199b2dbff6c2e201e8d83e5bb267ae0159e2ea620698db006de93ba11"
+  },
+  {
+    "operator": "Cross-Origin Request",
+    "instruction": "Blocked Cross-Site Request Forgery (CSRF) on Admin Login",
+    "riskLevel": "RED",
+    "triageSummary": "Origin https://malicious-csrf-attacker.example.org does not match Host localhost:3000.",
+    "actionsTaken": [
+      "Reject cross-origin login POST with HTTP 403"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790398610440-6z2nm",
+    "timestamp": "2026-09-26T04:56:50.440Z",
+    "previousHash": "4ec7db5199b2dbff6c2e201e8d83e5bb267ae0159e2ea620698db006de93ba11",
+    "hash": "b3bfc4e650d4804c1e7dd56b8f83d6849d8f3cace586764739cdf438dfe2551f"
+  },
+  {
+    "operator": "Client (198.51.100.20)",
+    "instruction": "Failed MFA Challenge for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Primary credentials valid, but second-factor MFA verification failed.",
+    "actionsTaken": [
+      "Reject session issuance",
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398610448-bfih3",
+    "timestamp": "2026-09-26T04:56:50.448Z",
+    "previousHash": "b3bfc4e650d4804c1e7dd56b8f83d6849d8f3cace586764739cdf438dfe2551f",
+    "hash": "88bee17b06ddc9d07c801d7e7bf60dff40123cf10752e7e6ca4ca032ecae3261"
+  },
+  {
+    "operator": "Rev. Ayan Kumar Ghosh (Chief Theological Authority)",
+    "instruction": "Successful Administrator Authentication",
+    "riskLevel": "GREEN",
+    "triageSummary": "Session token issued for Rev. Ayan Kumar Ghosh (CHIEF_THEOLOGICAL_EDITOR), mfaVerified=true.",
+    "actionsTaken": [
+      "Issue signed HMAC-SHA256 session token",
+      "Set HttpOnly SameSite=Strict cookie"
+    ],
+    "outcome": "SUCCESS",
+    "id": "audit-1790398610455-rqj2p",
+    "timestamp": "2026-09-26T04:56:50.455Z",
+    "previousHash": "88bee17b06ddc9d07c801d7e7bf60dff40123cf10752e7e6ca4ca032ecae3261",
+    "hash": "23af7e00fcbe0ba550c5d92c9e799fa900880ffb6ee22d8425563cb1e34b6adb"
+  },
+  {
+    "operator": "admin",
+    "instruction": "Blocked Client-Side Role Spoofing Attempt (FORGED_SUPER_ROOT_ROLE)",
+    "riskLevel": "RED",
+    "triageSummary": "Client attempted to override server-verified role CHIEF_THEOLOGICAL_EDITOR with FORGED_SUPER_ROOT_ROLE.",
+    "actionsTaken": [
+      "Ignore forged client header",
+      "Reject request with HTTP 403"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790398610462-vax1p",
+    "timestamp": "2026-09-26T04:56:50.462Z",
+    "previousHash": "23af7e00fcbe0ba550c5d92c9e799fa900880ffb6ee22d8425563cb1e34b6adb",
+    "hash": "01844da553804e4e2732c8dbc349b16ee7231859a30c22dc4d5501bf8826b843"
+  },
+  {
+    "operator": "Client (198.51.100.173)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398610523-2evne",
+    "timestamp": "2026-09-26T04:56:50.523Z",
+    "previousHash": "01844da553804e4e2732c8dbc349b16ee7231859a30c22dc4d5501bf8826b843",
+    "hash": "0c51c6e0ec9ef12d0ddfe77d18f123d6008eabf4502183baf87d41b04271ac58"
+  },
+  {
+    "operator": "Client (198.51.100.173)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 3.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398610529-3dfsh",
+    "timestamp": "2026-09-26T04:56:50.529Z",
+    "previousHash": "0c51c6e0ec9ef12d0ddfe77d18f123d6008eabf4502183baf87d41b04271ac58",
+    "hash": "77b68213c23794dd47ecf6683e69bd67a0930ea2188f8cdccc8be334d06c1f8b"
+  },
+  {
+    "operator": "Client (198.51.100.173)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 2.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398610537-1tsq6",
+    "timestamp": "2026-09-26T04:56:50.537Z",
+    "previousHash": "77b68213c23794dd47ecf6683e69bd67a0930ea2188f8cdccc8be334d06c1f8b",
+    "hash": "dc4cbaacb0d5dc257e703d2bb2555f02f76d3fbaa4251e19362ae7e786b8f32d"
+  },
+  {
+    "operator": "Client (198.51.100.173)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 1.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398610543-kwahr",
+    "timestamp": "2026-09-26T04:56:50.543Z",
+    "previousHash": "dc4cbaacb0d5dc257e703d2bb2555f02f76d3fbaa4251e19362ae7e786b8f32d",
+    "hash": "4f4cd6ab28ec4ed7438ed9db2fa229217e46dd85b3c4aae7d7e20459bf1024fa"
+  },
+  {
+    "operator": "Client (198.51.100.173)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 0.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790398610549-kajbg",
+    "timestamp": "2026-09-26T04:56:50.549Z",
+    "previousHash": "4f4cd6ab28ec4ed7438ed9db2fa229217e46dd85b3c4aae7d7e20459bf1024fa",
+    "hash": "31c26a4d8a47bc4ae4653e1229f42ee3e10537d70baf508912254b266071459f"
+  },
+  {
+    "operator": "Unauthenticated Client (198.51.100.173)",
+    "instruction": "Blocked Admin Login Attempt (Rate Limit Exceeded)",
+    "riskLevel": "YELLOW",
+    "triageSummary": "IP 198.51.100.173 temporarily locked out due to 5 consecutive failed login attempts.",
+    "actionsTaken": [
+      "Enforce 15-minute brute-force lockout"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790398610556-u7pg3",
+    "timestamp": "2026-09-26T04:56:50.556Z",
+    "previousHash": "31c26a4d8a47bc4ae4653e1229f42ee3e10537d70baf508912254b266071459f",
+    "hash": "63bac1b615a853949ffdff70bf9ae4dc1f930f5479899260ce6417bdcab2353b"
+  },
+  {
+    "operator": "Cross-Origin Request",
+    "instruction": "Blocked Cross-Site Request Forgery (CSRF) on Admin Login",
+    "riskLevel": "RED",
+    "triageSummary": "Origin https://malicious-csrf-attacker.example.org does not match Host localhost:3000.",
+    "actionsTaken": [
+      "Reject cross-origin login POST with HTTP 403"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790399028212-05oje",
+    "timestamp": "2026-09-26T05:03:48.212Z",
+    "previousHash": "63bac1b615a853949ffdff70bf9ae4dc1f930f5479899260ce6417bdcab2353b",
+    "hash": "53c939732c64fbb30f0adad3488445793ec3ce4e89e7745f901b8bea049b330b"
+  },
+  {
+    "operator": "Client (198.51.100.20)",
+    "instruction": "Failed MFA Challenge for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Primary credentials valid, but second-factor MFA verification failed.",
+    "actionsTaken": [
+      "Reject session issuance",
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790399028220-8jit1",
+    "timestamp": "2026-09-26T05:03:48.220Z",
+    "previousHash": "53c939732c64fbb30f0adad3488445793ec3ce4e89e7745f901b8bea049b330b",
+    "hash": "d8775ff041c00ab4c9c0afbe1d21d9ccefb7caf4b5d6709b296dcde351032a2e"
+  },
+  {
+    "operator": "Rev. Ayan Kumar Ghosh (Chief Theological Authority)",
+    "instruction": "Successful Administrator Authentication",
+    "riskLevel": "GREEN",
+    "triageSummary": "Session token issued for Rev. Ayan Kumar Ghosh (CHIEF_THEOLOGICAL_EDITOR), mfaVerified=true.",
+    "actionsTaken": [
+      "Issue signed HMAC-SHA256 session token",
+      "Set HttpOnly SameSite=Strict cookie"
+    ],
+    "outcome": "SUCCESS",
+    "id": "audit-1790399028230-jrg5a",
+    "timestamp": "2026-09-26T05:03:48.230Z",
+    "previousHash": "d8775ff041c00ab4c9c0afbe1d21d9ccefb7caf4b5d6709b296dcde351032a2e",
+    "hash": "54a340807930c2c8e28466414538e07e87d992ea66a90593f16c33e5398ca0d6"
+  },
+  {
+    "operator": "admin",
+    "instruction": "Blocked Client-Side Role Spoofing Attempt (FORGED_SUPER_ROOT_ROLE)",
+    "riskLevel": "RED",
+    "triageSummary": "Client attempted to override server-verified role CHIEF_THEOLOGICAL_EDITOR with FORGED_SUPER_ROOT_ROLE.",
+    "actionsTaken": [
+      "Ignore forged client header",
+      "Reject request with HTTP 403"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790399028242-apggm",
+    "timestamp": "2026-09-26T05:03:48.242Z",
+    "previousHash": "54a340807930c2c8e28466414538e07e87d992ea66a90593f16c33e5398ca0d6",
+    "hash": "f10ccfb9fcbecfe08b4242d63351109f9a37e39c7b5246239e38eb78350aa1eb"
+  },
+  {
+    "operator": "Rev. Ayan Kumar Ghosh (Level 5)",
+    "instruction": "Reset Circuit Breaker & Clear Striking Counters",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Circuit breaker reset under Level-4 authority authorization.",
+    "actionsTaken": [
+      "Reset circuit breaker",
+      "Clear struck counters"
+    ],
+    "outcome": "SUCCESS",
+    "id": "audit-1790399028280-08ydf",
+    "timestamp": "2026-09-26T05:03:48.280Z",
+    "previousHash": "f10ccfb9fcbecfe08b4242d63351109f9a37e39c7b5246239e38eb78350aa1eb",
+    "hash": "49eea73863439b921a332d529b54e3668e64b512813073156017e49c81380a71"
+  },
+  {
+    "operator": "Client (198.51.100.108)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790399028297-fxowt",
+    "timestamp": "2026-09-26T05:03:48.297Z",
+    "previousHash": "49eea73863439b921a332d529b54e3668e64b512813073156017e49c81380a71",
+    "hash": "56decd0501e04f433fc11fcc7edd9a1eb354faa72cd29cdec7b54ddd6fa7fdf5"
+  },
+  {
+    "operator": "Client (198.51.100.108)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 3.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790399028303-id4j6",
+    "timestamp": "2026-09-26T05:03:48.303Z",
+    "previousHash": "56decd0501e04f433fc11fcc7edd9a1eb354faa72cd29cdec7b54ddd6fa7fdf5",
+    "hash": "5e79e801936a52c9cdea1d4ab3a335d8799ade2890803d22de2fed6f5729c136"
+  },
+  {
+    "operator": "Client (198.51.100.108)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 2.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790399028310-m6oix",
+    "timestamp": "2026-09-26T05:03:48.310Z",
+    "previousHash": "5e79e801936a52c9cdea1d4ab3a335d8799ade2890803d22de2fed6f5729c136",
+    "hash": "ec30ffdbfa72ec57423be6dcb2f2ee071ae4315f55d82498ffcc9bd00604694c"
+  },
+  {
+    "operator": "Client (198.51.100.108)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 1.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790399028316-mxhy7",
+    "timestamp": "2026-09-26T05:03:48.316Z",
+    "previousHash": "ec30ffdbfa72ec57423be6dcb2f2ee071ae4315f55d82498ffcc9bd00604694c",
+    "hash": "c5423cef0b3301b5eaffc9d509033993b25d1a73e5775c5dc03e42db8e6185ce"
+  },
+  {
+    "operator": "Client (198.51.100.108)",
+    "instruction": "Failed Admin Login for user \"admin\"",
+    "riskLevel": "YELLOW",
+    "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 0.",
+    "actionsTaken": [
+      "Increment rate-limit counter"
+    ],
+    "outcome": "FAILURE",
+    "id": "audit-1790399028321-2vdsr",
+    "timestamp": "2026-09-26T05:03:48.321Z",
+    "previousHash": "c5423cef0b3301b5eaffc9d509033993b25d1a73e5775c5dc03e42db8e6185ce",
+    "hash": "7c3108c617342776606966e6302860ec2810baf09f59606fabba2e404fa99b82"
+  },
+  {
+    "operator": "Unauthenticated Client (198.51.100.108)",
+    "instruction": "Blocked Admin Login Attempt (Rate Limit Exceeded)",
+    "riskLevel": "YELLOW",
+    "triageSummary": "IP 198.51.100.108 temporarily locked out due to 5 consecutive failed login attempts.",
+    "actionsTaken": [
+      "Enforce 15-minute brute-force lockout"
+    ],
+    "outcome": "REJECTED",
+    "id": "audit-1790399028328-3q4sl",
+    "timestamp": "2026-09-26T05:03:48.328Z",
+    "previousHash": "7c3108c617342776606966e6302860ec2810baf09f59606fabba2e404fa99b82",
+    "hash": "ad6d94df0833b9a92f6a6e3997ab2353b7f0442904a4f0b906747a59a4293de5"
+  }
+]

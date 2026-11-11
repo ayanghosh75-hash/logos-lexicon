@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offline Mode — Logos Lexicon</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0B192C;
+      color: #FDFBF7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+    .card {
+      max-width: 480px;
+      width: 100%;
+      background: #112238;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: #F2D06B;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      margin: 0 0 12px 0;
+      color: #FDFBF7;
+    }
+    p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #A0B4C8;
+      margin: 0 0 24px 0;
+    }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .btn {
+      display: block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary {
+      background: #D4AF37;
+      color: #0B192C;
+    }
+    .btn-primary:hover {
+      background: #E5C358;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #FDFBF7;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.15);
+    }
+    .footer-note {
+      margin-top: 24px;
+      font-size: 11px;
+      color: #68809A;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">Offline Shell Active</div>
+    <h1>Working Offline</h1>
+    <p>
+      You are currently disconnected from the internet, but the verified <strong>Logos Lexicon</strong> application shell remains fully active on your device.
+      Your saved entries, bookmarks, and private study notes remain accessible.
+    </p>
+    <div class="actions">
+      <a href="/saved" class="btn btn-primary">Open Saved Study Notes &amp; Bookmarks</a>
+      <a href="/" class="btn btn-secondary">Return to Cached Application Shell</a>
+    </div>
+    <div class="footer-note">
+      Live dictionary search will resume automatically once network connection is restored.
+    </div>
+  </div>
+</body>
+</html>

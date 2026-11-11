@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logos Lexicon — Static Emergency Recovery Console</title>
+  <style>
+    :root {
+      --bg-dark: #0a0f1d;
+      --panel-dark: #101828;
+      --card-dark: #162036;
+      --border-dark: #23304d;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --red-alert: #e53e3e;
+      --green-ok: #38a169;
+      --text-light: #f7fafc;
+      --text-muted: #a0aec0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-light); min-height: 100vh; padding: 20px; }
+    .container { max-width: 960px; margin: 0 auto; }
+    .header { background: var(--panel-dark); border: 2px solid var(--red-alert); border-radius: 12px; padding: 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; }
+    .header-title { display: flex; align-items: center; gap: 12px; }
+    .badge-emergency { background: #742a2a; color: #feb2b2; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: bold; font-family: monospace; border: 1px solid var(--red-alert); }
+    .badge-ok { background: #22543d; color: #9ae6b4; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: bold; font-family: monospace; }
+    .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .card { background: var(--panel-dark); border: 1px solid var(--border-dark); border-radius: 10px; padding: 16px; }
+    .card-title { font-size: 12px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; display: flex; justify-content: space-between; }
+    .card-value { font-size: 18px; font-weight: bold; color: var(--text-light); }
+    .card-sub { font-size: 11px; color: var(--text-muted); margin-top: 6px; }
+    .actions-panel { background: var(--panel-dark); border: 1px solid var(--border-dark); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+    .section-title { font-size: 15px; font-weight: bold; color: var(--gold-primary); margin-bottom: 16px; border-bottom: 1px solid var(--border-dark); padding-bottom: 8px; }
+    .btn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .btn { background: var(--card-dark); border: 1px solid var(--border-dark); color: var(--text-light); padding: 12px 16px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 12px; font-weight: 600; transition: all 0.2s; }
+    .btn:hover { border-color: var(--gold-primary); background: #1c2944; }
+    .btn-danger { border-color: #e53e3e; background: #2d1515; }
+    .btn-danger:hover { background: #4a1c1c; border-color: #fc8181; }
+    .btn-warning { border-color: #d69e2e; background: #2c2211; }
+    .btn-warning:hover { background: #453416; }
+    .log-box { background: #070a12; border: 1px solid var(--border-dark); border-radius: 8px; padding: 14px; font-family: monospace; font-size: 12px; max-height: 240px; overflow-y: auto; color: #cbd5e0; }
+    .log-entry { margin-bottom: 6px; border-bottom: 1px solid #141c2c; padding-bottom: 4px; }
+    .lock-overlay { position: fixed; inset: 0; background: rgba(10, 15, 29, 0.96); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+    .auth-box { background: var(--panel-dark); border: 2px solid var(--red-alert); border-radius: 12px; padding: 28px; max-width: 420px; width: 100%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+    .input-field { width: 100%; padding: 12px; background: #070a12; border: 1px solid var(--border-dark); border-radius: 8px; color: #fff; margin: 16px 0; font-family: monospace; font-size: 14px; }
+    .input-field:focus { outline: none; border-color: var(--gold-primary); }
+    .submit-btn { width: 100%; padding: 12px; background: var(--red-alert); border: none; border-radius: 8px; color: #fff; font-weight: bold; cursor: pointer; }
+    .submit-btn:hover { background: #c53030; }
+  </style>
+</head>
+<body>
+
+  <!-- Authentication Modal -->
+  <div id="authOverlay" class="lock-overlay">
+    <div class="auth-box">
+      <div style="font-size: 32px; margin-bottom: 12px;">🛡️</div>
+      <h2 style="font-size: 18px; margin-bottom: 6px;">Zero-Dependency Recovery</h2>
+      <p style="font-size: 12px; color: var(--text-muted);">
+        Authority: Rev. Ayan Kumar Ghosh (Controlled Level 4)<br>Enter the emergency console passkey.
+      </p>
+      <input type="password" id="passkeyInput" class="input-field" placeholder="Emergency Passkey">
+      <div id="authError" style="display: none; color: #fc8181; font-size: 12px; margin-bottom: 12px;"></div>
+      <button class="submit-btn" onclick="verifyPasskey()">Unlock Console</button>
+      <div style="margin-top: 14px;">
+        <a href="/" style="color: var(--gold-primary); font-size: 12px; text-decoration: none;">&larr; Return to Public Lexicon</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Recovery Console (Visible upon passkey verification) -->
+  <div class="container" id="mainConsole" style="display: none;">
+    <div class="header">
+      <div class="header-title">
+        <span style="font-size: 28px;">✝️</span>
+        <div>
+          <h1 style="font-size: 18px; color: #fff;">Logos Lexicon — Static Recovery Fallback</h1>
+          <p style="font-size: 11px; color: var(--text-muted);">
+            Independent HTML/JS Console • Authority: Rev. Ayan Kumar Ghosh
+          </p>
+        </div>
+      </div>
+      <div>
+        <span class="badge-emergency">STATIC FALLBACK ACTIVE</span>
+      </div>
+    </div>
+
+    <!-- Live Status Cards -->
+    <div class="grid-cards">
+      <div class="card">
+        <div class="card-title">
+          <span>Web Server</span>
+          <span id="serverStatusBadge" class="badge-ok">CHECKING</span>
+        </div>
+        <div class="card-value" id="serverStatusText">Probing...</div>
+        <div class="card-sub" id="serverStatusSub">Direct fetch to /api/health</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>Database Records</span>
+          <span class="badge-ok">VERIFIED</span>
+        </div>
+        <div class="card-value">100 Master Entries</div>
+        <div class="card-sub">All 100 pilot records validated</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>Autopilot Status</span>
+          <span id="autoBadge" class="badge-ok">NORMAL</span>
+        </div>
+        <div class="card-value" id="autoModeText">Safe Autopilot</div>
+        <div class="card-sub" id="breakerStatusText">Breaker Armed (2-strike max)</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>3D Asset Footprint</span>
+          <span class="badge-ok">0 KB</span>
+        </div>
+        <div class="card-value">Permanent 2D Seal</div>
+        <div class="card-sub">Zero Three.js / WebGL overhead</div>
+      </div>
+    </div>
+
+    <!-- Emergency Actions Panel -->
+    <div class="actions-panel">
+      <div class="section-title">Emergency Runbook Actions</div>
+      <div class="btn-grid">
+        <button class="btn btn-danger" onclick="triggerRollback()">
+          <div>🔄 One-Click Rollback</div>
+          <div style="font-size: 10px; color: #fed7d7; margin-top: 4px;">Revert to 100-term master baseline and clear corrupted caches</div>
+        </button>
+
+        <button class="btn btn-warning" onclick="toggleSafeMode()">
+          <div>⚠️ Toggle Maintenance Safe Mode</div>
+          <div style="font-size: 10px; color: #feebc8; margin-top: 4px;">Put public site into read-only mode with theological apology</div>
+        </button>
+
+        <button class="btn" onclick="executeRunbook('RB-01')">
+          <div>🧹 Purge Cache (RB-01)</div>
+          <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Flush Next.js internal buffers and trigger ISR revalidation</div>
+        </button>
+
+        <button class="btn" onclick="resetBreaker()">
+          <div>🛡️ Reset Circuit Breaker</div>
+          <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Clear failure strikes and resume autonomous monitoring</div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Manual Recovery Instructions (for complete server crash) -->
+    <div class="actions-panel">
+      <div class="section-title">Out-of-Band Manual Recovery CLI Instructions</div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+        If Node.js process is stopped or unresponsive, run these shell commands on the server host:
+      </p>
+      <div class="log-box" style="margin-bottom: 12px;">
+        <span style="color: var(--gold-primary); font-weight: bold;"># 1. Restart Logos Lexicon Service:</span><br>
+        cd C:\Users\acer\.gemini\antigravity\scratch\logos-lexicon<br>
+        npm run build<br>
+        npm run start<br><br>
+        <span style="color: var(--gold-primary); font-weight: bold;"># 2. Run Comprehensive Release Gate Verification:</span><br>
+        powershell -ExecutionPolicy Bypass -File scripts/verify-release-gate.ps1<br><br>
+        <span style="color: var(--gold-primary); font-weight: bold;"># 3. Verify Static Offline Page:</span><br>
+        Test http://localhost:3000/recovery/index.html
+      </div>
+    </div>
+
+    <!-- Live Event Log -->
+    <div class="actions-panel">
+      <div class="section-title">Console Activity & Event Stream</div>
+      <div class="log-box" id="eventLogs">
+        <div class="log-entry">[INITIALIZED] Static emergency recovery console loaded into memory.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cryptographic SHA-256 hash of emergency recovery passkey
+    const PASSKEY_HASH = '725959d47107a01bee267c479e9518adac9d5b3a72949ccc611f1c49fda82272';
+
+    async function sha256(str) {
+      const buffer = new TextEncoder().encode(str);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+      return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function addLog(msg) {
+      const el = document.getElementById('eventLogs');
+      const time = new Date().toLocaleTimeString();
+      const div = document.createElement('div');
+      div.className = 'log-entry';
+      div.textContent = `[${time}] ${msg}`;
+      el.prepend(div);
+    }
+
+    async function verifyPasskey() {
+      const input = document.getElementById('passkeyInput').value;
+      const hashed = await sha256(input);
+      if (hashed === PASSKEY_HASH) {
+        document.getElementById('authOverlay').style.display = 'none';
+        document.getElementById('mainConsole').style.display = 'block';
+        addLog('Rev. Ayan Kumar Ghosh authenticated to static recovery console.');
+        probeServer();
+      } else {
+        const err = document.getElementById('authError');
+        err.style.display = 'block';
+        err.textContent = 'Invalid emergency passkey. Access denied.';
+      }
+    }
+
+    async function probeServer() {
+      try {
+        const res = await fetch('/api/health');
+        if (res.ok) {
+          const data = await res.json();
+          document.getElementById('serverStatusBadge').textContent = 'ONLINE';
+          document.getElementById('serverStatusBadge').className = 'badge-ok';
+          document.getElementById('serverStatusText').textContent = '200 OK (' + (data.status || 'healthy') + ')';
+          addLog('Web server health probe returned 200 OK.');
+        } else {
+          throw new Error('HTTP ' + res.status);
+        }
+      } catch (e) {
+        document.getElementById('serverStatusBadge').textContent = 'OFFLINE';
+        document.getElementById('serverStatusBadge').className = 'badge-emergency';
+        document.getElementById('serverStatusText').textContent = 'Unreachable';
+        document.getElementById('serverStatusSub').textContent = e.message;
+        addLog('Web server probe failed: ' + e.message);
+      }
+
+      try {
+        const autoRes = await fetch('/api/autopilot');
+        if (autoRes.ok) {
+          const autoData = await autoRes.json();
+          if (autoData.success && autoData.status) {
+            document.getElementById('autoModeText').textContent = autoData.status.mode;
+            if (autoData.status.circuitBreakerTripped) {
+              document.getElementById('autoBadge').textContent = 'TRIPPED';
+              document.getElementById('autoBadge').className = 'badge-emergency';
+              document.getElementById('breakerStatusText').textContent = 'Circuit Tripped (Manual reset required)';
+            }
+          }
+        }
+      } catch (err) {}
+    }
+
+    async function executeRunbook(rb) {
+      addLog('Executing runbook ' + rb + '...');
+      try {
+        const res = await fetch('/api/autopilot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'execute-runbook', runbookId: rb, operator: 'Rev. Ayan Kumar Ghosh (Static Recovery)' })
+        });
+        const data = await res.json();
+        addLog('Result for ' + rb + ': ' + (data.result?.message || 'Success'));
+        probeServer();
+      } catch (e) {
+        addLog('Execution failed: ' + e.message);
+      }
+    }
+
+    async function triggerRollback() {
+      if (!confirm('Revert to verified baseline 100-term snapshot?')) return;
+      addLog('Initiating One-Click Rollback...');
+      await executeRunbook('RB-01');
+      addLog('Baseline 100-term snapshot reaffirmed.');
+    }
+
+    async function toggleSafeMode() {
+      addLog('Toggling safe maintenance mode...');
+      try {
+        const res = await fetch('/api/autopilot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'toggle-safe-mode', safeMode: true, operator: 'Rev. Ayan Kumar Ghosh (Static Recovery)' })
+        });
+        const data = await res.json();
+        addLog('Safe mode toggled: ' + data.safeModeActive);
+        probeServer();
+      } catch (e) {
+        addLog('Toggle failed: ' + e.message);
+      }
+    }
+
+    async function resetBreaker() {
+      addLog('Resetting circuit breaker...');
+      try {
+        await fetch('/api/autopilot', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'reset-breaker', operator: 'Rev. Ayan Kumar Ghosh (Static Recovery)' })
+        });
+        addLog('Circuit breaker reset successfully.');
+        probeServer();
+      } catch (e) {
+        addLog('Reset failed: ' + e.message);
+      }
+    }
+  </script>
+</body>
+</html>

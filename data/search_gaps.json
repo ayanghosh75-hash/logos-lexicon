@@ -1,0 +1,27 @@
+[
+  {
+    "id": "gap-1789798232878-utafk",
+    "query": "monergism",
+    "cleanQuery": "monergism",
+    "firstSearchedAt": "2026-09-19T06:10:32.878Z",
+    "lastSearchedAt": "2026-09-19T06:10:32.878Z",
+    "searchCount": 1,
+    "language": "en",
+    "status": "queued",
+    "priorityScore": 35,
+    "userRequested": true
+  },
+  {
+    "id": "gap-1789798232853-4ftx1",
+    "query": "theosis",
+    "cleanQuery": "theosis",
+    "firstSearchedAt": "2026-09-19T06:10:32.852Z",
+    "lastSearchedAt": "2026-09-19T06:10:32.852Z",
+    "searchCount": 1,
+    "language": "en",
+    "suggestedCorrection": "Theology",
+    "status": "pending",
+    "priorityScore": 15,
+    "userRequested": false
+  }
+]

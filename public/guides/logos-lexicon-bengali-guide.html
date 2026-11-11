@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>লোগোস লেক্সিকন (Logos Lexicon) — সম্পূর্ণ ব্যবহার ও ইনস্টলেশন নির্দেশিকা</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4;
+      margin: 8mm 10mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Noto Sans Bengali', 'Nirmala UI', 'Vrinda', sans-serif;
+      background-color: #FDFBF7;
+      color: #1A202C;
+      line-height: 1.48;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .page-container {
+      width: 100%;
+      max-width: 190mm;
+      margin: 0 auto;
+    }
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, #091326 0%, #15294E 60%, #203A6B 100%);
+      color: #FFFFFF;
+      border-radius: 16px;
+      padding: 18px 22px;
+      border: 3px solid #D4AF37;
+      box-shadow: 0 8px 20px rgba(9, 19, 38, 0.18);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .hero-seal {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #FFF3B0 0%, #D4AF37 100%);
+      color: #091326;
+      font-family: 'Cinzel', serif;
+      font-weight: 800;
+      font-size: 20px;
+      border: 2.5px solid #FFFFFF;
+      margin-bottom: 6px;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
+    }
+    .hero h1 {
+      font-size: 23px;
+      font-weight: 800;
+      color: #FCE79C;
+      margin-bottom: 4px;
+      letter-spacing: 0.3px;
+    }
+    .hero h2 {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: #E2E8F0;
+      margin-bottom: 10px;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 6px;
+    }
+    .badge {
+      background: rgba(212, 175, 55, 0.2);
+      border: 1.5px solid #F3CC64;
+      color: #FFF9DB;
+      padding: 3px 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .badge-green {
+      background: linear-gradient(90deg, #059669, #10B981);
+      border-color: #A7F3D0;
+      color: #FFFFFF;
+    }
+    /* Spiritual Intro Box */
+    .spiritual-box {
+      background: linear-gradient(135deg, #FFFDF7 0%, #FEF6E4 100%);
+      border-left: 6px solid #D4AF37;
+      border-right: 2px solid #F3E5AB;
+      border-top: 1px solid #F3E5AB;
+      border-bottom: 1px solid #F3E5AB;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+    }
+    .spiritual-box h3 {
+      color: #8B1E3F;
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .spiritual-box p {
+      font-size: 11.8px;
+      color: #2D3748;
+      text-align: justify;
+    }
+    /* Section Headings */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(90deg, #0F1E36 0%, #1E3A6D 100%);
+      color: #FCE79C;
+      padding: 7px 14px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      border-left: 5px solid #D4AF37;
+    }
+    /* Feature Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 12px;
+    }
+    .feature-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-top: 4px solid #D4AF37;
+      border-radius: 10px;
+      padding: 9px 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .feature-card.emerald {
+      border-top-color: #059669;
+    }
+    .feature-card.crimson {
+      border-top-color: #8B1E3F;
+    }
+    .feature-card.indigo {
+      border-top-color: #3B82F6;
+    }
+    .feature-card h4 {
+      font-size: 12.8px;
+      font-weight: 700;
+      color: #0F1E36;
+      margin-bottom: 3px;
+    }
+    .feature-card p {
+      font-size: 11px;
+      color: #4A5568;
+    }
+    /* How to Use Steps */
+    .steps-box {
+      background: #F0FDF4;
+      border: 1.5px solid #86EFAC;
+      border-radius: 12px;
+      padding: 11px 15px;
+      margin-bottom: 8px;
+    }
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-bottom: 6px;
+      font-size: 11.5px;
+    }
+    .step-item:last-child {
+      margin-bottom: 0;
+    }
+    .step-num {
+      background: #059669;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 11px;
+      min-width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    /* Page Break for Clean 2-Page Layout */
+    .page-break {
+      page-break-before: always;
+    }
+    /* Device Installation Cards */
+    .device-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .device-card {
+      background: #FFFFFF;
+      border: 2px solid #CBD5E1;
+      border-radius: 14px;
+      padding: 14px 16px;
+      position: relative;
+    }
+    .device-card.android {
+      border-color: #10B981;
+      background: linear-gradient(180deg, #ECFDF5 0%, #FFFFFF 40%);
+    }
+    .device-card.ios {
+      border-color: #3B82F6;
+      background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 40%);
+    }
+    .device-card.windows {
+      border-color: #8B5CF6;
+      background: linear-gradient(180deg, #F5F3FF 0%, #FFFFFF 40%);
+    }
+    .device-card.mac {
+      border-color: #F59E0B;
+      background: linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 40%);
+    }
+    .device-header {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0F1E36;
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed #CBD5E1;
+    }
+    .device-list {
+      list-style: none;
+      font-size: 11.5px;
+      color: #334155;
+    }
+    .device-list li {
+      margin-bottom: 5px;
+      padding-left: 14px;
+      position: relative;
+    }
+    .device-list li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #059669;
+      font-weight: bold;
+    }
+    /* Why Install Highlight Box */
+    .why-install {
+      background: linear-gradient(135deg, #8B1E3F 0%, #581126 100%);
+      color: #FFFFFF;
+      border-radius: 14px;
+      padding: 16px 20px;
+      border: 2px solid #F3CC64;
+      margin-bottom: 18px;
+    }
+    .why-install h3 {
+      color: #FCE79C;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+    .why-install p {
+      font-size: 12px;
+      color: #F8FAFC;
+    }
+    /* QR & Footer Box */
+    .qr-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: #0F1E36;
+      color: #FFFFFF;
+      border-radius: 16px;
+      padding: 18px 22px;
+      border: 2px solid #D4AF37;
+    }
+    .qr-box {
+      background: #FFFFFF;
+      padding: 8px;
+      border-radius: 12px;
+      width: 115px;
+      height: 115px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .qr-box svg {
+      width: 100px;
+      height: 100px;
+    }
+    .footer-info h4 {
+      color: #FCE79C;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+    .footer-info p {
+      font-size: 11.5px;
+      color: #CBD5E1;
+      margin-bottom: 4px;
+    }
+    .url-pill {
+      display: inline-block;
+      background: #D4AF37;
+      color: #091326;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-top: 4px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- PAGE 1 -->
+    <div class="hero">
+      <div class="hero-seal">ΑΩ</div>
+      <h1>লোগোস লেক্সিকন (LOGOS LEXICON)</h1>
+      <h2>বহুভাষিক বাইবেলীয় ও ঈশ্বরতাত্ত্বিক অভিধান এবং বিশ্বকোষ</h2>
+      <div class="badge-row">
+        <span class="badge badge-green">✨ মূল অভিধান বিনামূল্যে (Free Core Access)</span>
+        <span class="badge">📖 তিন স্তরের পাঠ্য সুবিধা</span>
+        <span class="badge">🌍 বাংলা, ইংরেজি, গ্রিক ও হিব্রু</span>
+        <span class="badge">⚡ অফলাইনে ব্যবহারযোগ্য অ্যাপ</span>
+      </div>
+    </div>
+
+    <div class="spiritual-box">
+      <h3>🙏 খ্রিস্টীয় প্রীতি ও আধ্যাত্মিক শুভেচ্ছা — আপনার প্রতিদিনের বিশ্বস্ত সঙ্গী</h3>
+      <p>
+        প্রিয় পাঠক ও সত্যের অন্বেষণকারী বন্ধু, ঈশ্বরের বাক্যের গভীরতা ও সৌন্দর্যকে সহজ, বিশুদ্ধ এবং নির্ভরযোগ্যভাবে আপনার হাতের মুঠোয় পৌঁছে দিতেই <strong>লোগোস লেক্সিকন (Logos Lexicon)</strong>-এর সৃষ্টি। পবিত্র শাস্ত্রের প্রতিটি শব্দের পেছনে লুকিয়ে আছে অনন্ত জীবন ও প্রজ্ঞার অমূল্য রত্নভাণ্ডার। আপনি একজন সাধারণ পাঠক, যুবক-যুবতী, সানডে স্কুলের শিক্ষক, মণ্ডলীর পালক বা থিওলজির গবেষক—যেই হোন না কেন, এই ডিজিটাল অভিধানটি আপনার প্রাত্যহিক আধ্যাত্মিক বৃদ্ধি ও শাস্ত্রীয় অধ্যয়নের এক অপরিহার্য ও প্রিয় বন্ধু হয়ে উঠবে। এর মূল অভিধান, বাংলা অর্থ এবং গ্রিক/হিব্রু শব্দমূল অধ্যয়ন সকলের জন্য বিনামূল্যে উন্মুক্ত (ভবিষ্যতে কর্ণধারের অনুমোদন সাপেক্ষে ঐচ্ছিক উচ্চতর গবেষণামূলক প্রিমিয়াম টুল যুক্ত হতে পারে)।
+      </p>
+    </div>
+
+    <div class="section-title">
+      <span>🌟 লোগোস লেক্সিকনের অনন্য ও আকর্ষণীয় সুবিধাসমূহ</span>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>১. তিন স্তরের পাঠ্য ব্যবস্থা (3-Tier Reading Levels)</h4>
+        <p>
+          প্রতিটি শব্দের জন্য রয়েছে ৩টি আলাদা পাঠ্য স্তর: <strong>Simple (সহজ)</strong> নতুন বিশ্বাসীদের জন্য, <strong>Study (অধ্যয়ন)</strong> মণ্ডলীর শিক্ষকদের জন্য, এবং <strong>Academic (গবেষণাধর্মী)</strong> সেমিনারি ও পণ্ডিতদের জন্য।
+        </p>
+      </div>
+      <div class="feature-card emerald">
+        <h4>২. মূল বাইবেলীয় গ্রিক ও হিব্রু শব্দমূল (Greek & Hebrew)</h4>
+        <p>
+          পবিত্র বাইবেলের মূল গ্রিক (Greek) ও হিব্রু (Hebrew) শব্দের লিপি, সঠিক উচ্চারণ, লিপ্যন্তর, স্ট্রং'স নম্বর (Strong's Number) এবং শাস্ত্রীয় প্রয়োগের নিখুঁত ব্যাখ্যা।
+        </p>
+      </div>
+      <div class="feature-card crimson">
+        <h4>৩. বাংলা ও বহুভাষিক তাৎক্ষণিক অনুসন্ধান</h4>
+        <p>
+          বাংলা, ইংরেজি কিংবা উচ্চারণ দিয়ে সার্চ করুন। এমনকি বানান ভুল হলেও আমাদের স্মার্ট অনুসন্ধান প্রযুক্তি সঠিক শব্দটি ("Did you mean?") মুহূর্তেই আপনার সামনে তুলে ধরবে।
+        </p>
+      </div>
+      <div class="feature-card indigo">
+        <h4>৪. ৬১টি ঈশ্বরতাত্ত্বিক বিভাগ (61 Theological Paths)</h4>
+        <p>
+          বাইবেলীয় তত্ত্ব, সিস্টেমেটিক থিওলজি, মণ্ডলীর ইতিহাস, প্রাচীন ধর্মবিশ্বাস (Creeds & Confessions) এবং সমসাময়িক খ্রিস্টীয় নৈতিকতার সুশৃঙ্খল ও বিস্তৃত ভাণ্ডার।
+        </p>
+      </div>
+      <div class="feature-card emerald">
+        <h4>৫. পাশাপাশি তুলনামূলক অধ্যয়ন (Compare Terms)</h4>
+        <p>
+          যেমন <em>Justification (ধার্মিক গণনা)</em> ও <em>Sanctification (পবিত্রীকরণ)</em>—এমন যেকোনো দুটি তাত্ত্বিক শব্দকে পাশাপাশি রেখে সহজেই তুলনা করে বোঝার অনন্য সুবিধা।
+        </p>
+      </div>
+      <div class="feature-card">
+        <h4>৬. লেক্সি (Lexi) — আপনার শান্ত ও প্রজ্ঞাময় সহকারী</h4>
+        <p>
+          যেকোনো কঠিন শব্দের অর্থ খুঁজে পেতে বা বুঝতে নিচের ডানদিকের কোণায় থাকা <strong>"Ask Lexi"</strong> বাটনে ক্লিক করে তাৎক্ষণিক সাহায্য নিন।
+        </p>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span>🧭 কীভাবে ওয়েবসাইটটি অতি সহজে পরিচালনা ও ব্যবহার করবেন?</span>
+    </div>
+
+    <div class="steps-box">
+      <div class="step-item">
+        <span class="step-num">১</span>
+        <div>
+          <strong>সরাসরি প্রবেশ করুন:</strong> আপনার মোবাইল বা কম্পিউটারের ব্রাউজারে <strong>https://logoslexicon.org/</strong> খুলুন। কোনো রেজিস্ট্রেশন বা ফি ছাড়াই মূল অভিধানের সব সুবিধা উন্মুক্ত!
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">২</span>
+        <div>
+          <strong>শব্দ খুঁজুন:</strong> উপরের সার্চ বক্সে বাংলা বা ইংরেজিতে শব্দ লিখুন (যেমন: <em>Grace, অনুগ্রহ, Trinity, ত্রিত্ব, Covenant, Atonement</em>) অথবা A–Z বর্ণমালা ও ৬১টি বিভাগ থেকে বেছে নিন।
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">৩</span>
+        <div>
+          <strong>পড়ার স্তর ও ভাষা বদলান:</strong> যেকোনো শব্দের ভেতরে গিয়ে এক ক্লিকেই <em>Simple / Study / Academic</em> ট্যাব পরিবর্তন করুন এবং বাংলা অর্থ ও শাস্ত্রীয় পদসমূহ পাঠ করুন।
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">৪</span>
+        <div>
+          <strong>সংরক্ষণ ও শেয়ার করুন:</strong> আপনার প্রিয় শব্দগুলো বুকমার্ক করে রাখুন, প্রিন্ট করুন কিংবা WhatsApp-এ মণ্ডলীর বন্ধু ও পরিবারের সাথে এক ক্লিকে শেয়ার করুন।
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page-break"></div>
+
+    <div class="why-install">
+      <h3>💖 কেন আজই আপনার ফোনে বা কম্পিউটারে অ্যাপটি ইনস্টল করবেন?</h3>
+      <p>
+        লোগোস লেক্সিকন একটি আধুনিক প্রগ্রেসিভ ওয়েব অ্যাপ (PWA)। এটি আপনার ফোনের মেমোরিতে অতিরিক্ত জায়গা নেয় না, সম্পূর্ণ নিরাপদ, এবং একবার ইনস্টল করলে আপনার ফোনের হোম-স্ক্রিনে একটি সুন্দর অ্যাপ হিসেবে থাকবে। ফলে ইন্টারনেট ধীরগতির হলেও বা অফলাইনে থাকলেও আপনি যেকোনো সময়, প্রার্থনায়, ভ্রমণে বা বাইবেল ক্লাসে এক মুহূর্তেই এটি খুলতে পারবেন!
+      </p>
+    </div>
+
+    <div class="section-title">
+      <span>📲 ডিভাইস অনুযায়ী অ্যাপ ইনস্টল করার ধাপে ধাপে নির্দেশিকা</span>
+    </div>
+
+    <div class="device-grid">
+      <div class="device-card android">
+        <div class="device-header">📱 ১. Android মোবাইল ও ট্যাবলেট</div>
+        <ul class="device-list">
+          <li><strong>Google Chrome</strong> ব্রাউজারে <strong>logoslexicon.org</strong> ওয়েবসাইটটি খুলুন।</li>
+          <li>স্ক্রিনে থাকা <strong>"Install App"</strong> বাটনে ট্যাপ করুন।</li>
+          <li>অথবা উপরের ডানদিকের কোণায় <strong>তিনটি ডট (⋮)</strong> মেনুতে ট্যাপ করুন।</li>
+          <li>মেনু থেকে <strong>"Install App"</strong> বা <strong>"Add to Home screen"</strong> নির্বাচন করুন।</li>
+          <li><strong>"Install"</strong> চাপুন—আপনার হোম স্ক্রিনে লোগোস লেক্সিকন অ্যাপ যুক্ত হয়ে যাবে!</li>
+        </ul>
+      </div>
+
+      <div class="device-card ios">
+        <div class="device-header">🍎 ২. iPhone ও iPad (iOS ডিভাইস)</div>
+        <ul class="device-list">
+          <li>আপনার আইফোন বা আইপ্যাডের <strong>Safari</strong> ব্রাউজারে <strong>logoslexicon.org</strong> খুলুন।</li>
+          <li>স্ক্রিনের নিচে মাঝখানে থাকা <strong>Share বাটন (⬆️)</strong>-এ ট্যাপ করুন।</li>
+          <li>তালিকাটি একটু নিচে স্ক্রোল করে <strong>"Add to Home Screen"</strong> অপশনে ট্যাপ করুন।</li>
+          <li>উপরের ডানদিকের কোণায় <strong>"Add"</strong> বাটনে ট্যাপ করুন।</li>
+          <li>এখন আপনার হোম স্ক্রিন থেকে যেকোনো অ্যাপের মতোই এক ক্লিকে ব্যবহার করুন!</li>
+        </ul>
+      </div>
+
+      <div class="device-card windows">
+        <div class="device-header">💻 ৩. Windows কম্পিউটার ও ল্যাপটপ</div>
+        <ul class="device-list">
+          <li><strong>Google Chrome</strong> বা <strong>Microsoft Edge</strong> ব্রাউজারে সাইটটি খুলুন।</li>
+          <li>উপরের অ্যাড্রেস বারের (URL Bar) ডানপাশে থাকা <strong>Install আইকন (⊕ বা কম্পিউটার চিহ্ন)</strong>-এ ক্লিক করুন।</li>
+          <li>পপ-আপ বক্সে <strong>"Install"</strong> বাটনে ক্লিক করুন।</li>
+          <li>এটি আপনার ডেস্কটপ ও স্টার্ট মেনুতে একটি স্বতন্ত্র সফটওয়্যার হিসেবে চালু হবে!</li>
+        </ul>
+      </div>
+
+      <div class="device-card mac">
+        <div class="device-header">🖥️ ৪. MacBook ও iMac (macOS)</div>
+        <ul class="device-list">
+          <li><strong>Safari</strong> (macOS Sonoma বা নতুন) অথবা <strong>Google Chrome</strong>-এ সাইটটি খুলুন।</li>
+          <li>Safari ব্যবহার করলে উপরের মেনু থেকে <strong>File &rarr; Add to Dock</strong> নির্বাচন করুন।</li>
+          <li>Chrome ব্যবহার করলে অ্যাড্রেস বারের ডানদিকে থাকা <strong>"Install Logos Lexicon"</strong> আইকনে ক্লিক করুন।</li>
+          <li><strong>"Add" / "Install"</strong> ক্লিক করলেই আপনার Mac Dock-এ অ্যাপটি স্থায়ীভাবে যুক্ত হবে!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="spiritual-box" style="border-left-color: #059669; background: #F0FDF4;">
+      <h3 style="color: #065F46;">🌿 একটি বন্ধুসুলভ আহ্বান ও স্বচ্ছ মূল্যনীতি (Free Core Access &amp; Licensing)</h3>
+      <p>
+        <em>"তোমার বাক্য আমার চরণের প্রদীপ, আমার পথের আলোক।" (গীতসংহিতা ১১৯:১০৫)</em><br/>
+        এই অ্যাপের মূল অভিধান, বাংলা অর্থ ও শাস্ত্রীয় শব্দমূল অধ্যয়ন সকলের জন্য সম্পূর্ণ বিনামূল্যে উন্মুক্ত (ভবিষ্যতে সেমিনারি বা বিশেষজ্ঞ গবেষকদের জন্য ঐচ্ছিক প্রিমিয়াম টুল শুধুমাত্র কর্ণধারের অনুমোদনক্রমে যুক্ত হতে পারে)। আজই আপনার ডিভাইসে এটি ইনস্টল করুন এবং পরিবার ও মণ্ডলীর বন্ধুদের সাথে শেয়ার করুন।
+      </p>
+    </div>
+
+    <div class="qr-footer">
+      <div class="footer-info">
+        <h4>লোগোস লেক্সিকন (Logos Lexicon) — মালিকানা, লাইসেন্স ও সংযোগ</h4>
+        <p>একমাত্র কর্ণধার, প্রধান সম্পাদক ও চূড়ান্ত কর্তৃপক্ষ (Level 5): <strong>রেভারেন্ড অয়ন কুমার ঘোষ (Rev. Ayan Kumar Ghosh)</strong></p>
+        <p>লাইসেন্স ও উৎস স্বীকৃতি: <strong>https://logoslexicon.org/licensing</strong> | পরিচয় ও যোগাযোগ: <strong>https://logoslexicon.org/about</strong></p>
+        <a class="url-pill" href="https://logoslexicon.org/">https://logoslexicon.org/</a>
+        <span style="margin-left: 8px; font-size: 11px; color: #FCE79C;">ইনস্টল গাইড: https://logoslexicon.org/install</span>
+      </div>
+      <div class="qr-box">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" shape-rendering="crispEdges"><path fill="#FFFFFF" d="M0 0h41v41H0z"/><path stroke="#0B192C" d="M4 4.5h7m4 0h1m1 0h3m3 0h4m1 0h1m1 0h7M4 5.5h1m5 0h1m1 0h1m1 0h1m3 0h3m1 0h1m3 0h1m3 0h1m5 0h1M4 6.5h1m1 0h3m1 0h1m1 0h2m1 0h5m3 0h3m2 0h1m1 0h1m1 0h3m1 0h1M4 7.5h1m1 0h3m1 0h1m1 0h1m1 0h1m6 0h1m1 0h1m1 0h3m2 0h1m1 0h3m1 0h1M4 8.5h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m3 0h4m1 0h1m2 0h1m1 0h3m1 0h1M4 9.5h1m5 0h1m1 0h2m1 0h2m1 0h1m6 0h3m2 0h1m5 0h1M4 10.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M13 11.5h2m1 0h1m1 0h1m2 0h4m1 0h3M6 12.5h1m2 0h5m3 0h1m4 0h3m1 0h1m1 0h2m1 0h5M4 13.5h1m4 0h1m3 0h3m2 0h2m1 0h1m1 0h1m3 0h5m4 0h1M7 14.5h1m1 0h3m3 0h1m1 0h1m3 0h2m2 0h4m2 0h2m3 0h1M4 15.5h3m2 0h1m1 0h3m1 0h2m2 0h1m3 0h1m2 0h2m1 0h3m1 0h1M6 16.5h1m1 0h3m1 0h2m1 0h1m1 0h4m1 0h1m2 0h4m1 0h1m1 0h2M4 17.5h4m1 0h1m1 0h1m1 0h4m4 0h10m5 0h1M4 18.5h1m5 0h2m3 0h1m1 0h3m1 0h4m2 0h2m3 0h1m1 0h1m1 0h1M4 19.5h2m1 0h3m1 0h1m1 0h2m4 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m4 0h1M4 20.5h1m3 0h1m1 0h1m1 0h1m1 0h1m3 0h2m1 0h4m1 0h1m3 0h2m2 0h2M8 21.5h2m4 0h2m1 0h3m1 0h5m1 0h1m2 0h1m3 0h1M7 22.5h1m1 0h4m1 0h3m2 0h1m2 0h6m3 0h1m1 0h2M4 23.5h2m2 0h1m3 0h2m4 0h3m1 0h2m3 0h1m2 0h4m2 0h1M7 24.5h9m1 0h1m1 0h2m2 0h2m2 0h1m3 0h1M6 25.5h1m1 0h2m4 0h2m2 0h2m2 0h1m1 0h2m5 0h1m1 0h2m1 0h1M4 26.5h4m2 0h1m1 0h2m1 0h2m1 0h1m3 0h2m3 0h1m1 0h2m5 0h1M9 27.5h1m2 0h1m1 0h1m1 0h2m1 0h1m3 0h2m1 0h1m4 0h1m1 0h1m1 0h1M4 28.5h2m1 0h1m2 0h2m1 0h1m1 0h1m1 0h3m1 0h13m1 0h1M12 29.5h1m2 0h2m3 0h1m1 0h4m1 0h2m3 0h3m1 0h1M4 30.5h7m1 0h1m1 0h3m2 0h5m4 0h1m1 0h1m1 0h1m3 0h1M4 31.5h1m5 0h1m1 0h1m1 0h4m1 0h2m1 0h2m1 0h1m1 0h2m3 0h2m1 0h2M4 32.5h1m1 0h3m1 0h1m2 0h1m1 0h2m2 0h1m1 0h1m3 0h1m1 0h7M4 33.5h1m1 0h3m1 0h1m2 0h1m7 0h5m1 0h3m1 0h5M4 34.5h1m1 0h3m1 0h1m1 0h6m1 0h1m3 0h1m1 0h1m6 0h2m1 0h2M4 35.5h1m5 0h1m2 0h1m3 0h4m1 0h1m1 0h1m3 0h1m4 0h2M4 36.5h7m4 0h6m1 0h1m2 0h2m1 0h1m3 0h3m1 0h1"/></svg>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

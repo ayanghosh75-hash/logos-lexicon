@@ -1,0 +1,8 @@
+{
+  "checkpointId": "chk-1790399028372",
+  "anchoredAt": "2026-09-26T05:03:48.372Z",
+  "recordCount": 41,
+  "headRecordId": "audit-1789798295586-init",
+  "headHash": "6281eeea50a43a87372d96e7a233cda6b7eaff2a7f9383d081c2176504699db8",
+  "cumulativeChainDigest": "9484a34ce2d19748f64d33457987fbfd371e2ab4c604a823d532c8eeb62bb7d8"
+}

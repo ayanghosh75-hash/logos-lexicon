@@ -1,0 +1,14 @@
+{
+  "mode": "Safe Autopilot",
+  "circuitBreakerTripped": false,
+  "trippedIssues": [],
+  "lastScanAt": "2026-09-19T06:07:43.132Z",
+  "safeModeActive": false,
+  "activeRunbooks": [
+    "RB-01",
+    "RB-02",
+    "RB-03",
+    "RB-04",
+    "RB-05"
+  ]
+}

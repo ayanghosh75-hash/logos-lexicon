@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Logos Lexicon — Scholarly Multilingual Theological Dictionary</title>
+        <author>Logos Theological Editorial Board</author>
+        <editor>Rev. Ayan Kumar Ghosh</editor>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Logos Lexicon Institute</publisher>
+        <pubPlace>https://logoslexicon.org/</pubPlace>
+        <date>2026-09-26</date>
+        <availability status="restricted">
+          <p>Scholarly open-access repository under ecclesiastical oversight.</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Master Lexicon database with 3-tier reading levels (Simple, Study, Academic) and original Biblical Greek/Hebrew lemmas.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="lexicon">
+        <note>100 peer-reviewed foundational terms populated and validated under Controlled Level 4.</note>
+      </div>
+    </body>
+  </text>
+</TEI>

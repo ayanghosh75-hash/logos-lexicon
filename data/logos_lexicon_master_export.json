@@ -1,0 +1,185 @@
+{
+  "project": "Logos Lexicon",
+  "permanentAddress": "https://logoslexicon.org/",
+  "exportedAt": "2026-09-26T04:13:30.597Z",
+  "leadEditor": "Rev. Ayan Kumar Ghosh",
+  "stats": {
+    "masterEntriesCount": 100,
+    "searchGapsCount": 2,
+    "auditEntriesCount": 10
+  },
+  "auditLogSnapshot": [
+    {
+      "id": "audit-1789798295586-init",
+      "timestamp": "2026-09-19T06:11:35.586Z",
+      "operator": "Rev. Ayan Kumar Ghosh (Final Authority)",
+      "instruction": "Initialize Logos Lexicon Audit Trail & Controlled Level 4 Governance",
+      "riskLevel": "GREEN",
+      "triageSummary": "System initialization and cryptographic audit trail established.",
+      "actionsTaken": [
+        "Init audit logger",
+        "Register Level-4 authority credentials"
+      ],
+      "outcome": "SUCCESS",
+      "previousHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "hash": "6281eeea50a43a87372d96e7a233cda6b7eaff2a7f9383d081c2176504699db8"
+    },
+    {
+      "operator": "Rev. Ayan Kumar Ghosh",
+      "instruction": "Execute RB-01: Cache Corrupt / Stale Rebuild",
+      "riskLevel": "GREEN",
+      "triageSummary": "Cleared memory buffer cache and triggered ISR revalidation.",
+      "actionsTaken": [
+        "Flushed Next.js internal memory cache",
+        "Revalidated static dictionary routes"
+      ],
+      "outcome": "SUCCESS",
+      "id": "audit-1789798295587-o89uw",
+      "timestamp": "2026-09-19T06:11:35.587Z",
+      "previousHash": "6281eeea50a43a87372d96e7a233cda6b7eaff2a7f9383d081c2176504699db8",
+      "hash": "aea472520ec32edeac94beda890a656cdb35e0d42d69fdbd6b22fd3bd754d6a5"
+    },
+    {
+      "operator": "Safe Autopilot (Circuit Breaker)",
+      "instruction": "Two-Strike Limit Reached: test-issue",
+      "riskLevel": "RED",
+      "triageSummary": "Circuit breaker tripped for test-issue. Autonomous modifications halted. Rev. Ayan Kumar Ghosh notified.",
+      "actionsTaken": [
+        "Trip Circuit Breaker",
+        "Halt Autonomous Repairs",
+        "Notify Level-4 Authority"
+      ],
+      "outcome": "CIRCUIT_TRIPPED",
+      "id": "audit-1789798501324-4bdd9",
+      "timestamp": "2026-09-19T06:15:01.324Z",
+      "previousHash": "aea472520ec32edeac94beda890a656cdb35e0d42d69fdbd6b22fd3bd754d6a5",
+      "hash": "65a2dc36fce273d7f0beb92a7871614b07ee53e0698470d9d3f9df69d9cc6115"
+    },
+    {
+      "operator": "Rev. Ayan Kumar Ghosh",
+      "instruction": "Reset Circuit Breaker & Clear Striking Counters",
+      "riskLevel": "YELLOW",
+      "triageSummary": "Circuit breaker reset under Level-4 authority authorization.",
+      "actionsTaken": [
+        "Reset circuit breaker",
+        "Clear struck counters"
+      ],
+      "outcome": "SUCCESS",
+      "id": "audit-1789798501327-5b1mo",
+      "timestamp": "2026-09-19T06:15:01.327Z",
+      "previousHash": "65a2dc36fce273d7f0beb92a7871614b07ee53e0698470d9d3f9df69d9cc6115",
+      "hash": "a52d45528111e37cd97524b812ac9266831ca96b4ff3a08e1e54bee92bcc333a"
+    },
+    {
+      "operator": "Test Runner",
+      "instruction": "Chain test",
+      "riskLevel": "GREEN",
+      "triageSummary": "Testing hash chain",
+      "actionsTaken": [
+        "verify"
+      ],
+      "outcome": "SUCCESS",
+      "id": "audit-1789801086271-mabvp",
+      "timestamp": "2026-09-19T06:58:06.271Z",
+      "previousHash": "a52d45528111e37cd97524b812ac9266831ca96b4ff3a08e1e54bee92bcc333a",
+      "hash": "0effc54ade83218f22bb08d250715cb01f4b813542ed6bb570566bda9bbb8c12"
+    },
+    {
+      "operator": "Client (::1)",
+      "instruction": "Failed Admin Login for user \"attacker\"",
+      "riskLevel": "YELLOW",
+      "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+      "actionsTaken": [
+        "Increment rate-limit counter"
+      ],
+      "outcome": "FAILURE",
+      "id": "audit-1789801640761-jbzd3",
+      "timestamp": "2026-09-19T07:07:20.761Z",
+      "previousHash": "0effc54ade83218f22bb08d250715cb01f4b813542ed6bb570566bda9bbb8c12",
+      "hash": "831b011a07183424d2944f064394671f82ed6f2c9e4e24acb0b646f22c137613"
+    },
+    {
+      "operator": "Client (::1)",
+      "instruction": "Failed Admin Login for user \"attacker\"",
+      "riskLevel": "YELLOW",
+      "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 3.",
+      "actionsTaken": [
+        "Increment rate-limit counter"
+      ],
+      "outcome": "FAILURE",
+      "id": "audit-1789801980231-ftb72",
+      "timestamp": "2026-09-19T07:13:00.232Z",
+      "previousHash": "831b011a07183424d2944f064394671f82ed6f2c9e4e24acb0b646f22c137613",
+      "hash": "c5b55769c1574660593bbb3c34adfd8136db75f381a13fbf0c75077315d04116"
+    },
+    {
+      "operator": "Client (::1)",
+      "instruction": "Failed Admin Login for user \"attacker\"",
+      "riskLevel": "YELLOW",
+      "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 2.",
+      "actionsTaken": [
+        "Increment rate-limit counter"
+      ],
+      "outcome": "FAILURE",
+      "id": "audit-1789802081277-rbgqs",
+      "timestamp": "2026-09-19T07:14:41.277Z",
+      "previousHash": "c5b55769c1574660593bbb3c34adfd8136db75f381a13fbf0c75077315d04116",
+      "hash": "d60677cf016611edf4ec2f1ae1e3b831f5d3b53b17192c562c568c01ec63cf0a"
+    },
+    {
+      "operator": "Client (::1)",
+      "instruction": "Failed Admin Login for user \"attacker\"",
+      "riskLevel": "YELLOW",
+      "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+      "actionsTaken": [
+        "Increment rate-limit counter"
+      ],
+      "outcome": "FAILURE",
+      "id": "audit-1789802226558-yduje",
+      "timestamp": "2026-09-19T07:17:06.558Z",
+      "previousHash": "d60677cf016611edf4ec2f1ae1e3b831f5d3b53b17192c562c568c01ec63cf0a",
+      "hash": "15cd7ff44977bc32c3a9cc7b3af664e9c3d1f1061f3af377d2f96648a7b1ce01"
+    },
+    {
+      "operator": "Client (::1)",
+      "instruction": "Failed Admin Login for user \"attacker\"",
+      "riskLevel": "YELLOW",
+      "triageSummary": "Invalid credentials provided. Remaining attempts before lockout: 4.",
+      "actionsTaken": [
+        "Increment rate-limit counter"
+      ],
+      "outcome": "FAILURE",
+      "id": "audit-1790394313849-k043r",
+      "timestamp": "2026-09-26T03:45:13.849Z",
+      "previousHash": "15cd7ff44977bc32c3a9cc7b3af664e9c3d1f1061f3af377d2f96648a7b1ce01",
+      "hash": "e967bd2e9cef22f257d1310f6c40e2f5d988db3f7675cc99aa496d86a0415954"
+    }
+  ],
+  "searchGapsSnapshot": [
+    {
+      "id": "gap-1789798232878-utafk",
+      "query": "monergism",
+      "cleanQuery": "monergism",
+      "firstSearchedAt": "2026-09-19T06:10:32.878Z",
+      "lastSearchedAt": "2026-09-19T06:10:32.878Z",
+      "searchCount": 1,
+      "language": "en",
+      "status": "queued",
+      "priorityScore": 35,
+      "userRequested": true
+    },
+    {
+      "id": "gap-1789798232853-4ftx1",
+      "query": "theosis",
+      "cleanQuery": "theosis",
+      "firstSearchedAt": "2026-09-19T06:10:32.852Z",
+      "lastSearchedAt": "2026-09-19T06:10:32.852Z",
+      "searchCount": 1,
+      "language": "en",
+      "suggestedCorrection": "Theology",
+      "status": "pending",
+      "priorityScore": 15,
+      "userRequested": false
+    }
+  ]
+}

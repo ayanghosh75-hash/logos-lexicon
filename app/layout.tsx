@@ -1,0 +1,128 @@
+import type { Metadata, Viewport } from 'next';
+import './globals.css';
+import { LexiconProvider } from '@/components/providers/LexiconProvider';
+import { Navbar } from '@/components/navigation/Navbar';
+import { Footer } from '@/components/navigation/Footer';
+import { UpdateBanner } from '@/components/pwa/UpdateBanner';
+import { LexiGuide } from '@/components/lexi/LexiGuide';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://logoslexicon.org'),
+  title: {
+    default: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
+    template: '%s | Logos Lexicon',
+  },
+  description:
+    'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
+  applicationName: 'Logos Lexicon',
+  authors: [{ name: 'Rev. Ayan Kumar Ghosh', url: 'https://logoslexicon.org/about' }],
+  creator: 'Rev. Ayan Kumar Ghosh',
+  publisher: 'Logos Lexicon Theological Editorial Board',
+  manifest: '/manifest.webmanifest',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+  },
+  alternates: {
+    canonical: 'https://logoslexicon.org/',
+  },
+  openGraph: {
+    title: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
+    description:
+      'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
+    url: 'https://logoslexicon.org/',
+    siteName: 'Logos Lexicon',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: 'https://logoslexicon.org/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
+        type: 'image/jpeg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Logos Lexicon — Multilingual Biblical & Theological Dictionary',
+    description:
+      'Explore biblical and theological terms in English, Indian languages and Korean, with carefully reviewed Greek and Hebrew resources.',
+    images: ['https://logoslexicon.org/og-image.jpg'],
+    creator: '@LogosLexicon',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0B192C',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Prevent Flash of Unstyled Content (FOUC) for dark mode */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const stored = localStorage.getItem('logos_theme');
+                if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                  document.documentElement.setAttribute('data-theme', 'light');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+        {/* Preconnect to Google Fonts for Noto typography */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Hebrew:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+Greek:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet"
+        />
+        {/* Google AdSense Verification */}
+        <meta name="google-adsense-account" content="ca-pub-3020259399527859" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3020259399527859"
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className="bg-ivory-100 dark:bg-navy-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors selection:bg-gold-400 selection:text-navy-950">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <LexiconProvider>
+          <Navbar />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <UpdateBanner />
+          <LexiGuide />
+        </LexiconProvider>
+      </body>
+    </html>
+  );
+}

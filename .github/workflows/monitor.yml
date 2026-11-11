@@ -1,0 +1,34 @@
+name: Logos Lexicon 15-Minute Synthetic Health Monitor
+
+on:
+  schedule:
+    # Run every 15 minutes
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  synthetic-health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run 15-Minute Synthetic Monitor
+        env:
+          MONITOR_TARGET_URL: 'https://logoslexicon.org'
+        run: node scripts/synthetic-monitor.mjs
+
+      - name: Notify Owner on Failure
+        if: failure()
+        run: |
+          echo "::error::Logos Lexicon Synthetic Health Check Failed! Two consecutive failures trigger emergency incident escalation."

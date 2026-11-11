@@ -1,0 +1,203 @@
+export interface LanguageConfig {
+  code: string;
+  name: string;
+  nativeName: string;
+  script: string;
+  dir: 'ltr' | 'rtl';
+  fontFamily: string;
+  fallbackFont: string;
+  flagEmoji?: string;
+  isBiblicalSource?: boolean;
+}
+
+export const SUPPORTED_LANGUAGES: Record<string, LanguageConfig> = {
+  en: {
+    code: 'en',
+    name: 'English',
+    nativeName: 'English',
+    script: 'Latin',
+    dir: 'ltr',
+    fontFamily: 'Inter, system-ui, sans-serif',
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇬🇧',
+  },
+  bn: {
+    code: 'bn',
+    name: 'Bengali',
+    nativeName: 'বাংলা',
+    script: 'Bengali',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Bengali', 'SolaimanLipi', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇧🇩',
+  },
+  hi: {
+    code: 'hi',
+    name: 'Hindi',
+    nativeName: 'हिन्दी',
+    script: 'Devanagari',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Devanagari', 'Mangal', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  ur: {
+    code: 'ur',
+    name: 'Urdu',
+    nativeName: 'اردو',
+    script: 'Arabic (Nastaliq)',
+    dir: 'rtl',
+    fontFamily: "'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', serif",
+    fallbackFont: 'serif',
+    flagEmoji: '🇵🇰',
+  },
+  ko: {
+    code: 'ko',
+    name: 'Korean',
+    nativeName: '한국어',
+    script: 'Hangul',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans KR', 'Malgun Gothic', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇰🇷',
+  },
+  as: {
+    code: 'as',
+    name: 'Assamese',
+    nativeName: 'অসমীয়া',
+    script: 'Bengali-Assamese',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Bengali', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  or: {
+    code: 'or',
+    name: 'Odia',
+    nativeName: 'ଓଡ଼ିଆ',
+    script: 'Odia',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Oriya', 'Kalinga', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  ne: {
+    code: 'ne',
+    name: 'Nepali',
+    nativeName: 'नेपाली',
+    script: 'Devanagari',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Devanagari', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇳🇵',
+  },
+  ml: {
+    code: 'ml',
+    name: 'Malayalam',
+    nativeName: 'മലയാളം',
+    script: 'Malayalam',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Malayalam', 'Kartika', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  ta: {
+    code: 'ta',
+    name: 'Tamil',
+    nativeName: 'தமிழ்',
+    script: 'Tamil',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Tamil', 'Latha', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  te: {
+    code: 'te',
+    name: 'Telugu',
+    nativeName: 'తెలుగు',
+    script: 'Telugu',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Telugu', 'Gautami', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  kn: {
+    code: 'kn',
+    name: 'Kannada',
+    nativeName: 'ಕನ್ನಡ',
+    script: 'Kannada',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Kannada', 'Tunga', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  mr: {
+    code: 'mr',
+    name: 'Marathi',
+    nativeName: 'मराठी',
+    script: 'Devanagari',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Devanagari', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  pa: {
+    code: 'pa',
+    name: 'Punjabi',
+    nativeName: 'ਪੰਜਾਬੀ',
+    script: 'Gurmukhi',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Gurmukhi', 'Raavi', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+  gu: {
+    code: 'gu',
+    name: 'Gujarati',
+    nativeName: 'ગુજરાતી',
+    script: 'Gujarati',
+    dir: 'ltr',
+    fontFamily: "'Noto Sans Gujarati', 'Shruti', sans-serif",
+    fallbackFont: 'sans-serif',
+    flagEmoji: '🇮🇳',
+  },
+};
+
+export const BIBLICAL_LANGUAGES: Record<string, LanguageConfig> = {
+  grc: {
+    code: 'grc',
+    name: 'Biblical Greek',
+    nativeName: 'Ἑλληνική',
+    script: 'Greek',
+    dir: 'ltr',
+    fontFamily: "'SBL Greek', 'Gentium Plus', 'Noto Serif Greek', serif",
+    fallbackFont: 'serif',
+    isBiblicalSource: true,
+  },
+  hbo: {
+    code: 'hbo',
+    name: 'Biblical Hebrew',
+    nativeName: 'עִבְרִית',
+    script: 'Hebrew',
+    dir: 'rtl',
+    fontFamily: "'Ezra SIL', 'Noto Sans Hebrew', 'SBL Hebrew', serif",
+    fallbackFont: 'serif',
+    isBiblicalSource: true,
+  },
+  arc: {
+    code: 'arc',
+    name: 'Biblical Aramaic',
+    nativeName: 'ܐܪܡܝܐ / ארמית',
+    script: 'Aramaic / Hebrew',
+    dir: 'rtl',
+    fontFamily: "'Ezra SIL', 'Noto Sans Hebrew', 'Estrangelo Edessa', serif",
+    fallbackFont: 'serif',
+    isBiblicalSource: true,
+  },
+};
+
+export const DEFAULT_LANGUAGE = 'en';
+
+export function getLanguageConfig(code: string): LanguageConfig {
+  return SUPPORTED_LANGUAGES[code] || BIBLICAL_LANGUAGES[code] || SUPPORTED_LANGUAGES.en;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "logos-watchdog",
+  "version": "1.0.0",
+  "description": "Independent Out-of-Band Watchdog Service for Logos Lexicon",
+  "type": "module",
+  "scripts": {
+    "start": "node logos-watchdog.mjs",
+    "check": "node logos-watchdog.mjs --once"
+  }
+}

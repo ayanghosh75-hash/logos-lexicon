@@ -1,0 +1,32 @@
+{
+  "name": "logos-lexicon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Logos Lexicon — Multilingual Biblical & Theological Dictionary",
+  "scripts": {
+    "dev": "next dev",
+    "typecheck": "node --max-old-space-size=4096 ./node_modules/typescript/bin/tsc --noEmit",
+    "build": "node scripts/validate-production-links.mjs && npm run typecheck && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "next": "^15.1.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2"
+  }
+}

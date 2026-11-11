@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0-pwa",
+  "releaseTag": "v1.0.0-2026-09-26T05-00-17-973Z",
+  "signedBy": "Rev. Ayan Kumar Ghosh (Level 5 Authority)",
+  "timestamp": "2026-09-26T05:00:17.973Z",
+  "releaseDigest": "ea0157680ae73edf5e2593eb51f74e35622db566967f54ba655f24620e0b4d50",
+  "signature": "3fcd25a85b1535dd2be386eac118a3ecb5eb08438ee1c7f8596e316c0eb8ac02",
+  "fileHashes": {
+    "package.json": "199fe765a9d7971a76660763133dbc1111d656af7d98e7c5a9b9ac3bb28fb6f3",
+    "next.config.ts": "ffebf4d8b51d46a8d22904516ace1606a9606020f3b121a83f456be08d915854",
+    "middleware.ts": "cf3eff4a0702c2caaa9fb4c2c559b740b746c634915aac90d92e117d2edd134d",
+    "lib/db/pilotBatch100.ts": "5a21d39082d8db0dd60159534cda615e855eb210caddc6298b6e886b7a221cf6",
+    "lib/db/theologicalPaths.ts": "189e8733f6ce97e730e1f43e8c8e5a831550d4d7138792539b377e59fc84113b",
+    "lib/db/sourceRegister.ts": "d9fb144f29a8f39478bea5b796c11aefda361a21d8b5979d73032042ceaab128",
+    "lib/security/authority.ts": "94662c78ee11197e039d724a2d472ce5d5bb6bef52123c80feb7021351f57119",
+    "lib/lexi/autopilot.ts": "d3c4cc41329c6e6403361b5a0c3022351fb32bb1e9cce90c7266d93a527d9dae",
+    "lib/lexi/selfProtection.ts": "96bec68cc73983e8c1b92ed5d6824264e3bee12c1e56692a01bb4d06ac9d59b1",
+    "watchdog/logos-watchdog.mjs": "e5bfa5df23bf40f46202eedcdae094a23ee4207728d24c8754d418866216389e",
+    "public/offline.html": "190d1c44db34a5fb732c7b8c439658ad25bfcbebd0c1cd443764fd46a2f7fa49",
+    "public/recovery/index.html": "a795b27376685f0b7ea556a6df981fe6574ca109fe6dff7ea4eaff22afeea9db"
+  }
+}

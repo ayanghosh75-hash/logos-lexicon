@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Georgia', 'Cambria', 'Times New Roman', serif;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', serif;
+  --font-hebrew: 'Ezra SIL', 'Noto Sans Hebrew', 'SBL Hebrew', serif;
+  --font-greek: 'SBL Greek', 'Gentium Plus', 'Noto Serif Greek', serif;
+  
+  color-scheme: light dark;
+}
+
+/* RTL Directional Rules */
+[dir="rtl"] {
+  text-align: right;
+  font-family: var(--font-urdu);
+}
+
+/* Nastaliq Urdu Font styling */
+.font-urdu {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', serif;
+  line-height: 2.2;
+}
+
+.font-hebrew {
+  font-family: 'Ezra SIL', 'Noto Sans Hebrew', 'SBL Hebrew', serif;
+}
+
+.font-greek {
+  font-family: 'SBL Greek', 'Gentium Plus', 'Noto Serif Greek', serif;
+}
+
+/* High Contrast Mode */
+.contrast-high {
+  --tw-border-opacity: 1 !important;
+  filter: contrast(125%);
+}
+
+.contrast-high article {
+  border-width: 2px !important;
+  border-color: #000000 !important;
+}
+
+[data-theme="dark"].contrast-high article {
+  border-color: #D4AF37 !important;
+}
+
+/* Reduced Motion Mode */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reduce-motion *, .reduce-motion ::before, .reduce-motion ::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Skip to content accessible link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0B192C;
+  color: #D4AF37;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  top: 0;
+}
