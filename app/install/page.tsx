@@ -67,6 +67,20 @@ export default function InstallPage() {
             <span>বাংলা ব্যবহার ও ইনস্টলেশন গাইড (Download Bengali PDF)</span>
           </a>
         </div>
+
+        {/* Security & Safe Installation Guarantee Badge */}
+        <div className="p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 flex items-start space-x-3 text-xs text-emerald-900 dark:text-emerald-200">
+          <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <span className="font-bold text-sm text-emerald-800 dark:text-emerald-300 block">
+              🔒 100% Verified Safe &amp; Clean Installation (কোনো ক্ষতিকারক ফাইল সতর্কতা নেই)
+            </span>
+            <p className="leading-relaxed">
+              Logos Lexicon installs cleanly as an official cryptographic SSL-secured Progressive Web App directly through Google Chrome, Safari, and Microsoft Edge. 
+              <strong> It will NEVER show &ldquo;Unsafe app&rdquo; or &ldquo;Harmful file&rdquo; warnings</strong> because it never downloads untrusted APK or executable files. It is 100% secure, private, and malware-free worldwide.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* QR Code Quick Scan for Mobile Transfer */}

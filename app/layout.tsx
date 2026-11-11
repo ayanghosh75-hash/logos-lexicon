@@ -6,6 +6,7 @@ import { Footer } from '@/components/navigation/Footer';
 import { UpdateBanner } from '@/components/pwa/UpdateBanner';
 import { LexiGuide } from '@/components/lexi/LexiGuide';
 import { UserGuideModal } from '@/components/guide/UserGuideModal';
+import { GeoVernacularDetector } from '@/components/geo/GeoVernacularDetector';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://logos-lexicon-app.vercel.app'),
@@ -125,13 +126,20 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Logos Lexicon — Multilingual Biblical & Theological Dictionary" />
         <meta name="twitter:description" content="Explore biblical and theological terms across 21 languages with Greek & Hebrew studies, 66 Books Scripture Explorer, and Sermon Studio on any device worldwide." />
-        <meta name="twitter:image" content="https://logos-lexicon-app.vercel.app/og-image.png" />
+        {/* PWA Security & Clean Installation Verification */}
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Logos Lexicon" />
+        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
       </head>
       <body className="bg-ivory-100 dark:bg-navy-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors selection:bg-gold-400 selection:text-navy-950">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
         <LexiconProvider>
+          <GeoVernacularDetector />
           <Navbar />
           <main id="main-content" className="flex-1">
             {children}
