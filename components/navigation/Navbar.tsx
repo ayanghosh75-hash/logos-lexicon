@@ -54,6 +54,7 @@ export const Navbar: React.FC = () => {
     { href: '/dictionary', label: 'Dictionary', icon: Layers },
     { href: '/original-languages', label: 'Greek & Hebrew', icon: Sparkles },
     { href: '/compare', label: 'Compare', icon: Languages },
+    { href: '/install', label: 'Install', icon: Download },
     { href: '/about', label: 'About', icon: Info },
   ];
 
@@ -196,16 +197,14 @@ export const Navbar: React.FC = () => {
             </a>
 
             {/* PWA Install Button */}
-            {isInstallable && (
-              <button
-                onClick={triggerInstall}
-                className="bg-gold-500 hover:bg-gold-600 text-navy-950 px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center space-x-1 shadow-sm transition-colors"
-                title="Install Logos Lexicon application on your device"
-              >
-                <Download className="w-3.5 h-3.5" />
-                <span>Install</span>
-              </button>
-            )}
+            <button
+              onClick={isInstallable ? triggerInstall : () => { window.location.href = '/install'; }}
+              className="bg-gold-500 hover:bg-gold-600 text-navy-950 px-2.5 py-1.5 rounded-lg text-xs font-bold flex items-center space-x-1 shadow-sm transition-all hover:scale-105"
+              title="Install Logos Lexicon application on your device (Android, iPhone, PC, Mac)"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Install</span>
+            </button>
 
             {/* Theme Toggle */}
             <button
@@ -298,6 +297,24 @@ export const Navbar: React.FC = () => {
             >
               <HelpCircle className="w-4 h-4 text-gold-400" />
               <span>📖 Step-by-Step User Guide (ব্যবহার নির্দেশিকা)</span>
+            </button>
+          </div>
+
+          {/* Mobile Install App Action */}
+          <div className="pt-2">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (isInstallable) {
+                  triggerInstall();
+                } else {
+                  window.location.href = '/install';
+                }
+              }}
+              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white p-2.5 rounded-xl text-xs font-bold flex items-center justify-center space-x-2 transition-colors shadow-sm"
+            >
+              <Download className="w-4 h-4 text-white" />
+              <span>📲 Install Logos Lexicon App (মোবাইলে ইনস্টল করুন)</span>
             </button>
           </div>
 

@@ -74,8 +74,8 @@ export default function HomePage() {
             scriptural concepts, compare translations across 21 global languages, and examine original Biblical Greek, Hebrew, and Aramaic.
           </p>
 
-          {/* Quick Action: Step-by-Step User Guide Button */}
-          <div className="flex justify-center items-center gap-3 pt-1">
+          {/* Quick Actions: Step-by-Step User Guide & Install App */}
+          <div className="flex flex-wrap justify-center items-center gap-3 pt-1">
             <button
               onClick={openUserGuide}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold text-xs sm:text-sm shadow-lg transition-transform hover:scale-105"
@@ -83,6 +83,14 @@ export default function HomePage() {
               <HelpCircle className="w-4 h-4" />
               <span>📖 How to Use (Step-by-Step Guide / ব্যবহার নির্দেশিকা)</span>
             </button>
+
+            <Link
+              href="/install"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-lg transition-transform hover:scale-105"
+            >
+              <Download className="w-4 h-4" />
+              <span>📲 Install App (মোবাইলে ইনস্টল করুন)</span>
+            </Link>
           </div>
 
           {/* Multilingual Search Bar */}
