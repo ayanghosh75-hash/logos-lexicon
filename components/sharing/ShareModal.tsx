@@ -37,17 +37,17 @@ export const ShareModal: React.FC<ShareModalProps> = ({
   const [copied, setCopied] = useState(false);
   const [qrSvg, setQrSvg] = useState<string>('');
 
-  // Permanent Base URL strictly enforced (Canonical domain only)
-  const PERMANENT_BASE_URL = 'https://logoslexicon.org';
+  // Live Production URL that opens instantly on any device worldwide
+  const LIVE_PRODUCTION_URL = 'https://logos-lexicon-app.vercel.app';
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  const permanentUrl = cleanPath === '/' ? `${PERMANENT_BASE_URL}/` : `${PERMANENT_BASE_URL}${cleanPath}`;
+  const permanentUrl = cleanPath === '/' ? `${LIVE_PRODUCTION_URL}/` : `${LIVE_PRODUCTION_URL}${cleanPath}`;
 
   // Tailor message based on whether sharing the full app or a specific theological term
   const isFullAppShare = cleanPath === '/' || title === 'Logos Lexicon';
 
   const shareText = isFullAppShare
-    ? `Explore Logos Lexicon—a multilingual biblical and theological dictionary with English, Indian languages, Korean, Biblical Greek and Hebrew. Open or install it here: ${permanentUrl}`
-    : `Explore ‘${title}’ on Logos Lexicon—a multilingual biblical and theological dictionary with English, Indian languages, Korean, Biblical Greek and Hebrew. Read the entry here: ${permanentUrl}`;
+    ? `Explore Logos Lexicon—the multilingual biblical & theological dictionary and 66-book Scripture explorer across 21 languages (English, Bengali, Hindi, Urdu, Arabic, Persian, Filipino, Japanese, Chinese, Korean) with Greek & Hebrew studies. Open directly here: ${permanentUrl}`
+    : `Explore ‘${title}’ on Logos Lexicon—multilingual biblical & theological dictionary with Greek, Hebrew, and 21 global language translations. Read the entry here: ${permanentUrl}`;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -162,21 +162,22 @@ export const ShareModal: React.FC<ShareModalProps> = ({
                 href={`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-emerald-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-emerald-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors shadow-sm"
               >
                 <MessageSquare className="w-4 h-4 text-emerald-500" />
                 <span>WhatsApp</span>
               </a>
 
-              {/* Facebook */}
+              {/* Signal */}
               <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(permanentUrl)}`}
+                href={`sgnl://send?text=${encodeURIComponent(shareText)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-blue-600 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-blue-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 hover:text-blue-500 transition-colors shadow-sm"
+                title="Share directly to Signal Private Messenger"
               >
-                <Facebook className="w-4 h-4 text-blue-600" />
-                <span>Facebook</span>
+                <Send className="w-4 h-4 text-blue-500" />
+                <span>Signal</span>
               </a>
 
               {/* Telegram */}
@@ -184,10 +185,32 @@ export const ShareModal: React.FC<ShareModalProps> = ({
                 href={`https://t.me/share/url?url=${encodeURIComponent(permanentUrl)}&text=${encodeURIComponent(shareText)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-sky-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-sky-500 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-sky-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 hover:text-sky-500 transition-colors shadow-sm"
               >
                 <Send className="w-4 h-4 text-sky-500" />
                 <span>Telegram</span>
+              </a>
+
+              {/* Facebook */}
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(permanentUrl)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-blue-600 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 hover:text-blue-600 transition-colors shadow-sm"
+              >
+                <Facebook className="w-4 h-4 text-blue-600" />
+                <span>Facebook</span>
+              </a>
+
+              {/* Twitter / X */}
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-gray-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors shadow-sm"
+              >
+                <Share2 className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                <span>Twitter / X</span>
               </a>
 
               {/* Email */}
@@ -195,7 +218,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
                 href={`mailto:?subject=${encodeURIComponent(
                   isFullAppShare ? 'Logos Lexicon — Multilingual Biblical & Theological Dictionary' : `${title} — Logos Lexicon`
                 )}&body=${encodeURIComponent(shareText)}`}
-                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-rose-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-rose-500 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-rose-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 hover:text-rose-500 transition-colors shadow-sm"
               >
                 <Mail className="w-4 h-4 text-rose-500" />
                 <span>Email</span>
@@ -204,7 +227,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
               {/* SMS */}
               <a
                 href={`sms:?body=${encodeURIComponent(shareText)}`}
-                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-amber-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-amber-500 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-amber-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-semibold text-gray-800 dark:text-gray-200 hover:text-amber-500 transition-colors shadow-sm"
               >
                 <Smartphone className="w-4 h-4 text-amber-500" />
                 <span>SMS</span>
@@ -213,20 +236,20 @@ export const ShareModal: React.FC<ShareModalProps> = ({
               {/* Copy Direct */}
               <button
                 onClick={handleCopy}
-                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-gold-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 hover:text-gold-500 transition-colors shadow-sm"
+                className="p-2.5 rounded-xl border border-gray-200 dark:border-navy-700 hover:border-gold-500 bg-white dark:bg-navy-800 flex items-center justify-center space-x-1.5 text-xs font-bold text-gray-800 dark:text-gray-200 hover:text-gold-500 transition-colors shadow-sm"
               >
                 <Copy className="w-4 h-4 text-gold-500" />
-                <span>Copy Link</span>
+                <span>{copied ? 'Copied!' : 'Copy Link'}</span>
               </button>
 
-              {/* Native Mobile Share */}
+              {/* Native Mobile Share Sheet */}
               {typeof navigator !== 'undefined' && 'share' in navigator && (
                 <button
                   onClick={handleNativeShare}
-                  className="col-span-2 p-2.5 rounded-xl border border-gold-400/40 bg-gold-400/10 hover:bg-gold-400/20 text-navy-900 dark:text-gold-300 flex items-center justify-center space-x-1.5 text-xs font-bold transition-colors shadow-sm"
+                  className="col-span-2 sm:col-span-4 p-2.5 rounded-xl border border-gold-400/40 bg-gold-400/10 hover:bg-gold-400/20 text-navy-900 dark:text-gold-300 flex items-center justify-center space-x-1.5 text-xs font-bold transition-colors shadow-sm"
                 >
                   <ExternalLink className="w-4 h-4 text-gold-500" />
-                  <span>Device Share Menu</span>
+                  <span>Open Device Share Menu (WhatsApp, Signal, Instagram &amp; More)</span>
                 </button>
               )}
             </div>
