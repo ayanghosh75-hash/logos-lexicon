@@ -102,7 +102,7 @@ export default function InstallPage() {
           </h2>
           <p className="text-xs text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
             Point your smartphone camera at this permanent QR code to open the dictionary instantly.
-            Encodes the permanent public address: <strong className="text-navy-900 dark:text-gold-300 font-mono">https://logoslexicon.org/</strong>
+            Encodes the verified public address: <strong className="text-navy-900 dark:text-gold-300 font-mono">https://logos-lexicon-app.vercel.app/</strong>
           </p>
           <div className="flex flex-wrap items-center gap-2 pt-1 justify-center md:justify-start">
             <a
@@ -144,7 +144,7 @@ export default function InstallPage() {
 
           <ol className="space-y-3 text-xs text-gray-700 dark:text-gray-300 font-serif list-decimal list-inside">
             <li className="leading-relaxed">
-              Open <strong>Safari</strong> and navigate to <code>https://logoslexicon.org/</code>.
+              Open <strong>Safari</strong> and navigate to <code>https://logos-lexicon-app.vercel.app/</code>.
             </li>
             <li className="leading-relaxed">
               Tap the <strong>Share</strong> icon (square with an upward arrow) in the bottom navigation toolbar.

@@ -3,7 +3,7 @@
   "short_name": "Logos Lexicon",
   "description": "Understand the Word. Explore Every Language. Multilingual Biblical and Theological Dictionary.",
   "start_url": "/",
-  "id": "/",
+  "id": "https://logos-lexicon-app.vercel.app/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#0B192C",

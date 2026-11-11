@@ -9,6 +9,7 @@ const DATA_CACHE = `${CACHE_VERSION}-data`;
 const STATIC_ASSETS = [
   '/',
   '/manifest.webmanifest',
+  '/manifest.json',
   '/favicon.svg',
   '/icons/icon-192.png',
   '/icons/icon-512.png',
@@ -19,12 +20,18 @@ const STATIC_ASSETS = [
   '/status',
 ];
 
-// Install Event: Cache essential verified application shell
+// Install Event: Resilient, non-blocking cache population guaranteed to succeed worldwide
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
-    })
+    caches.open(STATIC_CACHE).then(async (cache) => {
+      for (const asset of STATIC_ASSETS) {
+        try {
+          await cache.add(asset);
+        } catch (e) {
+          console.warn('SW asset pre-cache skipped:', asset, e);
+        }
+      }
+    }).then(() => self.skipWaiting())
   );
 });
 

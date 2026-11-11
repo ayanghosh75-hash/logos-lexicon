@@ -42,7 +42,7 @@ const nextConfig: NextConfig = {
         },
         {
           key: "Content-Security-Policy",
-          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://*.google.com https://*.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://*.google.com; frame-src 'self' https://googleads.g.doubleclick.net https://*.google.com; frame-ancestors 'none';",
+          value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://*.google.com https://*.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://*.google.com https://*.googlesyndication.com https://vitals.vercel-insights.com; frame-src 'self' https://googleads.g.doubleclick.net https://*.google.com; manifest-src 'self'; worker-src 'self' blob:; frame-ancestors 'none';",
         },
       ],
     },

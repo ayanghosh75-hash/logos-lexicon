@@ -16,7 +16,7 @@ if (!fs.existsSync(qrDir)) {
   fs.mkdirSync(qrDir, { recursive: true });
 }
 
-const PERMANENT_URL = 'https://logoslexicon.org/';
+const PERMANENT_URL = 'https://logos-lexicon-app.vercel.app/';
 console.log(`Generating permanent QR code suite for: ${PERMANENT_URL}`);
 
 async function generateSuite() {
